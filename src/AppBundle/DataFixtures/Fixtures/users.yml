@@ -1,0 +1,4 @@
+AppBundle\Entity\User:
+  admin:
+    username: admin
+    password: password

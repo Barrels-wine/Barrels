@@ -31,7 +31,7 @@ monolog:
         #    level:  info
 
 hautelook_alice:
-    fixtures_path: 'DataFixtures'
+    fixtures_path: 'DataFixtures/Fixtures'
 
 #swiftmailer:
 #    delivery_address: me@example.com

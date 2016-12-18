@@ -6,7 +6,7 @@ services:
       - 9000:9000
     volumes:
       - .:/var/www/symfony
-      - ./logs/symfony:/var/www/symfony/app/logs
+      - ./logs/mycellar:/var/www/symfony/app/logs
     links:
       - db
   db:
