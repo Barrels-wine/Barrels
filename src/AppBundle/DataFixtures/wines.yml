@@ -1,0 +1,3 @@
+AppBundle\Entity\Wine:
+  wine{1..10}:
+    year: 2015

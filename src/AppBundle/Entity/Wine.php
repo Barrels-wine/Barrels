@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Wine
 {
     /**
-     * @ORM\Column(type="guid")
+     * @ORM\Column(type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -31,5 +31,21 @@ class Wine
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getYear()
+    {
+        return $this->year;
+    }
+
+    /**
+     * @param mixed $year
+     */
+    public function setYear($year)
+    {
+        $this->year = $year;
     }
 }
