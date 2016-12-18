@@ -1,0 +1,19 @@
+version: '2'
+services:
+    php:
+        build: ./docker/php-fpm
+        ports:
+            - 9000:9000
+        volumes:
+            - .:/var/www/symfony
+            - ./logs/symfony:/var/www/symfony/app/logs
+    nginx:
+        build: ./docker/nginx
+        ports:
+            - "80:80"
+        links:
+            - php
+        volumes_from:
+            - php
+        volumes:
+            - ./logs/nginx/:/var/log/nginx
