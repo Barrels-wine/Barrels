@@ -1,19 +1,32 @@
 version: '2'
 services:
-    php:
-        build: ./docker/php-fpm
-        ports:
-            - 9000:9000
-        volumes:
-            - .:/var/www/symfony
-            - ./logs/symfony:/var/www/symfony/app/logs
-    nginx:
-        build: ./docker/nginx
-        ports:
-            - "80:80"
-        links:
-            - php
-        volumes_from:
-            - php
-        volumes:
-            - ./logs/nginx/:/var/log/nginx
+  php:
+    build: ./docker/php-fpm
+    ports:
+      - 9000:9000
+    volumes:
+      - .:/var/www/symfony
+      - ./logs/symfony:/var/www/symfony/app/logs
+    links:
+      - db
+  db:
+    image: mariadb
+    volumes:
+      - /data/maridb:/var/lib/mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+  nginx:
+    build: ./docker/nginx
+    ports:
+      - "80:80"
+    links:
+      - php
+    volumes_from:
+      - php
+    volumes:
+      - ./logs/nginx/:/var/log/nginx

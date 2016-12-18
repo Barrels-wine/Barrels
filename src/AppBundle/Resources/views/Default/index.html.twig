@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <p>COUCOUC</p>
+    <ul>
+        {% for wine in wines %}
+            <li>{{ wine }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
