@@ -15,7 +15,11 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $wines = ['Chateau 1', 'Chevalier Montrachet'];
+        $wines = $this
+            ->get('doctrine.orm.entity_manager')
+            ->getRepository('AppBundle:Wine')
+            ->findAll()
+        ;
 
         return [
             'wines' => $wines,
