@@ -4,7 +4,7 @@
     <p>COUCOUC</p>
     <ul>
         {% for wine in wines %}
-            <li>{{ wine.year }}</li>
+            <li>{{ wine.name ~ ' (' ~ wine.vintage ~ ')' }}</li>
         {% endfor %}
     </ul>
 {% endblock %}
