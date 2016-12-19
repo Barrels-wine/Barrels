@@ -2,7 +2,9 @@
 
 namespace AppBundle\Entity;
 
+use AppBundle\Entity\Bottle;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Class Wine
@@ -61,16 +63,6 @@ class Wine
     private $winemaker;
 
     /**
-     * @ORM\Column(name="acquisition_price", type="float", nullable=true)
-     */
-    private $acquisitionPrice = null;
-
-    /**
-     * @ORM\Column(name="estimation_price", type="float", nullable=true)
-     */
-    private $estimationPrice = null;
-
-    /**
      * @ORM\Column(type="integer", nullable=true)
      */
     private $rating = null;
@@ -94,11 +86,6 @@ class Wine
      * @ORM\Column(name="classifcation_level" ,type="string", nullable=true)
      */
     private $classificationLevel = null;
-
-    /**
-     * @ORM\Column(type="string")
-     */
-    private $volume = '75cl';
 
     /**
      * @ORM\Column(type="string", nullable=true)
@@ -136,19 +123,19 @@ class Wine
     private $batch = null;
 
     /**
-     * @ORM\Column(name="nb_bottles", type="integer")
-     */
-    private $nbBottles = 0;
-
-    /**
-     * @ORM\Column(name="storage_location", type="string", nullable=true)
-     */
-    private $storageLocation = null;
-
-    /**
      * @ORM\Column(type="string")
      */
     private $category;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Bottle", mappedBy="wine", cascade={"remove", "persist"}, orphanRemoval=true)
+     */
+    private $bottles;
+
+    public function __construct()
+    {
+        $this->bottles = new ArrayCollection();
+    }
 
     /**
      * @return mixed
@@ -289,38 +276,6 @@ class Wine
     /**
      * @return mixed
      */
-    public function getAcquisitionPrice()
-    {
-        return $this->acquisitionPrice;
-    }
-
-    /**
-     * @param mixed $acquisitionPrice
-     */
-    public function setAcquisitionPrice($acquisitionPrice)
-    {
-        $this->acquisitionPrice = $acquisitionPrice;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEstimationPrice()
-    {
-        return $this->estimationPrice;
-    }
-
-    /**
-     * @param mixed $estimationPrice
-     */
-    public function setEstimationPrice($estimationPrice)
-    {
-        $this->estimationPrice = $estimationPrice;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getRating()
     {
         return $this->rating;
@@ -396,22 +351,6 @@ class Wine
     public function setClassificationLevel($classificationLevel)
     {
         $this->classificationLevel = $classificationLevel;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getVolume()
-    {
-        return $this->volume;
-    }
-
-    /**
-     * @param mixed $volume
-     */
-    public function setVolume($volume)
-    {
-        $this->volume = $volume;
     }
 
     /**
@@ -529,38 +468,6 @@ class Wine
     /**
      * @return mixed
      */
-    public function getNbBottles()
-    {
-        return $this->nbBottles;
-    }
-
-    /**
-     * @param mixed $nbBottles
-     */
-    public function setNbBottles($nbBottles)
-    {
-        $this->nbBottles = $nbBottles;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStorageLocation()
-    {
-        return $this->storageLocation;
-    }
-
-    /**
-     * @param mixed $storageLocation
-     */
-    public function setStorageLocation($storageLocation)
-    {
-        $this->storageLocation = $storageLocation;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getCategory()
     {
         return $this->category;
@@ -572,5 +479,36 @@ class Wine
     public function setCategory($category)
     {
         $this->category = $category;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getBottles()
+    {
+        return $this->bottles;
+    }
+
+    /**
+     * @param Bottle $bottle
+     */
+    public function addBottle(Bottle $bottle)
+    {
+        if (!$this->bottles->contains($bottle)) {
+            $this->bottles[] = $bottle;
+            $bottle->setWine($this);
+        }
+    }
+
+    /**
+     * @param Bottle $bottle
+     */
+    public function removeBottle(Bottle $bottle)
+    {
+        if ($this->bottles->contains($bottle)) {
+            $this->bottles->remove($bottle);
+            $bottle->setWine(null);
+            // Bottle is orphan -> deleted 'cause of OprhanRemoval
+        }
     }
 }
