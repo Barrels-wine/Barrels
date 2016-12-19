@@ -41,11 +41,6 @@ class Wine
     private $color;
 
     /**
-     * @ORM\Column(type="string")
-     */
-    private $vineyard;
-
-    /**
      * @ORM\Column(type="integer")
      */
     private $vintage;
@@ -66,14 +61,14 @@ class Wine
     private $winemaker;
 
     /**
-     * @ORM\Column(name="acquisition_price", type="float")
+     * @ORM\Column(name="acquisition_price", type="float", nullable=true)
      */
-    private $acquisitionPrice;
+    private $acquisitionPrice = null;
 
     /**
-     * @ORM\Column(name="average", type="float", nullable=true)
+     * @ORM\Column(name="estimation_price", type="float", nullable=true)
      */
-    private $averagePrice = null;
+    private $estimationPrice = null;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
@@ -89,6 +84,76 @@ class Wine
      * @ORM\Column(name="food_pairing", type="text", nullable=true)
      */
     private $foodPairing = null;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $reference = null;
+
+    /**
+     * @ORM\Column(name="classifcation_level" ,type="string", nullable=true)
+     */
+    private $classificationLevel = null;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $volume = '75cl';
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $reference = null;
+
+    /**
+     * @ORM\Column(type="interval", nullable=true)
+     */
+    private $aging = null;
+
+    /**
+     * @ORM\Column(name="best_aging", type="interval", nullable=true)
+     */
+    private $bestAging = null;
+
+    /**
+     * @ORM\Column(name="best_after", type="interval", nullable=true)
+     */
+    private $bestAfter = null;
+
+    /**
+     * @ORM\Column(name="drink_after", type="interval", nullable=true)
+     */
+    private $drinkAfter = null;
+
+    /**
+     * @ORM\Column(name="alcohol_degree", type="float", nullable=true)
+     */
+    private $alcoholDegree = null;
+
+    /**
+     * @ORM\Column(type="interval", nullable=true)
+     */
+    private $temperature = null;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $batch = null;
+
+    /**
+     * @ORM\Column(name="nb_bottles", type="integer")
+     */
+    private $nbBottles = 0;
+
+    /**
+     * @ORM\Column(name="storage_location", type="string", nullable=true)
+     */
+    private $storageLocation = null;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $category;
 
     /**
      * @return mixed
@@ -160,22 +225,6 @@ class Wine
     public function setColor($color)
     {
         $this->color = $color;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getVineyard()
-    {
-        return $this->vineyard;
-    }
-
-    /**
-     * @param mixed $vineyard
-     */
-    public function setVineyard($vineyard)
-    {
-        $this->vineyard = $vineyard;
     }
 
     /**
@@ -256,22 +305,6 @@ class Wine
     public function setAcquisitionPrice($acquisitionPrice)
     {
         $this->acquisitionPrice = $acquisitionPrice;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAveragePrice()
-    {
-        return $this->averagePrice;
-    }
-
-    /**
-     * @param mixed $averagePrice
-     */
-    public function setAveragePrice($averagePrice)
-    {
-        $this->averagePrice = $averagePrice;
     }
 
     /**
