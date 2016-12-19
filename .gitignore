@@ -16,6 +16,9 @@
 /web/bundles/
 *.pyc
 
+# file to import
+/src/AppBundle/Import/data.csv
+
 # used by Docker
 /logs
 /data
