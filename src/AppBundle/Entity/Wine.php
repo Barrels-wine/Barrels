@@ -101,11 +101,6 @@ class Wine
     private $volume = '75cl';
 
     /**
-     * @ORM\Column(type="string", nullable=true)
-     */
-    private $reference = null;
-
-    /**
      * @ORM\Column(type="interval", nullable=true)
      */
     private $aging = null;
@@ -310,6 +305,22 @@ class Wine
     /**
      * @return mixed
      */
+    public function getEstimationPrice()
+    {
+        return $this->estimationPrice;
+    }
+
+    /**
+     * @param mixed $estimationPrice
+     */
+    public function setEstimationPrice($estimationPrice)
+    {
+        $this->estimationPrice = $estimationPrice;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getRating()
     {
         return $this->rating;
@@ -353,5 +364,213 @@ class Wine
     public function setFoodPairing($foodPairing)
     {
         $this->foodPairing = $foodPairing;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * @param mixed $reference
+     */
+    public function setReference($reference)
+    {
+        $this->reference = $reference;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getClassificationLevel()
+    {
+        return $this->classificationLevel;
+    }
+
+    /**
+     * @param mixed $classificationLevel
+     */
+    public function setClassificationLevel($classificationLevel)
+    {
+        $this->classificationLevel = $classificationLevel;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVolume()
+    {
+        return $this->volume;
+    }
+
+    /**
+     * @param mixed $volume
+     */
+    public function setVolume($volume)
+    {
+        $this->volume = $volume;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAging()
+    {
+        return $this->aging;
+    }
+
+    /**
+     * @param mixed $aging
+     */
+    public function setAging($aging)
+    {
+        $this->aging = $aging;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBestAging()
+    {
+        return $this->bestAging;
+    }
+
+    /**
+     * @param mixed $bestAging
+     */
+    public function setBestAging($bestAging)
+    {
+        $this->bestAging = $bestAging;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBestAfter()
+    {
+        return $this->bestAfter;
+    }
+
+    /**
+     * @param mixed $bestAfter
+     */
+    public function setBestAfter($bestAfter)
+    {
+        $this->bestAfter = $bestAfter;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDrinkAfter()
+    {
+        return $this->drinkAfter;
+    }
+
+    /**
+     * @param mixed $drinkAfter
+     */
+    public function setDrinkAfter($drinkAfter)
+    {
+        $this->drinkAfter = $drinkAfter;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAlcoholDegree()
+    {
+        return $this->alcoholDegree;
+    }
+
+    /**
+     * @param mixed $alcoholDegree
+     */
+    public function setAlcoholDegree($alcoholDegree)
+    {
+        $this->alcoholDegree = $alcoholDegree;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTemperature()
+    {
+        return $this->temperature;
+    }
+
+    /**
+     * @param mixed $temperature
+     */
+    public function setTemperature($temperature)
+    {
+        $this->temperature = $temperature;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBatch()
+    {
+        return $this->batch;
+    }
+
+    /**
+     * @param mixed $batch
+     */
+    public function setBatch($batch)
+    {
+        $this->batch = $batch;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNbBottles()
+    {
+        return $this->nbBottles;
+    }
+
+    /**
+     * @param mixed $nbBottles
+     */
+    public function setNbBottles($nbBottles)
+    {
+        $this->nbBottles = $nbBottles;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStorageLocation()
+    {
+        return $this->storageLocation;
+    }
+
+    /**
+     * @param mixed $storageLocation
+     */
+    public function setStorageLocation($storageLocation)
+    {
+        $this->storageLocation = $storageLocation;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
     }
 }
