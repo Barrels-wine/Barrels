@@ -101,22 +101,22 @@ class Wine
     private $volume = '75cl';
 
     /**
-     * @ORM\Column(type="interval", nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $aging = null;
 
     /**
-     * @ORM\Column(name="best_aging", type="interval", nullable=true)
+     * @ORM\Column(name="best_aging", type="string", nullable=true)
      */
     private $bestAging = null;
 
     /**
-     * @ORM\Column(name="best_after", type="interval", nullable=true)
+     * @ORM\Column(name="best_after", type="string", nullable=true)
      */
     private $bestAfter = null;
 
     /**
-     * @ORM\Column(name="drink_after", type="interval", nullable=true)
+     * @ORM\Column(name="drink_after", type="string", nullable=true)
      */
     private $drinkAfter = null;
 
@@ -126,7 +126,7 @@ class Wine
     private $alcoholDegree = null;
 
     /**
-     * @ORM\Column(type="interval", nullable=true)
+     * @ORM\Column(type="float", nullable=true)
      */
     private $temperature = null;
 
