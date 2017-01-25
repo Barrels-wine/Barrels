@@ -14,7 +14,13 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
-.env
+*.pyc
 
-.idea
+# used by Docker
 /logs
+/data
+
+# IDE
+.idea
+app/logs/
+data/
