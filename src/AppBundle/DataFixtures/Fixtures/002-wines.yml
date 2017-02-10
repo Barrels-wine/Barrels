@@ -7,6 +7,5 @@ AppBundle\Entity\Wine:
     country: 'France'
     region: 'Bourgogne'
     winemaker: '<name()>'
-    acquisitionPrice: '<randomFloat(2)>'
     vintage: '<year()>'
     category: 'Vin'
