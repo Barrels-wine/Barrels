@@ -30,7 +30,7 @@ class Wine
     /**
      * @ORM\Column(type="string")
      */
-    private $appelation;
+    private $designation;
 
     /**
      * @ORM\Column(type="string")
@@ -83,7 +83,7 @@ class Wine
     private $reference = null;
 
     /**
-     * @ORM\Column(name="classifcation_level" ,type="string", nullable=true)
+     * @ORM\Column(name="classification_level" ,type="string", nullable=true)
      */
     private $classificationLevel = null;
 
@@ -164,17 +164,17 @@ class Wine
     /**
      * @return mixed
      */
-    public function getAppelation()
+    public function getDesignation()
     {
-        return $this->appelation;
+        return $this->designation;
     }
 
     /**
-     * @param mixed $appelation
+     * @param mixed $designation
      */
-    public function setAppelation($appelation)
+    public function setDesignation($designation)
     {
-        $this->appelation = $appelation;
+        $this->designation = $designation;
     }
 
     /**

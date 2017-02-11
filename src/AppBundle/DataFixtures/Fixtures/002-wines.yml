@@ -1,7 +1,7 @@
 AppBundle\Entity\Wine:
   wine{1..10}:
     name: '<word()>'
-    appelation: '<text()>'
+    designation: '<text()>'
     varietal: '<text()>'
     color: 'Rouge'
     country: 'France'

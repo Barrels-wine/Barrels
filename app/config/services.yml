@@ -1,6 +1,15 @@
 services:
   data_fixtures.processor.user:
-    class: AppBundle\DataFixtures\Processor\UserProcessor
+    class: 'AppBundle\DataFixtures\Processor\UserProcessor'
     arguments:
       - '@security.password_encoder'
-    tags: [ { name: fidry_alice_data_fixtures.processor } ]
+    tags: [ { name: 'fidry_alice_data_fixtures.processor' } ]
+  my_cellar.command.import:
+    class: 'AppBundle\Import\ImportCommand'
+    arguments:
+      - '@doctrine.orm.entity_manager'
+      - '@my_cellar.parser.csv'
+    tags:
+      - { name: 'console.command' }
+  my_cellar.parser.csv:
+    class: 'AppBundle\Import\CsvParser'

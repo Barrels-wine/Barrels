@@ -9,7 +9,7 @@ use AppBundle\Entity\Wine;
 * Class Bottle
 * @package AppBundle\Entity
 *
-* @ORM\Entity()&
+* @ORM\Entity()
 * @ORM\Table(name="bottle")
 */
 class Bottle
