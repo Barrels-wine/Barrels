@@ -21,7 +21,8 @@ Several fabric commands are available :
 
 - `fab local.app.deploy` : Deploy app (composer install, remove and warmup cache, install assets) for specified environment
 - `fab local.app.clear_cache` : Remove cache for specified environment
-- `fab local.database.generate` : Drop and recreate database then load fixtures unless specified otherwise
+- `fab local.database.generate` : Drop and recreate database then load fixtures if specified
+- `fab local.database.populate` : Load fixtures
 - `fab local.infrastructure.build` : Build project using docker-compose
 - `fab local.infrastructure.up` : Build then start the project using docker-compose
 - `fab local.infrastructure.reboot` : Stop the project then start it again
