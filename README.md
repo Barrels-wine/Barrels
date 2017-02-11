@@ -9,20 +9,27 @@ MyCellar
 
 This project uses docker to run.
 
-First you need to configure database parameters :
+First you need to modify `app/config/parameters.yml` to set relevant database configuration parameters.
 
-- Copy dist env file with `cp .env.dist .env`
-- Then modify `.env` and `app/config/parameters.yml` to set relevant database configuration parameters.
+Install python requirements: `pip install -r requirements.txt`.
 
-Make sure you have docker installed then launch `docker-compose build` and `docker-compose up -d`.
+Then just run `fab local.infrastructure.up` and `fab local.app.deploy`.
 
-## Create and update database schema
+## Commands
 
-Go into application container by running `docker-compose exec php bash` then launch `sf doctrine:database:create` and `sf doctrine:schema:update --force`.
+Several fabric commands are available :
 
-## Loading fixtures
+- `fab local.app.deploy` : Deploy app (composer install, remove and warmup cache, install assets) for specified environment
+- `fab local.app.clear_cache` : Remove cache for specified environment
+- `fab local.database.generate` : Drop and recreate database then load fixtures if specified
+- `fab local.database.populate` : Load fixtures
+- `fab local.infrastructure.build` : Build project using docker-compose
+- `fab local.infrastructure.up` : Build then start the project using docker-compose
+- `fab local.infrastructure.reboot` : Stop the project then start it again
+- `fab local.infrastructure.stop` : Stop the project
+- `fab local.infrastructure.clean` : Remove the stopped service containers
+- `fab local.infrastructure.ps` : List active service containers
+- `fab local.infrastructure.logs` : Print logs for specified containers or all of them
 
-Go into application container by running `docker-compose exec php bash` then launch `sf hautelook:fixtures:load`.
 
-Fixtures files are located in `@AppBundle/DataFixtures`.
 
