@@ -35,23 +35,22 @@ class User implements UserInterface, \Serializable
     private $active;
 
     /**
-     * @param int    $id
-     * @param string $email
-     * @param string $username
-     */
-    public function __construct($id, string $email, string $username)
-    {
-        $this->id = $id;
-        $this->email = $email;
-        $this->username = $username;
-    }
-
-    /**
      * @return string
      */
     public function getId(): string
     {
         return $this->id;
+    }
+
+    /**
+     * @param string $id
+     * @return User
+     */
+    public function setId($id) : User
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     /**
@@ -99,12 +98,31 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @param mixed $email
-     * @return $this
+     * @param string $email
+     * @return User
      */
     public function setEmail(string $email) : User
     {
         $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isActive() : bool
+    {
+        return $this->active;
+    }
+
+    /**
+     * @param bool $active
+     * @return User
+     */
+    public function setActive($active) : User
+    {
+        $this->active = $active;
 
         return $this;
     }

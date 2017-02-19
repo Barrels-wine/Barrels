@@ -1,5 +1,7 @@
 App\Entity\User:
-  admin:
-    username: admin
-    password: password
-    email: sfavot@jolicode.com
+  user_template (template):
+    active: true
+    password: 'password'
+  admin (extends user_template):
+    username: 'admin'
+    email: 'sfavot@jolicode.com'

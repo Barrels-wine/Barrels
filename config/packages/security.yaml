@@ -9,7 +9,7 @@ security:
     firewalls:
         main:
             pattern: ^/
-            anonymous:    true
+            anonymous: true
             stateless: true
             guard:
               authenticators:

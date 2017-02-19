@@ -21,7 +21,12 @@ class SecurityController extends AbstractController
 
         try {
             $token = $this->get('my_cellar.security.authentication_provider')->authenticateAndCreateJWT($data);
-            return new JsonResponse(['token' => $token->__toString()]);
+            $response = [
+                'token' => $token->__toString(),
+                'username' => $token->getClaim('username'),
+                'email' => $token->getClaim('email'),
+            ];
+            return new JsonResponse($response);
         } catch (BadCredentialsException $e) {
             throw new UnauthorizedHttpException('None', 'Bad credentials', $e);
         } catch (\Exception $e) {

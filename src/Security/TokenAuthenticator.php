@@ -6,22 +6,27 @@ namespace App\Security;
 
 use App\Entity\User;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
+use Symfony\Component\Security\Core\Exception\CustomUserMessageAuthenticationException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Guard\AbstractGuardAuthenticator;
 
 class TokenAuthenticator extends AbstractGuardAuthenticator
 {
-    /**
-     * @var JWTConfiguration
-     */
+    /** @var JWTConfiguration */
     private $configuration;
 
-    public function __construct(JWTConfiguration $configuration)
+    /** @var RouterInterface */
+    private $router;
+
+    public function __construct(JWTConfiguration $configuration, RouterInterface $router)
     {
         $this->configuration = $configuration;
+        $this->router = $router;
     }
 
     public function getCredentials(Request $request)
@@ -42,24 +47,23 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
         if (!$credentials) {
-            throw new AuthenticationException('Missing Token');
+            throw new CustomUserMessageAuthenticationException('Missing Token');
         }
 
         try {
             $token = $this->configuration->decode($credentials);
         } catch (\Exception $e) {
-            throw new AuthenticationException('Invalid Token');
+            throw new CustomUserMessageAuthenticationException('Invalid Token');
         }
 
         if ($token === false) {
-            throw new AuthenticationException('Invalid Token');
+            throw new CustomUserMessageAuthenticationException('Invalid Token');
         }
 
-        $user = new User(
-            $token->getClaim('id'),
-            $token->getClaim('email'),
-            $token->getClaim('username')
-        );
+        $user = new User();
+        $user->setId($token->getClaim('id'));
+        $user->setEmail($token->getClaim('email'));
+        $user->setUsername($token->getClaim('username'));
 
         return $user;
     }
@@ -71,6 +75,16 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
 
     public function onAuthenticationFailure(Request $request, AuthenticationException $exception)
     {
+        $route = $this->router->match($request->getPathInfo())['_route'];
+        if ($request->getMethod() === 'POST' && $route === 'login') {
+            return;
+        }
+
+        $data = [
+            'message' => strtr($exception->getMessageKey(), $exception->getMessageData())
+        ];
+
+        return new JsonResponse($data, Response::HTTP_FORBIDDEN);
     }
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, $providerKey)
@@ -84,7 +98,11 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
 
     public function start(Request $request, AuthenticationException $authException = null)
     {
-        throw $authException;
+        $data = [
+            'message' => strtr($authException->getMessageKey(), $authException->getMessageData())
+        ];
+
+        return new JsonResponse($data, Response::HTTP_UNAUTHORIZED);
     }
 
     public function supports(Request $request)
