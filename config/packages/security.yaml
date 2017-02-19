@@ -9,15 +9,12 @@ security:
     firewalls:
         main:
             pattern: ^/
-            anonymous: true
-            form_login:
-                check_path: login
-                login_path: login
-
-            logout:
-                path: security_logout
-                target: homepage
+            anonymous:    true
+            stateless: true
+            guard:
+              authenticators:
+                - 'my_cellar.security.token_authenticator'
 
     access_control:
-        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/, role: ROLE_USER }
+        - { path: ^/api/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: IS_AUTHENTICATED_FULLY }

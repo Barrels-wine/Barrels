@@ -4,24 +4,28 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
+use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 
 class SecurityController extends AbstractController
 {
     /**
-     * @Route("/login", name="login")
+     * @Route("/login", name="login", methods={"POST"})
      */
-    public function login(AuthenticationUtils $authenticationUtils)
+    public function login(Request $request)
     {
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
+        $data = json_decode($request->getContent(), true);
 
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
-
-        return $this->render('security/login.html.twig', [
-            'last_username' => $lastUsername,
-            'error'         => $error,
-        ]);
+        try {
+            $token = $this->get('my_cellar.security.authentication_provider')->authenticateAndCreateJWT($data);
+            return new JsonResponse(['token' => $token->__toString()]);
+        } catch (BadCredentialsException $e) {
+            throw new UnauthorizedHttpException('None', 'Bad credentials', $e);
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException($e->getMessage(), $e);
+        }
     }
 }

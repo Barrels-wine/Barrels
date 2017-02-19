@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Api;
+namespace App\Controller;
 
 use App\Entity\Wine;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,11 +14,11 @@ class WineController extends AbstractController
     /**
      * @Route("/wines", name="wines_list", methods={"GET"})
      */
-    public function getWines(Request $request)
+    public function getWines()
     {
         $wines = $this
             ->getDoctrine()
-            ->getRepository(Wine::class)
+            ->getRepository('AppBundle:Wine')
             ->findAll()
         ;
 

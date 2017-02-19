@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity()
@@ -13,74 +12,114 @@ use Symfony\Component\Validator\Constraints as Assert;
 class User implements UserInterface, \Serializable
 {
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="guid")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="UUID")
      */
     private $id;
-
     /**
      * @ORM\Column(type="string", length=25, unique=true)
      */
     private $username;
-
     /**
      * @ORM\Column(type="string", length=64)
      */
     private $password;
+    /**
+     * @ORM\Column(type="string", length=64, unique=true)
+     */
+    private $email;
+    /**
+     * @ORM\Column(name="active", type="boolean")
+     */
+    private $active;
 
     /**
-     * @ORM\Column(name="is_active", type="boolean")
+     * @param int    $id
+     * @param string $email
+     * @param string $username
      */
-    private $isActive;
-
-    public function __construct()
+    public function __construct($id, string $email, string $username)
     {
-        $this->isActive = true;
+        $this->id = $id;
+        $this->email = $email;
+        $this->username = $username;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getId()
+    public function getId(): string
     {
         return $this->id;
     }
 
-    public function getUsername()
+    /**
+     * @return string
+     */
+    public function getUsername(): string
     {
         return $this->username;
     }
 
     /**
-     * @param mixed $username
+     * @param string $username
+     * @return User
      */
-    public function setUsername($username)
+    public function setUsername(string $username) : User
     {
         $this->username = $username;
+        return $this;
     }
 
-    public function getSalt()
-    {
-        return null;
-    }
-
-    public function getPassword()
+    /**
+     * @return string
+     */
+    public function getPassword() : string
     {
         return $this->password;
     }
 
     /**
-     * @param mixed $password
+     * @param string $password
+     * @return User
      */
-    public function setPassword($password)
+    public function setPassword(string $password)
     {
         $this->password = $password;
+        return $this;
     }
 
-    public function getRoles()
+    /**
+     * @return string
+     */
+    public function getEmail() : string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     * @return $this
+     */
+    public function setEmail(string $email) : User
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getRoles() : array
     {
         return array('ROLE_USER');
+    }
+
+    public function getSalt()
+    {
+        return null;
     }
 
     public function eraseCredentials()
@@ -93,7 +132,7 @@ class User implements UserInterface, \Serializable
         return serialize(array(
             $this->id,
             $this->username,
-            $this->password,
+            $this->email,
         ));
     }
 
@@ -103,7 +142,7 @@ class User implements UserInterface, \Serializable
         list (
             $this->id,
             $this->username,
-            $this->password,
+            $this->email,
             ) = unserialize($serialized);
     }
 }
