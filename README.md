@@ -13,13 +13,15 @@ First you need to modify `app/config/parameters.yml` to set relevant database co
 
 Install python requirements: `pip install -r requirements.txt`.
 
-Then just run `fab local.infrastructure.up` and `fab local.app.deploy`.
+Then just run `fab local.start`.
 
 ## Commands
 
 Several fabric commands are available :
 
-- `fab local.app.deploy` : Deploy app (composer install, remove and warmup cache, install assets) for specified environment
+- `fab local.start` : Start the infrastructure
+- `fab local.stop` : Stop the infrastructure
+- `fab local.app.install` : Install app (composer install, remove and warmup cache, install assets) for specified environment
 - `fab local.app.clear_cache` : Remove cache for specified environment
 - `fab local.database.generate` : Drop and recreate database then load fixtures if specified
 - `fab local.database.populate` : Load fixtures

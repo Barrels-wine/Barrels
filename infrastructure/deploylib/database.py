@@ -1,4 +1,4 @@
-from task import task
+from .task import task
 from fabric.api import env
 
 @task(environments=['local'])
@@ -10,10 +10,12 @@ def generate(populate='false'):
     if populate == 'true':
         env.compose_run('php bin/console hautelook:fixtures:load -n ', 'php')
 
+
 @task(environments=['local'])
 def populate():
     "Populate database with fixtures"
     env.compose_run('php bin/console hautelook:fixtures:load -n ', 'php')
+
 
 @task(environments=['local'])
 def import_csv(purge='false',path='false',mapping='false'):

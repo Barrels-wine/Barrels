@@ -1,4 +1,4 @@
-from task import task
+from .task import task
 from fabric.api import env
 import time
 

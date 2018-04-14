@@ -48,13 +48,6 @@ def compose(command_name):
         env.run('docker-compose -p %s -f %s/%s %s' % (env.project_name, env.directory, env.temporary_file, command_name))
 
 
-def pull(revision, directory, remote='origin'):
-    with cd(directory):
-        env.run('git remote update')
-        env.run('git checkout %s/%s' % (remote, revision))
-        env.run('git rev-parse --short HEAD > VERSION')
-
-
 def merge_infra_files():
     output = None
     print(env.compose_files)
@@ -92,7 +85,6 @@ env.compose = compose
 env.compose_run = compose_run
 env.project_name = 'mycellar'
 env.ssh_into = ssh_into
-env.pull = pull
 env.local = False
 env.build_at_up = True
 env.root_dir = os.path.realpath(os.path.dirname(os.path.realpath(__file__)) + '/../..')

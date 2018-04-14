@@ -1,6 +1,6 @@
 import types
 import inspect
-import environments
+from . import environments
 
 from fabric import tasks
 from fabric import state
@@ -22,7 +22,7 @@ def task(*args, **kwargs):
         task_name = kwargs.pop("name", func.__name__)
         env_list = kwargs.pop("environments", [])
 
-        for name, env in environments.environments.iteritems():
+        for name, env in environments.environments.items():
             if env_list and name not in env_list:
                 continue
 
