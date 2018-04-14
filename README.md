@@ -19,24 +19,16 @@ Then just run `fab local.start`.
 
 Several fabric commands are available :
 
-- `fab local.start` : Start the infrastructure
-- `fab local.stop` : Stop the infrastructure
-- `fab local.app.install` : Install app (composer install, remove and warmup cache, install assets) for specified environment
-- `fab local.app.clear_cache` : Remove cache for specified environment
-- `fab local.app.ssh` : SSH into app container
-- `fab local.database.init` : Drop database and create a new empty one
-- `fab local.database.generate` : Drop and recreate database with schema then load fixtures if specified
-- `fab local.database.diff_migration` : Generate a migration by comparing the current database to the mapping information
-- `fab local.database.migrate` : Apply available migrations to db schema
-- `fab local.database.populate` : Load fixtures
-- `fab local.database.import_csv` : Import data from csv file, use option purge to truncate the wine and bottle tables before. You can specify the csv file path (in csv format) and the mapping file path (in yaml format).
-- `fab local.infrastructure.build` : Build project using docker-compose
-- `fab local.infrastructure.up` : Build then start the project using docker-compose
-- `fab local.infrastructure.reboot` : Stop the project then start it again
-- `fab local.infrastructure.stop` : Stop the project
-- `fab local.infrastructure.clean` : Remove the stopped service containers
-- `fab local.infrastructure.ps` : List active service containers
-- `fab local.infrastructure.logs` : Print logs for specified containers or all of them
-
+  - `fab cache_clear`: Clear cache of the application
+  - `fab cs_fix`: Fix coding standards in code
+  - `fab fixtures`: Import fixtures into database
+  - `fab install`: Install application (composer, assets)
+  - `fab logs`: Show logs of infrastructure
+  - `fab migrate_database`: Update database schema
+  - `fab restart_service`: Restart a single service
+  - `fab ssh`: Ssh into the php container
+  - `fab start`: Be sure that everything is started and installed
+  - `fab stop`: Stop the infrastructure
+  - `fab up`: Ensure infrastructure is sync and running
 
 

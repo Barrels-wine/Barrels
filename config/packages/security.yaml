@@ -13,7 +13,7 @@ security:
             stateless: true
             guard:
               authenticators:
-                - 'my_cellar.security.token_authenticator'
+                - 'App\Security\TokenAuthenticator'
 
     access_control:
         - { path: ^/api/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
