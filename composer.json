@@ -16,7 +16,9 @@
         "symfony/yaml": "^4.0"
     },
     "require-dev": {
-        "symfony/dotenv": "^4.0"
+        "doctrine/doctrine-fixtures-bundle": "^3.0",
+        "symfony/dotenv": "^4.0",
+        "theofidry/alice-data-fixtures": "^1.0"
     },
     "config": {
         "preferred-install": {

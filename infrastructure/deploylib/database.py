@@ -9,18 +9,18 @@ def init(populate='false'):
 
 
 @task(environments=['local'])
+def populate():
+    "Populate database with fixtures"
+    env.compose_run('php bin/console doctrine:fixtures:load ', 'php')
+
+
+@task(environments=['local'])
 def generate(populate='false'):
     "Generate database"
     init()
     migrate()
     if populate == 'true':
-        env.compose_run('php bin/console hautelook:fixtures:load -n ', 'php')
-
-
-@task(environments=['local'])
-def populate():
-    "Populate database with fixtures"
-    env.compose_run('php bin/console hautelook:fixtures:load -n ', 'php')
+        populate()
 
 
 @task
