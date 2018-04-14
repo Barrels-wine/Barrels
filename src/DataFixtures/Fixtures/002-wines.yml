@@ -1,0 +1,11 @@
+App\Entity\Wine:
+  wine{1..10}:
+    name: '<word()>'
+    designation: '<text()>'
+    varietal: '<text()>'
+    color: 'Rouge'
+    country: 'France'
+    region: 'Bourgogne'
+    winemaker: '<name()>'
+    vintage: '<year()>'
+    category: 'Vin'

@@ -1,0 +1,23 @@
+security:
+    encoders:
+        App\Entity\User: bcrypt
+
+    providers:
+        database_users:
+            entity: { class: App\Entity\User, property: username }
+
+    firewalls:
+        main:
+            pattern: ^/
+            anonymous: true
+            form_login:
+                check_path: login
+                login_path: login
+
+            logout:
+                path: security_logout
+                target: homepage
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, role: ROLE_USER }

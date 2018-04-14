@@ -7,8 +7,8 @@ services:
     ports:
       - 9000:9000
     volumes:
-      - ../..:/var/www/symfony
-      - ../../logs/mycellar:/var/www/symfony/app/logs
+      - ../..:/var/www/mycellar
+      - ../../logs/mycellar:/var/www/mycellar/var/logs
     links:
       - db
       - memcached

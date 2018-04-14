@@ -23,5 +23,5 @@ services:
     env_file: ./current.env
     links: [db, memcached]
     ports: ['9000:9000']
-    volumes: ['../..:/var/www/symfony', '../../logs/mycellar:/var/www/symfony/app/logs']
+    volumes: ['../..:/var/www/mycellar', '../../logs/mycellar:/var/www/mycellar/var/logs']
 version: '2'

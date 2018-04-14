@@ -1,29 +1,19 @@
-/app/config/parameters.yml
-/build/
-/phpunit.xml
-/var/*
-!/var/cache
-/var/cache/*
-!var/cache/.gitkeep
-!/var/logs
-/var/logs/*
-!var/logs/.gitkeep
-!/var/sessions
-/var/sessions/*
-!var/sessions/.gitkeep
-!var/SymfonyRequirements.php
+###> symfony/framework-bundle ###
+/.env
+/public/bundles/
+/var/
 /vendor/
-/web/bundles/
-*.pyc
+###< symfony/framework-bundle ###
 
 # file to import
-/src/AppBundle/Import/data.csv
+/src/Import/cave.csv
 
 # used by Docker
 /logs
 /data
 
+# Python
+__pycache__
+
 # IDE
 .idea
-app/logs/
-data/

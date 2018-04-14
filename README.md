@@ -23,7 +23,11 @@ Several fabric commands are available :
 - `fab local.stop` : Stop the infrastructure
 - `fab local.app.install` : Install app (composer install, remove and warmup cache, install assets) for specified environment
 - `fab local.app.clear_cache` : Remove cache for specified environment
-- `fab local.database.generate` : Drop and recreate database then load fixtures if specified
+- `fab local.app.ssh` : SSH into app container
+- `fab local.database.init` : Drop database and create a new empty one
+- `fab local.database.generate` : Drop and recreate database with schema then load fixtures if specified
+- `fab local.database.diff_migration` : Generate a migration by comparing the current database to the mapping information
+- `fab local.database.migrate` : Apply available migrations to db schema
 - `fab local.database.populate` : Load fixtures
 - `fab local.database.import_csv` : Import data from csv file, use option purge to truncate the wine and bottle tables before. You can specify the csv file path (in csv format) and the mapping file path (in yaml format).
 - `fab local.infrastructure.build` : Build project using docker-compose

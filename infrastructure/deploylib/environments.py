@@ -30,8 +30,8 @@ def local():
     env.env_file = 'development.env'
 
 
-def ssh_into(service, user='mycellar'):
-    env.run('docker exec -t -i -u %s %s_%s_1 /bin/bash' % (user, env.project_name, service))
+def ssh_into(service):
+    env.run('docker exec -t -i %s_%s_1 /bin/bash' % (env.project_name, service))
 
 
 def compose_run(command_name, service, directory=".", user="root", no_deps=False):

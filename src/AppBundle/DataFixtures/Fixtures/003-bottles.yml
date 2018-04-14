@@ -1,4 +1,0 @@
-AppBundle\Entity\Bottle:
-  bottle{1..10}:
-    acquisitionPrice: '<randomFloat(2)>'
-    wine: '@wine<numberBetween(1, 10)>'
