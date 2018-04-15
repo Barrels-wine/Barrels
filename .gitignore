@@ -5,8 +5,12 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
-# file to import
-/src/Import/cave.csv
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###
+
+# import files
+import_data
 
 # used by Docker
 /logs
@@ -17,3 +21,5 @@ __pycache__
 
 # IDE
 .idea
+
+/.php_cs.cache

@@ -1,4 +1,6 @@
-<?php declare(strict_types = 1);
+<?php
+
+declare(strict_types=1);
 
 namespace App\DataFixtures;
 
@@ -8,7 +10,7 @@ use Fidry\AliceDataFixtures\Loader\PurgerLoader;
 
 class AppFixtures extends Fixture
 {
-    const PATH = [
+    public const PATH = [
         'src/DataFixtures/Fixtures/001-users.yml',
         'src/DataFixtures/Fixtures/002-wines.yml',
         'src/DataFixtures/Fixtures/003-bottles.yml',
@@ -17,10 +19,6 @@ class AppFixtures extends Fixture
     /** @var PurgerLoader */
     private $loader;
 
-    /**
-     * AppFixtures constructor.
-     * @param PurgerLoader $loader
-     */
     public function __construct(PurgerLoader $loader)
     {
         $this->loader = $loader;

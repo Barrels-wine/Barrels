@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
@@ -12,9 +15,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 class Wine
 {
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="guid")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\GeneratedValue(strategy="UUID")
      */
     private $id;
 
@@ -24,12 +27,12 @@ class Wine
     private $name;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $designation;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $varietal;
 
@@ -39,7 +42,7 @@ class Wine
     private $color;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $vintage;
 
@@ -49,12 +52,12 @@ class Wine
     private $country;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $region;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $winemaker;
 
@@ -109,7 +112,7 @@ class Wine
     private $alcoholDegree = null;
 
     /**
-     * @ORM\Column(type="float", nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $temperature = null;
 
@@ -133,378 +136,285 @@ class Wine
         $this->bottles = new ArrayCollection();
     }
 
-    /**
-     * @return mixed
-     */
-    public function getId()
+    public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    /**
-     * @param mixed $name
-     */
-    public function setName($name)
+    public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDesignation()
+    public function getDesignation(): ?string
     {
         return $this->designation;
     }
 
-    /**
-     * @param mixed $designation
-     */
-    public function setDesignation($designation)
+    public function setDesignation(string $designation = null): self
     {
         $this->designation = $designation;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getVarietal()
+    public function getVarietal(): ?string
     {
         return $this->varietal;
     }
 
-    /**
-     * @param mixed $varietal
-     */
-    public function setVarietal($varietal)
+    public function setVarietal(string $varietal = null): self
     {
         $this->varietal = $varietal;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getColor()
+    public function getColor(): string
     {
         return $this->color;
     }
 
-    /**
-     * @param mixed $color
-     */
-    public function setColor($color)
+    public function setColor(string $color): self
     {
         $this->color = $color;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getVintage()
+    public function getVintage(): ?int
     {
         return $this->vintage;
     }
 
-    /**
-     * @param mixed $vintage
-     */
-    public function setVintage($vintage)
+    public function setVintage(int $vintage = null): self
     {
         $this->vintage = $vintage;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCountry()
+    public function getCountry(): string
     {
         return $this->country;
     }
 
-    /**
-     * @param mixed $country
-     */
-    public function setCountry($country)
+    public function setCountry(string $country): self
     {
         $this->country = $country;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getRegion()
+    public function getRegion(): ?string
     {
         return $this->region;
     }
 
-    /**
-     * @param mixed $region
-     */
-    public function setRegion($region)
+    public function setRegion(string $region = null): self
     {
         $this->region = $region;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getWinemaker()
+    public function getWinemaker(): ?string
     {
         return $this->winemaker;
     }
 
-    /**
-     * @param mixed $winemaker
-     */
-    public function setWinemaker($winemaker)
+    public function setWinemaker(string $winemaker = null): self
     {
         $this->winemaker = $winemaker;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getRating()
+    public function getRating(): ?int
     {
         return $this->rating;
     }
 
-    /**
-     * @param mixed $rating
-     */
-    public function setRating($rating)
+    public function setRating(int $rating = null): self
     {
         $this->rating = $rating;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getComment()
+    public function getComment(): ?string
     {
         return $this->comment;
     }
 
-    /**
-     * @param mixed $comment
-     */
-    public function setComment($comment)
+    public function setComment(string $comment = null): self
     {
         $this->comment = $comment;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getFoodPairing()
+    public function getFoodPairing(): ?string
     {
         return $this->foodPairing;
     }
 
-    /**
-     * @param mixed $foodPairing
-     */
-    public function setFoodPairing($foodPairing)
+    public function setFoodPairing(string $foodPairing = null): self
     {
         $this->foodPairing = $foodPairing;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getReference()
+    public function getReference(): ?string
     {
         return $this->reference;
     }
 
-    /**
-     * @param mixed $reference
-     */
-    public function setReference($reference)
+    public function setReference(string $reference = null): self
     {
         $this->reference = $reference;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getClassificationLevel()
+    public function getClassificationLevel(): ?string
     {
         return $this->classificationLevel;
     }
 
-    /**
-     * @param mixed $classificationLevel
-     */
-    public function setClassificationLevel($classificationLevel)
+    public function setClassificationLevel(string $classificationLevel = null): self
     {
         $this->classificationLevel = $classificationLevel;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getAging()
+    public function getAging(): ?string
     {
         return $this->aging;
     }
 
-    /**
-     * @param mixed $aging
-     */
-    public function setAging($aging)
+    public function setAging(string $aging = null): self
     {
         $this->aging = $aging;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getBestAging()
+    public function getBestAging(): ?\DateTime
     {
         return $this->bestAging;
     }
 
-    /**
-     * @param mixed $bestAging
-     */
-    public function setBestAging($bestAging)
+    public function setBestAging(\DateTime $bestAging = null): self
     {
         $this->bestAging = $bestAging;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getBestAfter()
+    public function getBestAfter(): ?\DateTime
     {
         return $this->bestAfter;
     }
 
-    /**
-     * @param mixed $bestAfter
-     */
-    public function setBestAfter($bestAfter)
+    public function setBestAfter(\DateTime $bestAfter = null): self
     {
         $this->bestAfter = $bestAfter;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDrinkAfter()
+    public function getDrinkAfter(): ?\DateTime
     {
         return $this->drinkAfter;
     }
 
-    /**
-     * @param mixed $drinkAfter
-     */
-    public function setDrinkAfter($drinkAfter)
+    public function setDrinkAfter(\DateTime $drinkAfter = null): self
     {
         $this->drinkAfter = $drinkAfter;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getAlcoholDegree()
+    public function getAlcoholDegree(): ?float
     {
         return $this->alcoholDegree;
     }
 
-    /**
-     * @param mixed $alcoholDegree
-     */
-    public function setAlcoholDegree($alcoholDegree)
+    public function setAlcoholDegree(float $alcoholDegree = null): self
     {
         $this->alcoholDegree = $alcoholDegree;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getTemperature()
+    public function getTemperature(): ?int
     {
         return $this->temperature;
     }
 
-    /**
-     * @param mixed $temperature
-     */
-    public function setTemperature($temperature)
+    public function setTemperature(int $temperature = null): self
     {
         $this->temperature = $temperature;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getBatch()
+    public function getBatch(): ?string
     {
         return $this->batch;
     }
 
-    /**
-     * @param mixed $batch
-     */
-    public function setBatch($batch)
+    public function setBatch(string $batch = null): self
     {
         $this->batch = $batch;
+
+        return $this;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getCategory()
+    public function getCategory(): string
     {
         return $this->category;
     }
 
-    /**
-     * @param mixed $category
-     */
-    public function setCategory($category)
+    public function setCategory(string $category): self
     {
         $this->category = $category;
+
+        return $this;
     }
 
-    /**
-     * @return ArrayCollection
-     */
-    public function getBottles()
+    public function getBottles(): Collection
     {
         return $this->bottles;
     }
 
-    /**
-     * @param Bottle $bottle
-     */
-    public function addBottle(Bottle $bottle)
+    public function addBottle(Bottle $bottle): self
     {
         if (!$this->bottles->contains($bottle)) {
             $this->bottles[] = $bottle;
             $bottle->setWine($this);
         }
+
+        return $this;
     }
 
-    /**
-     * @param Bottle $bottle
-     */
-    public function removeBottle(Bottle $bottle)
+    public function removeBottle(Bottle $bottle): self
     {
         if ($this->bottles->contains($bottle)) {
             $this->bottles->remove($bottle);
             $bottle->setWine(null);
-            // Bottle is orphan -> deleted 'cause of OprhanRemoval
         }
+
+        return $this;
     }
 }

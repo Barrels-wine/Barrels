@@ -1,27 +1,41 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Controller;
 
+use App\HttpFoundation\ApiResponse;
+use App\Security\AuthenticationProvider;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 
 class SecurityController extends AbstractController
 {
     /**
-     * @Route("/login", name="login")
+     * @Route("/login", name="login", methods={"POST"})
      */
-    public function login(AuthenticationUtils $authenticationUtils)
+    public function login(Request $request, AuthenticationProvider $authProvider): ApiResponse
     {
-        // get the login error if there is one
-        $error = $authenticationUtils->getLastAuthenticationError();
+        $data = json_decode($request->getContent(), true);
 
-        // last username entered by the user
-        $lastUsername = $authenticationUtils->getLastUsername();
+        try {
+            $token = $authProvider->authenticateAndCreateJWT($data);
+            $response = [
+                'token' => $token->__toString(),
+                'username' => $token->getClaim('username'),
+                'email' => $token->getClaim('email'),
+            ];
 
-        return $this->render('security/login.html.twig', [
-            'last_username' => $lastUsername,
-            'error'         => $error,
-        ]);
+            return new ApiResponse($response);
+        } catch (BadCredentialsException $e) {
+            throw new UnauthorizedHttpException('None', 'Bad credentials', $e);
+        } catch (\Exception $e) {
+            throw new NotFoundHttpException($e->getMessage(), $e);
+        }
     }
 }

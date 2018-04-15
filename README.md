@@ -9,34 +9,38 @@ MyCellar
 
 This project uses docker to run.
 
-First you need to modify `app/config/parameters.yml` to set relevant database configuration parameters.
+If running the project for the first time you will need to modify your `/etc/hosts` file to include the following line :
 
-Install python requirements: `pip install -r requirements.txt`.
+```
+127.0.0.1 api.mycellar.test
+```
 
-Then just run `fab local.start`.
+You can now install python requirements: `pip install -r requirements.txt`.
+
+Then just run `fab start`.
+
+The project is available at `http://api.mycellar.test`. You can use an api client (eg. Postman) to play with it.
 
 ## Commands
 
 Several fabric commands are available :
 
-- `fab local.start` : Start the infrastructure
-- `fab local.stop` : Stop the infrastructure
-- `fab local.app.install` : Install app (composer install, remove and warmup cache, install assets) for specified environment
-- `fab local.app.clear_cache` : Remove cache for specified environment
-- `fab local.app.ssh` : SSH into app container
-- `fab local.database.init` : Drop database and create a new empty one
-- `fab local.database.generate` : Drop and recreate database with schema then load fixtures if specified
-- `fab local.database.diff_migration` : Generate a migration by comparing the current database to the mapping information
-- `fab local.database.migrate` : Apply available migrations to db schema
-- `fab local.database.populate` : Load fixtures
-- `fab local.database.import_csv` : Import data from csv file, use option purge to truncate the wine and bottle tables before. You can specify the csv file path (in csv format) and the mapping file path (in yaml format).
-- `fab local.infrastructure.build` : Build project using docker-compose
-- `fab local.infrastructure.up` : Build then start the project using docker-compose
-- `fab local.infrastructure.reboot` : Stop the project then start it again
-- `fab local.infrastructure.stop` : Stop the project
-- `fab local.infrastructure.clean` : Remove the stopped service containers
-- `fab local.infrastructure.ps` : List active service containers
-- `fab local.infrastructure.logs` : Print logs for specified containers or all of them
-
-
-
+  - `fab cache_clear`:     Clear cache of the application
+  - `fab clean`:           Clean the infrastructure, remove all data
+  - `fab clean_start`:     Start everything from fresh
+  - `fab create_db`:       (Re)Create an empty database
+  - `fab cs_fix`:          Fix coding standards in code
+  - `fab diff_migration`:  Generate a migration by comparing the current database to the mapping information
+  - `fab import_csv`:      Import data from csv file, use option purge to truncate the wine and bottle tables before. You can specify the csv file path (in csv format) and the mapping file path (in yaml format)
+  - `fab init_db`:         Drop and recreate database with updated schema then load fixtures if specified so
+  - `fab install`:         Install application (composer, assets)
+  - `fab logs`:            Show logs for all container
+  - `fab migrate`:         Apply available database migrations
+  - `fab populate_db`:     Import fixtures into database
+  - `fab reboot`:          Reboot the infrastructure
+  - `fab restart_service`: Restart a single service
+  - `fab ssh`:             Ssh into the application container
+  - `fab start`:           Ensure everything is started and installed
+  - `fab stop`:            Stop the infrastructure
+  - `fab up`:              Ensure infrastructure is synced and running
+  - `fab update_db`:       Update database to match schema
