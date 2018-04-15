@@ -1,16 +1,17 @@
 <?php
 
-namespace App\Import;
+declare(strict_types=1);
 
+namespace App\Import;
 
 class CsvParser
 {
-    const DELIMITER = ';';
+    public const DELIMITER = ';';
 
-    public function parse($filename)
+    public function parse($filename): ?array
     {
         if (!file_exists($filename) || !is_readable($filename)) {
-            return false;
+            return null;
         }
 
         $header = null;
@@ -25,7 +26,7 @@ class CsvParser
             }
             fclose($handle);
         }
+
         return $data;
     }
-
 }

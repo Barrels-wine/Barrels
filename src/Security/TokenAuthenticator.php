@@ -57,7 +57,7 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
             throw new CustomUserMessageAuthenticationException('Invalid Token');
         }
 
-        if ($token === false) {
+        if ($token === null) {
             throw new CustomUserMessageAuthenticationException('Invalid Token');
         }
 
@@ -82,7 +82,7 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
         }
 
         $data = [
-            'message' => strtr($exception->getMessageKey(), $exception->getMessageData())
+            'message' => strtr($exception->getMessageKey(), $exception->getMessageData()),
         ];
 
         return new JsonResponse($data, Response::HTTP_FORBIDDEN);
@@ -100,7 +100,7 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
     public function start(Request $request, AuthenticationException $authException = null)
     {
         $data = [
-            'message' => strtr($authException->getMessageKey(), $authException->getMessageData())
+            'message' => strtr($authException->getMessageKey(), $authException->getMessageData()),
         ];
 
         return new JsonResponse($data, Response::HTTP_UNAUTHORIZED);
@@ -110,5 +110,4 @@ class TokenAuthenticator extends AbstractGuardAuthenticator
     {
         return true;
     }
-
 }

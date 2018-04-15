@@ -1,135 +1,112 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
-* @ORM\Entity()
-* @ORM\Table(name="bottle")
-*/
+ * @ORM\Entity()
+ * @ORM\Table(name="bottle")
+ */
 class Bottle
 {
-  /**
-   * @ORM\Column(type="integer")
-   * @ORM\Id
-   * @ORM\GeneratedValue(strategy="AUTO")
-   */
-  private $id;
+    /**
+     * @ORM\Column(type="guid")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="UUID")
+     */
+    private $id;
 
-  /**
-   * @ORM\ManyToOne(targetEntity="Wine", inversedBy="bottles", cascade={"persist"})
-   * @ORM\JoinColumn(name="wine_id", referencedColumnName="id", onDelete="CASCADE", nullable=false)
-   */
-  private $wine;
+    /**
+     * @ORM\ManyToOne(targetEntity="Wine", inversedBy="bottles", cascade={"persist"})
+     * @ORM\JoinColumn(name="wine_id", referencedColumnName="id", onDelete="CASCADE", nullable=false)
+     */
+    private $wine;
 
-  /**
-   * @ORM\Column(name="acquisition_price", type="float", nullable=true)
-   */
-  private $acquisitionPrice = null;
+    /**
+     * @ORM\Column(name="acquisition_price", type="float", nullable=true)
+     */
+    private $acquisitionPrice = null;
 
-  /**
-   * @ORM\Column(name="estimation_price", type="float", nullable=true)
-   */
-  private $estimationPrice = null;
+    /**
+     * @ORM\Column(name="estimation_price", type="float", nullable=true)
+     */
+    private $estimationPrice = null;
 
-  /**
-   * @ORM\Column(type="string")
-   */
-  private $volume = '75cl';
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $volume = '75cl';
 
-  /**
-   * @ORM\Column(name="storage_location", type="string", nullable=true)
-   */
-  private $storageLocation = null;
+    /**
+     * @ORM\Column(name="storage_location", type="string", nullable=true)
+     */
+    private $storageLocation = null;
 
-  /**
-   * @return mixed
-   */
-  public function getId()
-  {
-      return $this->id;
-  }
+    public function getId(): string
+    {
+        return $this->id;
+    }
 
-  /**
-   * @return Wine
-   */
-  public function getWine()
-  {
-      return $this->wine;
-  }
+    public function getWine(): Wine
+    {
+        return $this->wine;
+    }
 
-  /**
-   * @param Wine $wine
-   */
-  public function setWine(Wine $wine)
-  {
-      $this->wine = $wine;
-  }
+    public function setWine(Wine $wine): self
+    {
+        $this->wine = $wine;
 
-  /**
-   * @return mixed
-   */
-  public function getAcquisitionPrice()
-  {
-      return $this->acquisitionPrice;
-  }
+        return $this;
+    }
 
-  /**
-   * @param mixed $acquisitionPrice
-   */
-  public function setAcquisitionPrice(float $acquisitionPrice)
-  {
-      $this->acquisitionPrice = $acquisitionPrice;
-  }
+    public function getAcquisitionPrice(): ?int
+    {
+        return $this->acquisitionPrice;
+    }
 
-  /**
-   * @return mixed
-   */
-  public function getEstimationPrice()
-  {
-      return $this->estimationPrice;
-  }
+    public function setAcquisitionPrice(float $acquisitionPrice): self
+    {
+        $this->acquisitionPrice = $acquisitionPrice;
 
-  /**
-   * @param mixed $estimationPrice
-   */
-  public function setEstimationPrice(float $estimationPrice)
-  {
-      $this->estimationPrice = $estimationPrice;
-  }
+        return $this;
+    }
 
-  /**
-   * @return mixed
-   */
-  public function getVolume()
-  {
-      return $this->volume;
-  }
+    public function getEstimationPrice(): ?int
+    {
+        return $this->estimationPrice;
+    }
 
-  /**
-   * @param mixed $volume
-   */
-  public function setVolume(string $volume)
-  {
-      $this->volume = $volume;
-  }
-  /**
-   * @return mixed
-   */
-  public function getStorageLocation()
-  {
-      return $this->storageLocation;
-  }
+    public function setEstimationPrice(float $estimationPrice): self
+    {
+        $this->estimationPrice = $estimationPrice;
 
-  /**
-   * @param mixed $storageLocation
-   */
-  public function setStorageLocation(string $storageLocation)
-  {
-      $this->storageLocation = $storageLocation;
-  }
+        return $this;
+    }
 
+    public function getVolume(): string
+    {
+        return $this->volume;
+    }
 
+    public function setVolume(string $volume): self
+    {
+        $this->volume = $volume;
 
-} ?>
+        return $this;
+    }
+
+    public function getStorageLocation(): ?string
+    {
+        return $this->storageLocation;
+    }
+
+    public function setStorageLocation(string $storageLocation): self
+    {
+        $this->storageLocation = $storageLocation;
+
+        return $this;
+    }
+}

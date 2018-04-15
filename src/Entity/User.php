@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\User\UserInterface;;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity()
@@ -17,122 +19,90 @@ class User implements UserInterface, \Serializable
      * @ORM\GeneratedValue(strategy="UUID")
      */
     private $id;
+
     /**
      * @ORM\Column(type="string", length=25, unique=true)
      */
     private $username;
+
     /**
      * @ORM\Column(type="string", length=64)
      */
     private $password;
+
     /**
      * @ORM\Column(type="string", length=64, unique=true)
      */
     private $email;
+
     /**
      * @ORM\Column(name="active", type="boolean")
      */
     private $active;
 
-    /**
-     * @return string
-     */
     public function getId(): string
     {
         return $this->id;
     }
 
-    /**
-     * @param string $id
-     * @return User
-     */
-    public function setId($id) : User
+    public function setId(string $id): self
     {
         $this->id = $id;
 
         return $this;
     }
 
-    /**
-     * @return string
-     */
     public function getUsername(): string
     {
         return $this->username;
     }
 
-    /**
-     * @param string $username
-     * @return User
-     */
-    public function setUsername(string $username) : User
+    public function setUsername(string $username): self
     {
         $this->username = $username;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getPassword() : string
+    public function getPassword(): string
     {
         return $this->password;
     }
 
-    /**
-     * @param string $password
-     * @return User
-     */
-    public function setPassword(string $password)
+    public function setPassword(string $password): self
     {
         $this->password = $password;
+
         return $this;
     }
 
-    /**
-     * @return string
-     */
-    public function getEmail() : string
+    public function getEmail(): string
     {
         return $this->email;
     }
 
-    /**
-     * @param string $email
-     * @return User
-     */
-    public function setEmail(string $email) : User
+    public function setEmail(string $email): self
     {
         $this->email = $email;
 
         return $this;
     }
 
-    /**
-     * @return bool
-     */
-    public function isActive() : bool
+    public function isActive(): bool
     {
         return $this->active;
     }
 
-    /**
-     * @param bool $active
-     * @return User
-     */
-    public function setActive($active) : User
+    public function setActive(bool $active): self
     {
         $this->active = $active;
 
         return $this;
     }
 
-    /**
-     * @return array
-     */
-    public function getRoles() : array
+    public function getRoles(): array
     {
-        return array('ROLE_USER');
+        return ['ROLE_USER'];
     }
 
     public function getSalt()
@@ -144,23 +114,20 @@ class User implements UserInterface, \Serializable
     {
     }
 
-    /** @see \Serializable::serialize() */
     public function serialize()
     {
-        return serialize(array(
+        return serialize([
             $this->id,
             $this->username,
             $this->email,
-        ));
+        ]);
     }
 
-    /** @see \Serializable::unserialize() */
     public function unserialize($serialized)
     {
-        list (
+        list(
             $this->id,
             $this->username,
-            $this->email,
-            ) = unserialize($serialized);
+            $this->email) = unserialize($serialized);
     }
 }

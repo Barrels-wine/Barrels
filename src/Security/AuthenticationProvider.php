@@ -6,9 +6,7 @@ namespace App\Security;
 
 use App\Entity\User;
 use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\NoResultException;
 use Lcobucci\JWT\Builder;
-use Lcobucci\JWT\Parsing\Encoder;
 use Lcobucci\JWT\Token;
 use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
 use Symfony\Component\Security\Core\Exception\BadCredentialsException;
@@ -37,17 +35,7 @@ class AuthenticationProvider
         $this->configuration = $configuration;
     }
 
-    /**
-     * Build a JWT token for valid credentials
-     *
-     * @param array $loginData
-     *
-     * @throws NoResultException
-     * @throws BadCredentialsException
-     *
-     * @return Token
-     */
-    public function authenticateAndCreateJWT(array $loginData)
+    public function authenticateAndCreateJWT(array $loginData): Token
     {
         $user = $this->findEnabledUserByUsername($loginData['username']);
 
@@ -66,23 +54,15 @@ class AuthenticationProvider
                 ->set('email', $user->getEmail())
                 ->set('username', $user->getUsername())
                 ->set('id', $user->getId())
-                ->sign($signer,  $passPhrase)
+                ->sign($signer, $passPhrase)
             ;
 
             return $builder->getToken();
-        } else {
-            throw new BadCredentialsException();
         }
+        throw new BadCredentialsException();
     }
 
-    /**
-     * @param string $username
-     *
-     * @throws \Doctrine\ORM\NonUniqueResultException
-     *
-     * @return User|null
-     */
-    public function findEnabledUserByUsername(string $username)
+    public function findEnabledUserByUsername(string $username): ?User
     {
         $repo = $this->entityManager->getRepository(User::class);
 

@@ -7,6 +7,7 @@ namespace App\Security;
 use Lcobucci\JWT\Parser;
 use Lcobucci\JWT\Signer;
 use Lcobucci\JWT\Signer\Hmac\Sha256;
+use Lcobucci\JWT\Token;
 
 class JWTConfiguration
 {
@@ -25,20 +26,12 @@ class JWTConfiguration
         return new Sha256();
     }
 
-    public function getPassPhrase() : string
+    public function getPassPhrase(): string
     {
         return $this->passPhrase;
     }
 
-    /**
-     * Read a JWT string and get the full validated Token from it.
-     * Return false if the token is invalid or expired.
-     *
-     * @param string $jwt
-     *
-     * @return bool|\Lcobucci\JWT\Token
-     */
-    public function decode(string $jwt)
+    public function decode(string $jwt): ?Token
     {
         $token = (new Parser())->parse($jwt);
 
@@ -46,13 +39,13 @@ class JWTConfiguration
             // Check expiration
             if ($token->hasClaim('exp')) {
                 if ($token->getClaim('exp') < time()) {
-                    return false;
+                    return null;
                 }
             }
 
             return $token;
-        } else {
-            return false;
         }
+
+        return null;
     }
 }

@@ -19,8 +19,12 @@ RUN chown -R mycellar:mycellar /var/lib/nginx
 RUN curl https://getcomposer.org/composer.phar > /usr/local/bin/composer && \
     chmod +x /usr/local/bin/composer
 
+USER mycellar
+
 RUN composer global require "friendsofphp/php-cs-fixer:^2.4" --prefer-dist --no-progress --no-suggest --optimize-autoloader --classmap-authoritative \
 && composer clear-cache
+
+USER root
 
 # Add composer global binaries to $PATH
 ENV PATH $PATH:/home/mycellar/.composer/vendor/bin/

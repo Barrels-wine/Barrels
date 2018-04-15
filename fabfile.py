@@ -4,11 +4,35 @@ from fabric.context_managers import quiet
 import os
 from sys import platform
 
+@task
+def up():
+    """
+    Ensure infrastructure is synced and running
+    """
+    docker_compose('build')
+    docker_compose('up --remove-orphans -d')
+
+
+@task
+def clean():
+    """
+    Clean the infrastructure, remove all data
+    """
+    docker_compose('rm -f -v')
+
+
+@task
+def cache_clear():
+    """
+    Clear cache of the application
+    """
+    docker_compose_run('rm -rf var/cache/', 'php', 'mycellar', no_deps=True)
+
 
 @task
 def start():
     """
-    Be sure that everything is started and installed
+    Ensure everything is started and installed
     """
     if not os.path.exists('./.env'):
         local('cp .env.dist .env')
@@ -17,14 +41,21 @@ def start():
     cache_clear()
     install()
 
+
 @task
 def clean_start():
     """
     Start everything from fresh
     """
-    docker_compose('rm')
+    clean()
     docker_compose('build --no-cache')
+
+    if not os.path.exists('./.env'):
+        local('cp .env.dist .env')
+
     docker_compose('up --remove-orphans -d --force-recreate')
+    cache_clear()
+    install()
 
 
 @task
@@ -36,15 +67,6 @@ def restart_service(service):
 
 
 @task
-def up():
-    """
-    Ensure infrastructure is sync and running
-    """
-    docker_compose('build')
-    docker_compose('up --remove-orphans -d')
-
-
-@task
 def stop():
     """
     Stop the infrastructure
@@ -53,19 +75,31 @@ def stop():
 
 
 @task
+def reboot():
+    """
+    Reboot the infrastructure
+    """
+    stop()
+    start()
+
+
+@task
 def logs():
     """
-    Show logs of infrastructure
+    Show logs for all container
     """
     docker_compose('logs -f --tail=150')
 
 
 @task
-def install():
+def install(environment='dev'):
     """
     Install application (composer, assets)
     """
-    docker_compose_run('composer install', 'php', 'mycellar')
+    docker_compose_run('composer install --no-scripts ' + ('--no-dev', '--dev')[environment == 'dev'], 'php', 'mycellar')
+    cache_clear()
+    docker_compose_run('php bin/console cache:warmup --no-optional-warmers --env=' + environment, 'php', 'mycellar')
+    docker_compose_run('php bin/console assets:install --symlink', 'php', 'mycellar')
 
 
 @task
@@ -80,23 +114,32 @@ def cs_fix(dry_run=False):
 
 
 @task
-def cache_clear():
+def init_database():
     """
-    Clear cache of the application
+    (Re)Create an empty database
     """
-    docker_compose_run('rm -rf var/cache/', 'php', 'mycellar', no_deps=True)
+    docker_compose_run('php bin/console doctrine:database:drop --force ', 'php', no_deps=True)
+    docker_compose_run('php bin/console doctrine:database:create ', 'php', no_deps=True)
 
 
 @task
-def migrate_database():
+def diff_migration():
     """
-    Update database schema
+    Generate a migration by comparing the current database to the mapping information
+    """
+    docker_compose_run('php bin/console doctrine:migration:diff', 'php', 'mycellar', no_deps=True)
+
+
+@task
+def migrate():
+    """
+    Apply available database migrations
     """
     docker_compose_run('php bin/console doctrine:migration:migrate --no-interaction', 'php', 'mycellar', no_deps=True)
 
 
 @task
-def fixtures():
+def populate():
     """
     Import fixtures into database
     """
@@ -104,9 +147,28 @@ def fixtures():
 
 
 @task
+def generate_database(populate='False'):
+    """
+    Drop and recreate database with updated schema then load fixtures if specified so
+    """
+    init()
+    migrate()
+    if populate == 'true':
+        populate()
+
+
+@task
+def import_csv(purge='false',path='false',mapping='false'):
+    """
+    Import data from csv file, use option purge to truncate the wine and bottle tables before. You can specify the csv file path (in csv format) and the mapping file path (in yaml format).
+    """
+    docker_compose_run('php bin/console mycellar:import -n' + ('', ' --purge')[purge == 'true'] + ('', ' %s' % path)[path != 'false'] + ('', ' %s' % mapping)[mapping != 'false'], 'php', 'mycellar', no_deps=True)
+
+
+@task
 def ssh():
     """
-    Ssh into the php container
+    Ssh into the application container
     """
     docker_compose('exec --user=mycellar --index=1 php /bin/bash')
 

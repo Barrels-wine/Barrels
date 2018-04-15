@@ -1,13 +1,12 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace App\DataFixtures\Processor;
 
-use Fidry\AliceDataFixtures\ProcessorInterface;
 use App\Entity\User;
+use Fidry\AliceDataFixtures\ProcessorInterface;
 use Symfony\Component\Security\Core\Encoder\EncoderFactoryInterface;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 final class UserProcessor implements ProcessorInterface
 {
@@ -21,7 +20,6 @@ final class UserProcessor implements ProcessorInterface
 
     public function preProcess(string $id, $object): void
     {
-
         if (false === $object instanceof User) {
             return;
         }
@@ -35,5 +33,6 @@ final class UserProcessor implements ProcessorInterface
     }
 
     public function postProcess(string $id, $object): void
-    {}
+    {
+    }
 }
