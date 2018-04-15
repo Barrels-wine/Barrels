@@ -16,9 +16,9 @@ class JWTConfiguration
      */
     private $passPhrase;
 
-    public function __construct(string $passPhrase = null)
+    public function __construct(string $projectSecret = null)
     {
-        $this->passPhrase = $passPhrase;
+        $this->passPhrase = $projectSecret;
     }
 
     public function getSigner(): Signer

@@ -25,21 +25,22 @@ The project is available at `http://api.mycellar.test`. You can use an api clien
 
 Several fabric commands are available :
 
-  - `fab cache_clear`:       Clear cache of the application
-  - `fab clean`:             Clean the infrastructure, remove all data
-  - `fab clean_start`:       Start everything from fresh
-  - `fab cs_fix`:            Fix coding standards in code
-  - `fab diff_migration`:    Generate a migration by comparing the current database to the mapping inform...
-  - `fab generate_database`: Drop and recreate database with updated schema then load fixtures if specifi...
-  - `fab import_csv`:        Import data from csv file, use option purge to truncate the wine and bottle ...
-  - `fab init_database`:     (Re)Create an empty database
-  - `fab install`:           Install application (composer, assets)
-  - `fab logs`:              Show logs for all container
-  - `fab migrate`:           Apply available database migrations
-  - `fab populate`:          Import fixtures into database
-  - `fab reboot`:            Reboot the infrastructure
-  - `fab restart_service`:   Restart a single service
-  - `fab ssh`:               Ssh into the application container
-  - `fab start`:             Ensure everything is started and installed
-  - `fab stop`:              Stop the infrastructure
-  - `fab up`:                Ensure infrastructure is synced and running
+  - `fab cache_clear`:     Clear cache of the application
+  - `fab clean`:           Clean the infrastructure, remove all data
+  - `fab clean_start`:     Start everything from fresh
+  - `fab create_db`:       (Re)Create an empty database
+  - `fab cs_fix`:          Fix coding standards in code
+  - `fab diff_migration`:  Generate a migration by comparing the current database to the mapping information
+  - `fab import_csv`:      Import data from csv file, use option purge to truncate the wine and bottle tables before. You can specify the csv file path (in csv format) and the mapping file path (in yaml format)
+  - `fab init_db`:         Drop and recreate database with updated schema then load fixtures if specified so
+  - `fab install`:         Install application (composer, assets)
+  - `fab logs`:            Show logs for all container
+  - `fab migrate`:         Apply available database migrations
+  - `fab populate_db`:     Import fixtures into database
+  - `fab reboot`:          Reboot the infrastructure
+  - `fab restart_service`: Restart a single service
+  - `fab ssh`:             Ssh into the application container
+  - `fab start`:           Ensure everything is started and installed
+  - `fab stop`:            Stop the infrastructure
+  - `fab up`:              Ensure infrastructure is synced and running
+  - `fab update_db`:       Update database to match schema

@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Bottle
 {
+    public const DEFAULT_VOLUME = '75cl';
+
     /**
      * @ORM\Column(type="guid")
      * @ORM\Id
@@ -38,7 +40,7 @@ class Bottle
     /**
      * @ORM\Column(type="string", nullable=true)
      */
-    private $volume = '75cl';
+    private $volume = self::DEFAULT_VOLUME;
 
     /**
      * @ORM\Column(name="storage_location", type="string", nullable=true)
@@ -103,7 +105,7 @@ class Bottle
         return $this->storageLocation;
     }
 
-    public function setStorageLocation(string $storageLocation): self
+    public function setStorageLocation(string $storageLocation = null): self
     {
         $this->storageLocation = $storageLocation;
 

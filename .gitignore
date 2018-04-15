@@ -5,13 +5,12 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
-
 ###> symfony/web-server-bundle ###
 /.web-server-pid
 ###< symfony/web-server-bundle ###
 
-# file to import
-/src/Import/cave.csv
+# import files
+import_data
 
 # used by Docker
 /logs

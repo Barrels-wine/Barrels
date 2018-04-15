@@ -26,12 +26,12 @@ class Wine
     private $name;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $designation;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $varietal;
 
@@ -41,7 +41,7 @@ class Wine
     private $color;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $vintage;
 
@@ -51,12 +51,12 @@ class Wine
     private $country;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $region;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $winemaker;
 
@@ -152,24 +152,24 @@ class Wine
         return $this;
     }
 
-    public function getDesignation(): string
+    public function getDesignation(): ?string
     {
         return $this->designation;
     }
 
-    public function setDesignation(string $designation): self
+    public function setDesignation(string $designation = null): self
     {
         $this->designation = $designation;
 
         return $this;
     }
 
-    public function getVarietal(): string
+    public function getVarietal(): ?string
     {
         return $this->varietal;
     }
 
-    public function setVarietal(string $varietal): self
+    public function setVarietal(string $varietal = null): self
     {
         $this->varietal = $varietal;
 
@@ -188,12 +188,12 @@ class Wine
         return $this;
     }
 
-    public function getVintage(): string
+    public function getVintage(): ?string
     {
         return $this->vintage;
     }
 
-    public function setVintage(string $vintage): self
+    public function setVintage(string $vintage = null): self
     {
         $this->vintage = $vintage;
 
@@ -212,24 +212,24 @@ class Wine
         return $this;
     }
 
-    public function getRegion(): string
+    public function getRegion(): ?string
     {
         return $this->region;
     }
 
-    public function setRegion(string $region): self
+    public function setRegion(string $region = null): self
     {
         $this->region = $region;
 
         return $this;
     }
 
-    public function getWinemaker(): string
+    public function getWinemaker(): ?string
     {
         return $this->winemaker;
     }
 
-    public function setWinemaker(string $winemaker): self
+    public function setWinemaker(string $winemaker = null): self
     {
         $this->winemaker = $winemaker;
 
@@ -241,7 +241,7 @@ class Wine
         return $this->rating;
     }
 
-    public function setRating(int $rating): self
+    public function setRating(int $rating = null): self
     {
         $this->rating = $rating;
 
@@ -253,7 +253,7 @@ class Wine
         return $this->comment;
     }
 
-    public function setComment(string $comment): self
+    public function setComment(string $comment = null): self
     {
         $this->comment = $comment;
 
@@ -265,7 +265,7 @@ class Wine
         return $this->foodPairing;
     }
 
-    public function setFoodPairing(string $foodPairing): self
+    public function setFoodPairing(string $foodPairing = null): self
     {
         $this->foodPairing = $foodPairing;
 
@@ -277,7 +277,7 @@ class Wine
         return $this->reference;
     }
 
-    public function setReference(string $reference): self
+    public function setReference(string $reference = null): self
     {
         $this->reference = $reference;
 
@@ -289,7 +289,7 @@ class Wine
         return $this->classificationLevel;
     }
 
-    public function setClassificationLevel(string $classificationLevel): self
+    public function setClassificationLevel(string $classificationLevel = null): self
     {
         $this->classificationLevel = $classificationLevel;
 
@@ -301,7 +301,7 @@ class Wine
         return $this->aging;
     }
 
-    public function setAging(string $aging): self
+    public function setAging(string $aging = null): self
     {
         $this->aging = $aging;
 
@@ -349,7 +349,7 @@ class Wine
         return $this->alcoholDegree;
     }
 
-    public function setAlcoholDegree(string $alcoholDegree): self
+    public function setAlcoholDegree(string $alcoholDegree = null): self
     {
         $this->alcoholDegree = $alcoholDegree;
 
@@ -361,9 +361,11 @@ class Wine
         return $this->temperature;
     }
 
-    public function setTemperature(int $temperature): self
+    public function setTemperature(int $temperature = null): self
     {
         $this->temperature = $temperature;
+
+        return $this;
     }
 
     public function getBatch(): ?string
@@ -371,7 +373,7 @@ class Wine
         return $this->batch;
     }
 
-    public function setBatch(string $batch): self
+    public function setBatch(string $batch = null): self
     {
         $this->batch = $batch;
 

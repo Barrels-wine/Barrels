@@ -114,7 +114,7 @@ def cs_fix(dry_run=False):
 
 
 @task
-def init_database():
+def create_db():
     """
     (Re)Create an empty database
     """
@@ -139,7 +139,15 @@ def migrate():
 
 
 @task
-def populate():
+def update_db():
+    """
+    Update database to match schema
+    """
+    docker_compose_run('php bin/console doctrine:schema:update --force', 'php', 'mycellar', no_deps=True)
+
+
+@task
+def populate_db():
     """
     Import fixtures into database
     """
@@ -147,18 +155,18 @@ def populate():
 
 
 @task
-def generate_database(populate='False'):
+def init_db(populate='False'):
     """
     Drop and recreate database with updated schema then load fixtures if specified so
     """
-    init()
+    create_db()
     migrate()
     if populate == 'true':
-        populate()
+        populate_db()
 
 
 @task
-def import_csv(purge='false',path='false',mapping='false'):
+def import_csv(purge='true',path='false',mapping='false'):
     """
     Import data from csv file, use option purge to truncate the wine and bottle tables before. You can specify the csv file path (in csv format) and the mapping file path (in yaml format).
     """
