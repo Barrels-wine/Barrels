@@ -19,7 +19,7 @@ class WineController extends AbstractController
     {
         $wines = $this
             ->getDoctrine()
-            ->getRepository('AppBundle:Wine')
+            ->getRepository(Wine::class)
             ->findAll()
         ;
 

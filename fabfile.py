@@ -151,11 +151,11 @@ def populate_db():
     """
     Import fixtures into database
     """
-    docker_compose_run('php bin/console doctrine:fixtures:load', 'php', 'mycellar', no_deps=True)
+    docker_compose_run('php bin/console doctrine:fixtures:load --no-interaction', 'php', 'mycellar', no_deps=True)
 
 
 @task
-def init_db(populate='False'):
+def init_db(populate='true'):
     """
     Drop and recreate database with updated schema then load fixtures if specified so
     """

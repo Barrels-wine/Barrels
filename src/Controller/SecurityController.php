@@ -18,12 +18,12 @@ class SecurityController extends AbstractController
     /**
      * @Route("/login", name="login", methods={"POST"})
      */
-    public function login(Request $request): JsonResponse
+    public function login(Request $request, AuthenticationProvider $authProvider): JsonResponse
     {
         $data = json_decode($request->getContent(), true);
 
         try {
-            $token = $this->get(AuthenticationProvider::class)->authenticateAndCreateJWT($data);
+            $token = $authProvider->authenticateAndCreateJWT($data);
             $response = [
                 'token' => $token->__toString(),
                 'username' => $token->getClaim('username'),
