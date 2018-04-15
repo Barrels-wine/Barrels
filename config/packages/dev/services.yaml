@@ -1,0 +1,4 @@
+services:
+    Fidry\AliceDataFixtures\Loader\PurgerLoader:
+        alias: 'fidry_alice_data_fixtures.loader.doctrine'
+        public: true

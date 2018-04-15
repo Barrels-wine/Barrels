@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Security\AuthenticationProvider;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -20,7 +21,7 @@ class SecurityController extends AbstractController
         $data = json_decode($request->getContent(), true);
 
         try {
-            $token = $this->get('my_cellar.security.authentication_provider')->authenticateAndCreateJWT($data);
+            $token = $this->get(AuthenticationProvider::class)->authenticateAndCreateJWT($data);
             $response = [
                 'token' => $token->__toString(),
                 'username' => $token->getClaim('username'),
