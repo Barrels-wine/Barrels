@@ -22,7 +22,7 @@ class Serializer
             return $object->getId();
         });
 
-        $this->serializer = new BaseSerializer(array($normalizer), array($encoder));
+        $this->serializer = new BaseSerializer([$normalizer], [$encoder]);
     }
 
     public function serialize($data)

@@ -1,0 +1,24 @@
+version: 2
+jobs:
+    build:
+        machine: true
+        working_directory: ~/mycellar
+        steps:
+            - checkout
+            - run:
+                name: Prepare cache
+                command: |
+                    set -x
+                    touch .php_cs.cache
+            - restore_cache:
+                name: Restore PHP CS Fixer cache
+                key: php-cs-fixer-{{ checksum ".php_cs.cache" }}
+            - run:
+                name: pip install
+                command: pip install --upgrade pip && pip install -r requirements.txt
+            - run:
+                name: Build and start infrastructure
+                command: fab start
+            - run:
+                name: Check coding standards
+                command: fab cs_fix:True
