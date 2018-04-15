@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -111,7 +112,7 @@ class Wine
     private $alcoholDegree = null;
 
     /**
-     * @ORM\Column(type="float", nullable=true)
+     * @ORM\Column(type="integer", nullable=true)
      */
     private $temperature = null;
 
@@ -188,12 +189,12 @@ class Wine
         return $this;
     }
 
-    public function getVintage(): ?string
+    public function getVintage(): ?int
     {
         return $this->vintage;
     }
 
-    public function setVintage(string $vintage = null): self
+    public function setVintage(int $vintage = null): self
     {
         $this->vintage = $vintage;
 
@@ -308,48 +309,48 @@ class Wine
         return $this;
     }
 
-    public function getBestAging(): \DateTime
+    public function getBestAging(): ?\DateTime
     {
         return $this->bestAging;
     }
 
-    public function setBestAging(\DateTime $bestAging): self
+    public function setBestAging(\DateTime $bestAging = null): self
     {
         $this->bestAging = $bestAging;
 
         return $this;
     }
 
-    public function getBestAfter(): \DateTime
+    public function getBestAfter(): ?\DateTime
     {
         return $this->bestAfter;
     }
 
-    public function setBestAfter(\DateTime $bestAfter): self
+    public function setBestAfter(\DateTime $bestAfter = null): self
     {
         $this->bestAfter = $bestAfter;
 
         return $this;
     }
 
-    public function getDrinkAfter(): \DateTime
+    public function getDrinkAfter(): ?\DateTime
     {
         return $this->drinkAfter;
     }
 
-    public function setDrinkAfter(\DateTime $drinkAfter): self
+    public function setDrinkAfter(\DateTime $drinkAfter = null): self
     {
         $this->drinkAfter = $drinkAfter;
 
         return $this;
     }
 
-    public function getAlcoholDegree(): ?string
+    public function getAlcoholDegree(): ?float
     {
         return $this->alcoholDegree;
     }
 
-    public function setAlcoholDegree(string $alcoholDegree = null): self
+    public function setAlcoholDegree(float $alcoholDegree = null): self
     {
         $this->alcoholDegree = $alcoholDegree;
 
@@ -392,7 +393,7 @@ class Wine
         return $this;
     }
 
-    public function getBottles(): ArrayCollection
+    public function getBottles(): Collection
     {
         return $this->bottles;
     }

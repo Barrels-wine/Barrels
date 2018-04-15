@@ -154,7 +154,7 @@ class Importer
             ->getRepository(Wine::class)
             ->findOneBy([
                 'name' => $row[$this->mapping['name']],
-                'vintage' => $row[$this->mapping['vintage']],
+                'vintage' => (int) $row[$this->mapping['vintage']],
             ])
         ;
 
@@ -167,7 +167,7 @@ class Importer
         $wine = $this->setProperty($wine, 'designation', $row);
         $wine = $this->setProperty($wine, 'varietal', $row);
         $wine = $this->setProperty($wine, 'color', $row);
-        $wine = $this->setProperty($wine, 'vintage', $row);
+        $wine = $this->setProperty($wine, 'vintage', $row, 'int');
         $wine = $this->setProperty($wine, 'country', $row);
         $wine = $this->setProperty($wine, 'region', $row);
         $wine = $this->setProperty($wine, 'winemaker', $row);
@@ -180,7 +180,7 @@ class Importer
         $wine = $this->setProperty($wine, 'bestAging', $row);
         $wine = $this->setProperty($wine, 'bestAfter', $row);
         $wine = $this->setProperty($wine, 'drinkAfter', $row);
-        $wine = $this->setProperty($wine, 'alcoholDegree', $row);
+        $wine = $this->setProperty($wine, 'alcoholDegree', $row, 'float');
         $wine = $this->setProperty($wine, 'temperature', $row, 'int');
         $wine = $this->setProperty($wine, 'batch', $row);
         $wine = $this->setProperty($wine, 'category', $row, 'string', 'Vins');

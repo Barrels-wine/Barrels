@@ -28,12 +28,12 @@ class Bottle
     private $wine;
 
     /**
-     * @ORM\Column(name="acquisition_price", type="float", nullable=true)
+     * @ORM\Column(name="acquisition_price", type="integer", nullable=true)
      */
     private $acquisitionPrice = null;
 
     /**
-     * @ORM\Column(name="estimation_price", type="float", nullable=true)
+     * @ORM\Column(name="estimation_price", type="integer", nullable=true)
      */
     private $estimationPrice = null;
 

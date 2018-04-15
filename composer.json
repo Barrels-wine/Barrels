@@ -15,7 +15,8 @@
         "symfony/serializer": "^4.0",
         "symfony/validator": "^4.0",
         "symfony/web-server-bundle": "^4.0",
-        "symfony/yaml": "^4.0"
+        "symfony/yaml": "^4.0",
+        "willdurand/negotiation": "^2.3"
     },
     "require-dev": {
         "doctrine/doctrine-fixtures-bundle": "^3.0",

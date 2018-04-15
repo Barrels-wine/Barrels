@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\HttpFoundation\ApiResponse;
 use App\Security\AuthenticationProvider;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -18,7 +19,7 @@ class SecurityController extends AbstractController
     /**
      * @Route("/login", name="login", methods={"POST"})
      */
-    public function login(Request $request, AuthenticationProvider $authProvider): JsonResponse
+    public function login(Request $request, AuthenticationProvider $authProvider): ApiResponse
     {
         $data = json_decode($request->getContent(), true);
 
@@ -30,7 +31,7 @@ class SecurityController extends AbstractController
                 'email' => $token->getClaim('email'),
             ];
 
-            return new JsonResponse($response);
+            return new ApiResponse($response);
         } catch (BadCredentialsException $e) {
             throw new UnauthorizedHttpException('None', 'Bad credentials', $e);
         } catch (\Exception $e) {
