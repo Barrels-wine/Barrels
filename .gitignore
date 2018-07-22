@@ -18,6 +18,7 @@ import_data
 
 # Python
 __pycache__
+fabfile.pyc
 
 # IDE
 .idea

@@ -15,7 +15,7 @@ If running the project for the first time you will need to modify your `/etc/hos
 127.0.0.1 api.mycellar.test
 ```
 
-You can now install python requirements: `pip install -r requirements.txt`.
+You can now install python requirements: `pip install -r --upgraded requirements.txt`.
 
 Then just run `fab start`.
 
