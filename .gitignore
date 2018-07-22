@@ -10,7 +10,7 @@
 ###< symfony/web-server-bundle ###
 
 # import files
-import_data
+import_data/data.csv
 
 # used by Docker
 /logs

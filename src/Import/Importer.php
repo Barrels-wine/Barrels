@@ -176,10 +176,10 @@ class Importer
         $wine = $this->setProperty($wine, 'foodPairing', $row);
         $wine = $this->setProperty($wine, 'reference', $row);
         $wine = $this->setProperty($wine, 'classificationLevel', $row);
-        $wine = $this->setProperty($wine, 'aging', $row);
-        $wine = $this->setProperty($wine, 'bestAging', $row);
-        $wine = $this->setProperty($wine, 'bestAfter', $row);
-        $wine = $this->setProperty($wine, 'drinkAfter', $row);
+        $wine = $this->setProperty($wine, 'drinkFrom', $row);
+        $wine = $this->setProperty($wine, 'drinkTo', $row);
+        $wine = $this->setProperty($wine, 'climaxFrom', $row);
+        $wine = $this->setProperty($wine, 'climaxTo', $row);
         $wine = $this->setProperty($wine, 'alcoholDegree', $row, 'float');
         $wine = $this->setProperty($wine, 'temperature', $row, 'int');
         $wine = $this->setProperty($wine, 'batch', $row);

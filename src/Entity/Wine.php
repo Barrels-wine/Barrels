@@ -87,24 +87,24 @@ class Wine
     private $classificationLevel = null;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(name="drink_from", type="string", nullable=true)
      */
-    private $aging = null;
+    private $drinkFrom = null;
 
     /**
-     * @ORM\Column(name="best_aging", type="string", nullable=true)
+     * @ORM\Column(name="drink_to", type="string", nullable=true)
      */
-    private $bestAging = null;
+    private $drinkTo = null;
 
     /**
-     * @ORM\Column(name="best_after", type="string", nullable=true)
+     * @ORM\Column(name="climax_from", type="string", nullable=true)
      */
-    private $bestAfter = null;
+    private $climaxFrom = null;
 
     /**
-     * @ORM\Column(name="drink_after", type="string", nullable=true)
+     * @ORM\Column(name="climax_to", type="string", nullable=true)
      */
-    private $drinkAfter = null;
+    private $climaxTo = null;
 
     /**
      * @ORM\Column(name="alcohol_degree", type="float", nullable=true)
@@ -297,50 +297,50 @@ class Wine
         return $this;
     }
 
-    public function getAging(): ?string
+    public function getDrinkFrom(): ?string
     {
-        return $this->aging;
+        return $this->drinkFrom;
     }
 
-    public function setAging(string $aging = null): self
+    public function setDrinkFrom(string $drinkFrom = null): self
     {
-        $this->aging = $aging;
+        $this->drinkFrom = $drinkFrom;
 
         return $this;
     }
 
-    public function getBestAging(): ?\DateTime
+    public function getDrinkTo(): ?string
     {
-        return $this->bestAging;
+        return $this->drinkTo;
     }
 
-    public function setBestAging(\DateTime $bestAging = null): self
+    public function setDrinkTo(string $drinkTo = null): self
     {
-        $this->bestAging = $bestAging;
+        $this->drinkTo = $drinkTo;
 
         return $this;
     }
 
-    public function getBestAfter(): ?\DateTime
+    public function getClimaxFrom(): ?string
     {
-        return $this->bestAfter;
+        return $this->climaxFrom;
     }
 
-    public function setBestAfter(\DateTime $bestAfter = null): self
+    public function setClimaxFrom(string $climaxFrom = null): self
     {
-        $this->bestAfter = $bestAfter;
+        $this->climaxFrom = $climaxFrom;
 
         return $this;
     }
 
-    public function getDrinkAfter(): ?\DateTime
+    public function getClimaxTo(): ?string
     {
-        return $this->drinkAfter;
+        return $this->climaxTo;
     }
 
-    public function setDrinkAfter(\DateTime $drinkAfter = null): self
+    public function setClimaxTo(string $climaxTo = null): self
     {
-        $this->drinkAfter = $drinkAfter;
+        $this->climaxTo = $climaxTo;
 
         return $this;
     }
