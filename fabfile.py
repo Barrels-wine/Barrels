@@ -112,13 +112,19 @@ def cs_fix(dry_run=False):
     else:
         docker_compose_run('php-cs-fixer fix --config=.php_cs', 'php', 'mycellar')
 
+@task
+def drop_db():
+    """
+    Drop the database
+    """
+    docker_compose_run('php bin/console doctrine:database:drop --force --if-exists ', 'php', no_deps=True)
 
 @task
 def create_db():
     """
     (Re)Create an empty database
     """
-    docker_compose_run('php bin/console doctrine:database:drop --force ', 'php', no_deps=True)
+    drop_db()
     docker_compose_run('php bin/console doctrine:database:create ', 'php', no_deps=True)
 
 
