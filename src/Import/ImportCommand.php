@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace App\Import;
 
-use App\Entity\Bottle;
-use App\Entity\Wine;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -66,8 +64,8 @@ class ImportCommand extends Command
 
         return $this->importer->import(
             $console,
-            $this->projectDir . DIRECTORY_SEPARATOR . $input->getArgument('mapping'),
-            $this->projectDir . DIRECTORY_SEPARATOR . $input->getArgument('path')
+            $this->projectDir . \DIRECTORY_SEPARATOR . $input->getArgument('mapping'),
+            $this->projectDir . \DIRECTORY_SEPARATOR . $input->getArgument('path')
         );
     }
 }
