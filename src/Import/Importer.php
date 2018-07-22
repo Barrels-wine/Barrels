@@ -149,7 +149,8 @@ class Importer
         return $object;
     }
 
-    public function formatPrice(string $price): int {
+    public function formatPrice(string $price): int
+    {
         $price = (float) $price;
         $price = $price * 100;
         $price = (int) round($price);
