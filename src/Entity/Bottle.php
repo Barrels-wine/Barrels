@@ -28,12 +28,12 @@ class Bottle
     private $wine;
 
     /**
-     * @ORM\Column(name="acquisition_price", type="integer", nullable=true)
+     * @ORM\Column(name="acquisition_price", type="string", nullable=true)
      */
     private $acquisitionPrice = null;
 
     /**
-     * @ORM\Column(name="estimation_price", type="integer", nullable=true)
+     * @ORM\Column(name="estimation_price", type="string", nullable=true)
      */
     private $estimationPrice = null;
 
@@ -64,24 +64,24 @@ class Bottle
         return $this;
     }
 
-    public function getAcquisitionPrice(): ?int
+    public function getAcquisitionPrice(): ?string
     {
         return $this->acquisitionPrice;
     }
 
-    public function setAcquisitionPrice(float $acquisitionPrice): self
+    public function setAcquisitionPrice(string $acquisitionPrice): self
     {
         $this->acquisitionPrice = $acquisitionPrice;
 
         return $this;
     }
 
-    public function getEstimationPrice(): ?int
+    public function getEstimationPrice(): ?string
     {
         return $this->estimationPrice;
     }
 
-    public function setEstimationPrice(float $estimationPrice): self
+    public function setEstimationPrice(string $estimationPrice): self
     {
         $this->estimationPrice = $estimationPrice;
 
