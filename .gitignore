@@ -22,5 +22,6 @@ fabfile.pyc
 
 # IDE
 .idea
+.vscode
 
 /.php_cs.cache

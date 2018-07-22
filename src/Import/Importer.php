@@ -82,8 +82,8 @@ class Importer
             $wine = $this->getOrCreateWine($row);
             for ($i = 0; $i < $row[$this->mapping['nbBottles']]; ++$i) {
                 $bottle = new Bottle();
-                $bottle = $this->setProperty($bottle, 'acquisitionPrice', $row);
-                $bottle = $this->setProperty($bottle, 'estimationPrice', $row);
+                $bottle = $this->setProperty($bottle, 'acquisitionPrice', $row, function ($price) { return $this->formatPrice($price); });
+                $bottle = $this->setProperty($bottle, 'estimationPrice', $row, function ($price) { return $this->formatPrice($price); });
                 $bottle = $this->setProperty($bottle, 'volume', $row, 'string', Bottle::DEFAULT_VOLUME);
                 $bottle = $this->setProperty($bottle, 'storageLocation', $row);
                 $bottle->setWine($wine);
@@ -118,7 +118,7 @@ class Importer
         return $count;
     }
 
-    public function setProperty($object, string $property, array $row, string $cast = 'string', $default = null)
+    public function setProperty($object, string $property, array $row, $cast = 'string', $default = null)
     {
         if (!isset($this->mapping[$property]) || !$this->mapping[$property]) {
             $this->console->note('Property ' . $property . ' is not defined in mapping.');
@@ -137,12 +137,24 @@ class Importer
         $value = $value === '0' || $value === '' ? $default : $value;
 
         if ($value !== null) {
-            settype($value, $cast);
+            if (\is_callable($cast)) {
+                $value = $cast($value);
+            } else {
+                settype($value, $cast);
+            }
         }
 
         $object->$setter($value);
 
         return $object;
+    }
+
+    public function formatPrice(string $price): int {
+        $price = (float) $price;
+        $price = $price * 100;
+        $price = (int) round($price);
+
+        return $price;
     }
 
     public function getOrCreateWine(array $row): Wine
