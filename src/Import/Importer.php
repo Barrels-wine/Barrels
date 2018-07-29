@@ -33,6 +33,17 @@ class Importer
         'syrah' => 'Syrah',
     ];
 
+    const ISO_CODES = [
+        'Afrique du Sud' => 'ZA',
+        'Australie' => 'AU',
+        'Chili' => 'CL',
+        'Espagne' => 'ES',
+        'France' => 'FR',
+        'Hongrie' => 'HU',
+        'Italie' => 'IT',
+        'Nouvelle Zélande' => 'NZ',
+    ];
+
     /** @var EntityManagerInterface */
     protected $entityManager;
 
@@ -198,6 +209,11 @@ class Importer
         return $varietals;
     }
 
+    public function formatCountry(string $country): string
+    {
+        return self::ISO_CODES[$country];
+    }
+
     public function getOrCreateWine(array $row): Wine
     {
         // First check if wine exist
@@ -221,7 +237,7 @@ class Importer
         $wine = $this->setProperty($wine, 'varietals', $row, function ($varietals) { return $this->formatVarietals($varietals); });
         $wine = $this->setProperty($wine, 'color', $row);
         $wine = $this->setProperty($wine, 'vintage', $row, 'int');
-        $wine = $this->setProperty($wine, 'country', $row);
+        $wine = $this->setProperty($wine, 'country', $row, function ($country) { return $this->formatCountry($country); });
         $wine = $this->setProperty($wine, 'region', $row);
         $wine = $this->setProperty($wine, 'winemaker', $row);
         $wine = $this->setProperty($wine, 'rating', $row);

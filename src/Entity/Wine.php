@@ -201,7 +201,7 @@ class Wine
         return $this;
     }
 
-    public function getCountry(): string
+    public function getCountry(): ?string
     {
         return $this->country;
     }

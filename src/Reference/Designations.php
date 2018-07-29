@@ -8,7 +8,9 @@ class Designations
 {
     const DESIGNATIONS = [
         'FR' => [
-
+            'Bourgogne' => [
+                'Bourgogne aligoté',
+            ],
         ],
     ];
 

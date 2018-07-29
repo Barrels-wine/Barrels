@@ -10,16 +10,25 @@ use Symfony\Component\Validator\ConstraintValidator;
 
 class ValidDesignationValidator extends ConstraintValidator
 {
-    const FR_ISO = 'FR';
-
     public function validate($protocol, Constraint $constraint)
     {
         $designations = [];
 
-        if ($protocol->getCountry() === self::FR_ISO) {
-            $designations = Designations::getByCountryAndRegion($protocol->getCountry(), $protocol->getRegions());
+        if (!$protocol->getCountry()) {
+            return;
+        }
+
+        if ($protocol->getCountry() === 'FR') {
+            if (!$protocol->getRegion()) {
+                return;
+            }
+            $designations = Designations::getByCountryAndRegion($protocol->getCountry(), $protocol->getRegion());
         } else {
             $designations = Designations::getByCountry($protocol->getCountry());
+        }
+
+        if (!\count($designations)) {
+            return;
         }
 
         if (!\in_array($protocol->getDesignation(), $designations, true)) {

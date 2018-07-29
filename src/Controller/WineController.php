@@ -70,7 +70,7 @@ class WineController extends BaseController
      * @Route("/wines", name="wine", methods={"POST"})
      * @JsonBody
      */
-    public function createWine(ValidatorInterface $validator, Wine $wine): ApiResponse
+    public function createWine(Wine $wine, ValidatorInterface $validator): ApiResponse
     {
         $em = $this->getDoctrine()->getManager();
 
