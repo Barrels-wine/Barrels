@@ -1,4 +1,6 @@
 App\Entity\Wine:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: [name, designation, vintage, classificationLevel, batch, producer]
   properties:
     name:
       - NotBlank: { message: 'wine.name.required' }
