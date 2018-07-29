@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Entity\Bottle;
 use App\Entity\Wine;
 use App\HttpFoundation\ApiResponse;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -24,7 +25,23 @@ class WineController extends AbstractController
         ;
 
         return new ApiResponse([
-            'wines' => $wines,
+            'results' => $wines,
+        ]);
+    }
+
+    /**
+     * @Route("/bottles/count", name="bottles_count", methods={"GET"})
+     */
+    public function countBottles(): ApiResponse
+    {
+        $count = $this
+            ->getDoctrine()
+            ->getRepository(Bottle::class)
+            ->count([])
+        ;
+
+        return new ApiResponse([
+            'count' => $count,
         ]);
     }
 
