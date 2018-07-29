@@ -5,8 +5,8 @@ services:
     build:
       context: ../services/php-base
       args:
-        MYCELLAR_UID: ${MYCELLAR_UID}
-    image: mycellar_basephp
+        BARRELS_UID: ${BARRELS_UID}
+    image: barrels_basephp
     command: echo 'Base php container'
 
   php:

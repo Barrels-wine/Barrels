@@ -1,4 +1,4 @@
-MyCellar
+Barrels
 ========
 
 ## Pre-requisites
@@ -12,14 +12,14 @@ This project uses docker to run.
 If running the project for the first time you will need to modify your `/etc/hosts` file to include the following line :
 
 ```
-127.0.0.1 api.mycellar.test
+127.0.0.1 api.barrels.test
 ```
 
 You can now install python requirements: `pip install -r --upgraded requirements.txt`.
 
 Then just run `fab start`.
 
-The project is available at `http://api.mycellar.test`. You can use an api client (eg. Postman) to play with it.
+The project is available at `http://api.barrels.test`. You can use an api client (eg. Postman) to play with it.
 
 ## Commands
 

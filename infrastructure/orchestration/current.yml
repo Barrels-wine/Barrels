@@ -17,8 +17,8 @@ services:
     volumes: ['../..:/var/www:cached']
   php-base:
     build:
-      args: {MYCELLAR_UID: '${MYCELLAR_UID}'}
+      args: {BARRELS_UID: '${BARRELS_UID}'}
       context: ../services/php-base
     command: echo 'Base php container'
-    image: mycellar_basephp
+    image: barrels_basephp
 version: '2'

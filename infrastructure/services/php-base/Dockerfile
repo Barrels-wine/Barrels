@@ -36,10 +36,10 @@ RUN apk --update add \
     && \
     rm -rf /var/cache/apk/*
 
-# Install fake user mycellar
-ARG MYCELLAR_UID=1000
-RUN addgroup -g 1000 mycellar && \
-    adduser -S -u $MYCELLAR_UID -h /home/mycellar -s /bin/bash mycellar mycellar
+# Install fake user barrels
+ARG BARRELS_UID=1000
+RUN addgroup -g 1000 barrels && \
+    adduser -S -u $BARRELS_UID -h /home/barrels -s /bin/bash barrels barrels
 
 # Configuration
 COPY app.ini /etc/php7/conf.d/app.ini

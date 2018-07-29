@@ -32,7 +32,7 @@ class ImportCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('mycellar:import')
+            ->setName('barrels:import')
             ->setDescription('Import data from csv file.')
             ->addArgument('path', InputArgument::OPTIONAL, 'CSV file path relative to project dir', self::DEFAULT_FILE_PATH)
             ->addArgument('mapping', InputArgument::OPTIONAL, 'Mapping file path relative to project dir', self::DEFAULT_MAPPING_PATH)

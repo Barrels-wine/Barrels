@@ -26,7 +26,7 @@ def cache_clear():
     """
     Clear cache of the application
     """
-    docker_compose_run('rm -rf var/cache/', 'php', 'mycellar', no_deps=True)
+    docker_compose_run('rm -rf var/cache/', 'php', 'barrels', no_deps=True)
 
 
 @task
@@ -96,10 +96,10 @@ def install(environment='dev'):
     """
     Install application (composer, assets)
     """
-    docker_compose_run('composer install --no-scripts ' + ('--no-dev', '--dev')[environment == 'dev'], 'php', 'mycellar')
+    docker_compose_run('composer install --no-scripts ' + ('--no-dev', '--dev')[environment == 'dev'], 'php', 'barrels')
     cache_clear()
-    docker_compose_run('php bin/console cache:warmup --no-optional-warmers --env=' + environment, 'php', 'mycellar')
-    docker_compose_run('php bin/console assets:install --symlink', 'php', 'mycellar')
+    docker_compose_run('php bin/console cache:warmup --no-optional-warmers --env=' + environment, 'php', 'barrels')
+    docker_compose_run('php bin/console assets:install --symlink', 'php', 'barrels')
 
 
 @task
@@ -108,9 +108,9 @@ def cs_fix(dry_run=False):
     Fix coding standards in code
     """
     if dry_run:
-        docker_compose_run('php-cs-fixer fix --config=.php_cs --dry-run --diff', 'php', 'mycellar')
+        docker_compose_run('php-cs-fixer fix --config=.php_cs --dry-run --diff', 'php', 'barrels')
     else:
-        docker_compose_run('php-cs-fixer fix --config=.php_cs', 'php', 'mycellar')
+        docker_compose_run('php-cs-fixer fix --config=.php_cs', 'php', 'barrels')
 
 @task
 def drop_db():
@@ -133,7 +133,7 @@ def diff_migration():
     """
     Generate a migration by comparing the current database to the mapping information
     """
-    docker_compose_run('php bin/console doctrine:migration:diff', 'php', 'mycellar', no_deps=True)
+    docker_compose_run('php bin/console doctrine:migration:diff', 'php', 'barrels', no_deps=True)
 
 
 @task
@@ -141,7 +141,7 @@ def migrate():
     """
     Apply available database migrations
     """
-    docker_compose_run('php bin/console doctrine:migration:migrate --no-interaction', 'php', 'mycellar', no_deps=True)
+    docker_compose_run('php bin/console doctrine:migration:migrate --no-interaction', 'php', 'barrels', no_deps=True)
 
 
 @task
@@ -149,7 +149,7 @@ def update_db():
     """
     Update database to match schema
     """
-    docker_compose_run('php bin/console doctrine:schema:update --force', 'php', 'mycellar', no_deps=True)
+    docker_compose_run('php bin/console doctrine:schema:update --force', 'php', 'barrels', no_deps=True)
 
 
 @task
@@ -157,7 +157,7 @@ def populate_db():
     """
     Import fixtures into database
     """
-    docker_compose_run('php bin/console doctrine:fixtures:load --no-interaction', 'php', 'mycellar', no_deps=True)
+    docker_compose_run('php bin/console doctrine:fixtures:load --no-interaction', 'php', 'barrels', no_deps=True)
 
 
 @task
@@ -176,7 +176,7 @@ def import_csv(purge='true',path='false',mapping='false'):
     """
     Import data from csv file, use option purge to truncate the wine and bottle tables before. You can specify the csv file path (in csv format) and the mapping file path (in yaml format).
     """
-    docker_compose_run('php bin/console mycellar:import -n' + ('', ' --purge')[purge == 'true'] + ('', ' %s' % path)[path != 'false'] + ('', ' %s' % mapping)[mapping != 'false'], 'php', 'mycellar', no_deps=True)
+    docker_compose_run('php bin/console barrels:import -n' + ('', ' --purge')[purge == 'true'] + ('', ' %s' % path)[path != 'false'] + ('', ' %s' % mapping)[mapping != 'false'], 'php', 'barrels', no_deps=True)
 
 
 @task
@@ -184,18 +184,18 @@ def ssh():
     """
     Ssh into the application container
     """
-    docker_compose('exec --user=mycellar --index=1 php /bin/bash')
+    docker_compose('exec --user=barrels --index=1 php /bin/bash')
 
 
 def docker_compose(command_name):
-    local('MYCELLAR_UID=%s docker-compose -p mycellar %s %s' % (
+    local('BARRELS_UID=%s docker-compose -p barrels %s %s' % (
         env.uid,
         ' '.join('-f infrastructure/orchestration/' + file for file in env.compose_files),
         command_name
     ))
 
 
-def docker_compose_run(command_name, service, user="mycellar", no_deps=False):
+def docker_compose_run(command_name, service, user="barrels", no_deps=False):
     args = [
         'run '
         '--rm '
