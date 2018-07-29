@@ -10,7 +10,7 @@ use Symfony\Component\Validator\ConstraintValidator;
 
 class ValidRegionValidator extends ConstraintValidator
 {
-    const FR_ISO = 'FR';
+    public const FR_ISO = 'FR';
 
     public function validate($protocol, Constraint $constraint)
     {

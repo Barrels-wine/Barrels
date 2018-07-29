@@ -14,7 +14,7 @@ use Symfony\Component\Yaml\Yaml;
 
 class Importer
 {
-    const VARIETALS = [
+    public const VARIETALS = [
         'Braquet' => 'Brachetto',
         'Cabernet-franc' => 'Cabernet franc',
         'Cabernet-sauvignon' => 'Cabernet sauvignon',
@@ -33,7 +33,7 @@ class Importer
         'syrah' => 'Syrah',
     ];
 
-    const ISO_CODES = [
+    public const ISO_CODES = [
         'Afrique du Sud' => 'ZA',
         'Australie' => 'AU',
         'Chili' => 'CL',
@@ -197,9 +197,9 @@ class Importer
         $varietals = explode(';', $varietals);
 
         foreach ($varietals as $varietal) {
-            if (!\in_array($varietal, Varietals::getConstants())) {
+            if (!\in_array($varietal, Varietals::getConstants(), true)) {
                 if (!\array_key_exists($varietal, self::VARIETALS)) {
-                    $this->console->warning('Varietal '.$varietal.' is unknown');
+                    $this->console->warning('Varietal ' . $varietal . ' is unknown');
                     continue;
                 }
                 $varietal = self::VARIETALS[$varietal];

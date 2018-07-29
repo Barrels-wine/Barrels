@@ -6,7 +6,7 @@ namespace App\Reference;
 
 class Designations
 {
-    const DESIGNATIONS = [
+    public const DESIGNATIONS = [
         'FR' => [
             'Bourgogne' => [
                 'Bourgogne aligoté',
