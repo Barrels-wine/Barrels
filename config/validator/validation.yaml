@@ -1,0 +1,33 @@
+App\Entity\Wine:
+  properties:
+    name:
+      - NotBlank: { message: 'wine.name.required' }
+    designation:
+      - NotBlank: { message: 'wine.designation.required' }
+      - App\Validator\Constraints\ValidDesignation: { message: 'wine.designation.not_valid' }
+    color:
+      - NotBlank: { message: 'wine.color.required' }
+      - Choice: { callback: ['App\Reference\Colors', 'getConstants'], message: 'wine.color.not_valid' }
+    country:
+      - NotBlank: { message: 'wine.country.required' }
+      - Country: { message: 'wine.country.not_valid' }
+    region:
+      - App\Validator\Constraints\ValidRegion: { message: 'wine.region.not_valid' }
+    drinkFrom:
+      - Date: { message: 'wine.drink_from.valid_date' }
+    drinkTo:
+      - Date: { message: 'wine.drink_to.valid_date' }
+    climaxFrom:
+      - Date: { message: 'wine.climax_from.valid_date' }
+    climaxTo:
+      - Date: { message: 'wine.climax_to.valid_date' }
+    alcoholDegree:
+      - GreaterThanOrEqual: { value: 0, message: 'wine.alcohol_degree.no_negative' }
+    temperature:
+      - GreaterThanOrEqual: { value: 0, message: 'wine.temperature.no_negative' }
+    category:
+      - Choice: { callback: ['App\Reference\Categories', 'getConstants'], message: 'wine.category.not_valid' }
+    varietals:
+      - Choice: { callback: ['App\Reference\Varietals', 'getConstants'], message: 'wine.varietals.not_valid' }
+    ranking:
+      - Range: { min: 1, max: 5, message: 'wine.ranking.between_1_and_5' }

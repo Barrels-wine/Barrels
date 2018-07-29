@@ -6,6 +6,7 @@ namespace App\Import;
 
 use App\Entity\Bottle;
 use App\Entity\Wine;
+use App\Reference\Varietals;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 use Symfony\Component\Yaml\Exception\ParseException;
@@ -13,6 +14,25 @@ use Symfony\Component\Yaml\Yaml;
 
 class Importer
 {
+    const VARIETALS = [
+        'Braquet' => 'Brachetto',
+        'Cabernet-franc' => 'Cabernet franc',
+        'Cabernet-sauvignon' => 'Cabernet sauvignon',
+        'Cabernet Sauvignon' => 'Cabernet sauvignon',
+        'Chenin blanc' => 'Chenin',
+        'cinsault' => 'Cinsault',
+        'Gewurtztraminer' => 'Gewürztraminer',
+        'Grenache Blanc' => 'Grenache blanc',
+        'incrocio mazoni' => 'Incrocio Manzoni',
+        'merlot' => 'Merlot',
+        'Macabeu' => 'Macabeo',
+        'Mourvedre' => 'Mourvèdre',
+        'mourvedre' => 'Mourvèdre',
+        'Rousssane' => 'Roussanne',
+        'San Giovese' => 'Sangiovese',
+        'syrah' => 'Syrah',
+    ];
+
     /** @var EntityManagerInterface */
     protected $entityManager;
 
@@ -158,6 +178,26 @@ class Importer
         return $price;
     }
 
+    public function formatVarietals(string $varietalsStr): array
+    {
+        $varietals = str_replace(['.', ',', '+'], ';', $varietalsStr);
+        $varietals = str_replace(' ;', ';', $varietals);
+        $varietals = str_replace('; ', ';', $varietals);
+        $varietals = explode(';', $varietals);
+
+        foreach ($varietals as $varietal) {
+            if (!\in_array($varietal, Varietals::getConstants())) {
+                if (!\array_key_exists($varietal, self::VARIETALS)) {
+                    $this->console->warning('Varietal '.$varietal.' is unknown');
+                    continue;
+                }
+                $varietal = self::VARIETALS[$varietal];
+            }
+        }
+
+        return $varietals;
+    }
+
     public function getOrCreateWine(array $row): Wine
     {
         // First check if wine exist
@@ -178,7 +218,7 @@ class Importer
         $wine = new Wine();
         $wine = $this->setProperty($wine, 'name', $row);
         $wine = $this->setProperty($wine, 'designation', $row);
-        $wine = $this->setProperty($wine, 'varietal', $row);
+        $wine = $this->setProperty($wine, 'varietals', $row, function ($varietals) { return $this->formatVarietals($varietals); });
         $wine = $this->setProperty($wine, 'color', $row);
         $wine = $this->setProperty($wine, 'vintage', $row, 'int');
         $wine = $this->setProperty($wine, 'country', $row);
@@ -186,8 +226,8 @@ class Importer
         $wine = $this->setProperty($wine, 'winemaker', $row);
         $wine = $this->setProperty($wine, 'rating', $row);
         $wine = $this->setProperty($wine, 'comment', $row);
-        $wine = $this->setProperty($wine, 'foodPairing', $row);
-        $wine = $this->setProperty($wine, 'reference', $row);
+        //$wine = $this->setProperty($wine, 'foodPairing', $row);
+        //$wine = $this->setProperty($wine, 'reference', $row);
         $wine = $this->setProperty($wine, 'classificationLevel', $row);
         $wine = $this->setProperty($wine, 'drinkFrom', $row);
         $wine = $this->setProperty($wine, 'drinkTo', $row);

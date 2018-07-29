@@ -13,7 +13,7 @@ use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 
-class SecurityController extends AbstractController
+class SecurityController extends BaseController
 {
     /**
      * @Route("/login", name="login", methods={"POST"})
