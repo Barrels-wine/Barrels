@@ -4,14 +4,16 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Annotation\JsonBody;
 use App\Entity\Bottle;
 use App\Entity\Wine;
 use App\HttpFoundation\ApiResponse;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-class WineController extends AbstractController
+class WineController extends BaseController
 {
     /**
      * @Route("/wines", name="wines_list", methods={"GET"})
@@ -61,5 +63,22 @@ class WineController extends AbstractController
         }
 
         return new ApiResponse($wine);
+    }
+
+    /**
+     * @Route("/wines", name="wine", methods={"POST"})
+     * @JsonBody
+     */
+    public function createWine(Wine $wine, ValidatorInterface $validator): ApiResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $this->validate($validator, $wine);
+
+        $em->persist($wine);
+        $em->flush();
+        $em->refresh($wine);
+
+        return new ApiResponse($wine, Response::HTTP_CREATED);
     }
 }

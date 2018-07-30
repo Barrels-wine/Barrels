@@ -2,7 +2,7 @@ App\Entity\Wine:
   wine{1..10}:
     name: '<word()>'
     designation: '<text()>'
-    varietal: '<text()>'
+    varietals: ['<word()>','<word()>']
     color: 'Rouge'
     country: 'France'
     region: 'Bourgogne'

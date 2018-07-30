@@ -19,7 +19,7 @@ temperature: 'Température'
 batch: 'Cuvée'
 winemaker: 'Producteur'
 nbBottles: 'Bouteilles'
-varietal: 'Cépage'
+varietals: 'Cépage'
 # Total évaluation
 # Total achat
 storageLocation: 'Emplacements'

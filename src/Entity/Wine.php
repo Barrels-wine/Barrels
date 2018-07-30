@@ -32,9 +32,9 @@ class Wine
     private $designation;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="simple_array", nullable=true)
      */
-    private $varietal;
+    private $varietals;
 
     /**
      * @ORM\Column(type="string")
@@ -165,14 +165,14 @@ class Wine
         return $this;
     }
 
-    public function getVarietal(): ?string
+    public function getVarietals(): ?array
     {
-        return $this->varietal;
+        return $this->varietals;
     }
 
-    public function setVarietal(string $varietal = null): self
+    public function setVarietals(array $varietals = null)
     {
-        $this->varietal = $varietal;
+        $this->varietals = $varietals;
 
         return $this;
     }
@@ -201,7 +201,7 @@ class Wine
         return $this;
     }
 
-    public function getCountry(): string
+    public function getCountry(): ?string
     {
         return $this->country;
     }
