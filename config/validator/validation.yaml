@@ -32,4 +32,4 @@ App\Entity\Wine:
     varietals:
       - Choice: { callback: ['App\Reference\Varietals', 'getConstants'], message: 'wine.varietals.not_valid' }
     rating:
-      - Range: { min: 1, max: 5, invalidMessage: 'wine.ranking.between_1_and_5' }
+      - Range: { min: 1, max: 5, invalidMessage: 'wine.rating.between_1_and_5' }
