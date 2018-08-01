@@ -87,24 +87,24 @@ class Wine
     private $classificationLevel = null;
 
     /**
-     * @ORM\Column(name="drink_from", type="string", nullable=true)
+     * @ORM\Column(name="drink_from", type="integer", nullable=true)
      */
-    private $drinkFrom = null;
+    private $drinkFrom;
 
     /**
-     * @ORM\Column(name="drink_to", type="string", nullable=true)
+     * @ORM\Column(name="drink_to", type="integer", nullable=true)
      */
-    private $drinkTo = null;
+    private $drinkTo;
 
     /**
-     * @ORM\Column(name="climax_from", type="string", nullable=true)
+     * @ORM\Column(name="climax_from", type="integer", nullable=true)
      */
-    private $climaxFrom = null;
+    private $climaxFrom;
 
     /**
-     * @ORM\Column(name="climax_to", type="string", nullable=true)
+     * @ORM\Column(name="climax_to", type="integer", nullable=true)
      */
-    private $climaxTo = null;
+    private $climaxTo;
 
     /**
      * @ORM\Column(name="alcohol_degree", type="float", nullable=true)
@@ -297,48 +297,48 @@ class Wine
         return $this;
     }
 
-    public function getDrinkFrom(): ?string
+    public function getDrinkFrom(): ?int
     {
         return $this->drinkFrom;
     }
 
-    public function setDrinkFrom(string $drinkFrom = null): self
+    public function setDrinkFrom(int $drinkFrom = null): self
     {
         $this->drinkFrom = $drinkFrom;
 
         return $this;
     }
 
-    public function getDrinkTo(): ?string
+    public function getDrinkTo(): ?int
     {
         return $this->drinkTo;
     }
 
-    public function setDrinkTo(string $drinkTo = null): self
+    public function setDrinkTo(int $drinkTo = null): self
     {
         $this->drinkTo = $drinkTo;
 
         return $this;
     }
 
-    public function getClimaxFrom(): ?string
+    public function getClimaxFrom(): ?int
     {
         return $this->climaxFrom;
     }
 
-    public function setClimaxFrom(string $climaxFrom = null): self
+    public function setClimaxFrom(int $climaxFrom = null): self
     {
         $this->climaxFrom = $climaxFrom;
 
         return $this;
     }
 
-    public function getClimaxTo(): ?string
+    public function getClimaxTo(): ?int
     {
         return $this->climaxTo;
     }
 
-    public function setClimaxTo(string $climaxTo = null): self
+    public function setClimaxTo(int $climaxTo = null): self
     {
         $this->climaxTo = $climaxTo;
 
