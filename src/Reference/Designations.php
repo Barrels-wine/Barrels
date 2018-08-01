@@ -14,13 +14,22 @@ class Designations
         ],
     ];
 
-    public static function getByCountryAndRegion(string $country, string $region)
-    {
-        return self::DESIGNATIONS[$country][$region];
-    }
-
     public static function getByCountry(string $country)
     {
+        if (!\array_key_exists($country, self::DESIGNATIONS)) {
+            return [];
+        }
+
         return self::DESIGNATIONS[$country];
+    }
+
+    public static function getByCountryAndRegion(string $country, string $region)
+    {
+        $byCountry = self::getByCountry($country);
+        if (!\array_key_exists($region, $byCountry)) {
+            return [];
+        }
+
+        return $byCountry[$region];
     }
 }

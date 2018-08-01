@@ -8,6 +8,6 @@ class Categories
 {
     public static function getConstants()
     {
-        return ['wine', 'champagne', 'liquor'];
+        return ['wine', 'champagne', 'sweet'];
     }
 }
