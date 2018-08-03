@@ -23,7 +23,7 @@ class WineController extends BaseController
         $wines = $this
             ->getDoctrine()
             ->getRepository(Wine::class)
-            ->findAll()
+            ->findBy([], ['createdAt' => 'DESC']);
         ;
 
         return new ApiResponse([

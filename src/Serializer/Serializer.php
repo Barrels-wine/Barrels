@@ -18,6 +18,11 @@ class Serializer
         $encoder = new JsonEncoder();
         $normalizer = new GetSetMethodNormalizer();
 
+        $normalizer->setCallbacks(['createdAt' => function ($dateTime) {
+            return $dateTime instanceof \DateTime
+                ? $dateTime->format(\DateTime::ATOM)
+                : null;
+        }]);
         $normalizer->setCircularReferenceHandler(function ($object) {
             return $object->getId();
         });

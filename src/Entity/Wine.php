@@ -22,6 +22,11 @@ class Wine
     private $id;
 
     /**
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $createdAt;
+
+    /**
      * @ORM\Column(type="string")
      */
     private $name;
@@ -134,11 +139,24 @@ class Wine
     public function __construct()
     {
         $this->bottles = new ArrayCollection();
+        $this->createdAt = new \DateTime();
     }
 
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
     }
 
     public function getName(): string

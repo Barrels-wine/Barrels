@@ -30,6 +30,7 @@ App\Entity\Wine:
       - NotBlank: { message: 'wine.category.required' }
       - Choice: { callback: ['App\Reference\Categories', 'getConstants'], message: 'wine.category.not_valid' }
     varietals:
-      - Choice: { callback: ['App\Reference\Varietals', 'getConstants'], message: 'wine.varietals.not_valid' }
+      - All:
+        - Choice: { callback: ['App\Reference\Varietals', 'getConstants'], message: 'wine.varietals.not_valid' }
     rating:
       - Range: { min: 1, max: 5, invalidMessage: 'wine.rating.between_1_and_5' }

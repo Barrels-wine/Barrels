@@ -22,6 +22,11 @@ class Bottle
     private $id;
 
     /**
+     * @ORM\Column(name="created_at", type="datetime")
+     */
+    private $createdAt;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Wine", inversedBy="bottles", cascade={"persist"})
      * @ORM\JoinColumn(name="wine_id", referencedColumnName="id", onDelete="CASCADE", nullable=false)
      */
@@ -47,9 +52,26 @@ class Bottle
      */
     private $storageLocation = null;
 
+    public function __construct()
+    {
+        $this->createdAt = new \DateTime();
+    }
+
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function getCreatedAt()
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt($createdAt)
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
     }
 
     public function getWine(): Wine
