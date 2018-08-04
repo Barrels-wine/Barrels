@@ -108,6 +108,7 @@ class ApiExceptionSubscriber implements EventSubscriberInterface
         if ($exception instanceof ValidationException) {
             $content['validation'] = true;
             $content['violations'] = $exception->getViolations();
+            $content['message'] = 'error.validation_failed';
         }
 
         $response = new JsonResponse($content, Response::HTTP_INTERNAL_SERVER_ERROR);

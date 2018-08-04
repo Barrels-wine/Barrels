@@ -31,7 +31,7 @@ class SecurityController extends BaseController
 
             return new ApiResponse($response);
         } catch (BadCredentialsException $e) {
-            throw new UnauthorizedHttpException('None', 'Bad credentials', $e);
+            throw new UnauthorizedHttpException('None', 'login.bad_credentials', $e);
         } catch (\Exception $e) {
             throw new NotFoundHttpException($e->getMessage(), $e);
         }
