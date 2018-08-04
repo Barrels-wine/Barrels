@@ -14,6 +14,11 @@ class Designations
         ],
     ];
 
+    public static function getAll()
+    {
+        return self::DESIGNATIONS;
+    }
+
     public static function getByCountry(string $country)
     {
         if (!\array_key_exists($country, self::DESIGNATIONS)) {
