@@ -43,7 +43,7 @@ class Bottle
     private $estimationPrice = null;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string", nullable=false)
      */
     private $volume = self::DEFAULT_VOLUME;
 
@@ -60,6 +60,13 @@ class Bottle
     public function getId(): string
     {
         return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     public function getCreatedAt()
@@ -132,5 +139,10 @@ class Bottle
         $this->storageLocation = $storageLocation;
 
         return $this;
+    }
+
+    public function __clone()
+    {
+        $this->setId(null);
     }
 }

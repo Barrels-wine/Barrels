@@ -34,3 +34,15 @@ App\Entity\Wine:
         - Choice: { callback: ['App\Reference\Varietals', 'getConstants'], message: 'wine.varietals.not_valid' }
     rating:
       - Range: { min: 1, max: 5, invalidMessage: 'wine.rating.between_1_and_5' }
+
+App\Entity\Bottle:
+  properties:
+    acquisitionPrice:
+      - GreaterThanOrEqual: { value: 0, message: 'bottle.acquisition_price.no_negative' }
+    estimationPrice:
+    - GreaterThanOrEqual: { value: 0, message: 'bottle.estimation_price.no_negative' }
+    volume:
+      - NotBlank: { message: 'bottle.volume.required' }
+    wine:
+      - NotNull: { message: 'bottle.wine.required' }
+      - Valid: ~

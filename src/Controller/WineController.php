@@ -8,7 +8,9 @@ use App\Annotation\JsonBody;
 use App\Entity\Bottle;
 use App\Entity\Wine;
 use App\HttpFoundation\ApiResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
@@ -16,7 +18,7 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 class WineController extends BaseController
 {
     /**
-     * @Route("/wines", name="wines_list", methods={"GET"})
+     * @Route("/wines", name="get_wines_list", methods={"GET"})
      */
     public function getWines(): ApiResponse
     {
@@ -31,7 +33,7 @@ class WineController extends BaseController
     }
 
     /**
-     * @Route("/bottles/count", name="bottles_count", methods={"GET"})
+     * @Route("/bottles/count", name="get_bottles_count", methods={"GET"})
      */
     public function countBottles(): ApiResponse
     {
@@ -47,7 +49,7 @@ class WineController extends BaseController
     }
 
     /**
-     * @Route("/wines/{id}", name="wine", methods={"GET"})
+     * @Route("/wines/{id}", name="get_wine", methods={"GET"})
      */
     public function getWine(string $id): ApiResponse
     {
@@ -65,7 +67,7 @@ class WineController extends BaseController
     }
 
     /**
-     * @Route("/wines", name="wine", methods={"POST"})
+     * @Route("/wines", name="create_wine", methods={"POST"})
      * @JsonBody
      */
     public function createWine(Wine $wine, ValidatorInterface $validator): ApiResponse
@@ -75,6 +77,33 @@ class WineController extends BaseController
         $this->validate($validator, $wine);
 
         $em->persist($wine);
+        $em->flush();
+        $em->refresh($wine);
+
+        return new ApiResponse($wine, Response::HTTP_CREATED);
+    }
+
+    /**
+     * @Route("/bottles", name="create_bottle", methods={"POST"})
+     * @JsonBody
+     */
+    public function createBottle(Bottle $bottle, Request $request, ValidatorInterface $validator): ApiResponse
+    {
+        $nbBottles = $request->query->get('nb', 1);
+        dump($nbBottles);
+        $em = $this->getDoctrine()->getManager();
+
+        $this->validate($validator, $bottle);
+
+        $wine = $bottle->getWine();
+        if (!$wine->getId()) {
+            $em->persist($wine);
+        }
+
+        for ($i=0; $i<$nbBottles; $i++) {
+            $clone = clone $bottle;
+            $em->persist($clone);
+        }
         $em->flush();
         $em->refresh($wine);
 
