@@ -7,7 +7,6 @@ namespace App\Controller;
 use App\HttpFoundation\ApiResponse;
 use App\Security\AuthenticationProvider;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Exception\BadCredentialsException;
@@ -33,7 +32,7 @@ class SecurityController extends BaseController
         } catch (BadCredentialsException $e) {
             throw new UnauthorizedHttpException('None', 'login.bad_credentials', $e);
         } catch (\Exception $e) {
-            throw new NotFoundHttpException($e->getMessage(), $e);
+            throw new UnauthorizedHttpException('None', 'login.bad_credentials', $e);
         }
     }
 }

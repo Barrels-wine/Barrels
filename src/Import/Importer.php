@@ -6,6 +6,9 @@ namespace App\Import;
 
 use App\Entity\Bottle;
 use App\Entity\Wine;
+use App\Reference\Categories;
+use App\Reference\Colors;
+use App\Reference\FrenchRegions;
 use App\Reference\Varietals;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
@@ -42,6 +45,40 @@ class Importer
         'Hongrie' => 'HU',
         'Italie' => 'IT',
         'Nouvelle Zélande' => 'NZ',
+    ];
+
+    public const COLORS = [
+        'blanc' => Colors::WHITE,
+        'champagne' => Colors::WHITE,
+        'rouge' => Colors::RED,
+        'rose' => Colors::ROSE,
+        'rosé' => Colors::ROSE,
+        'liquoreux' => Colors::WHITE,
+    ];
+
+    public const REGIONS = [
+        'Abruzzo' => 'Abruzzo',
+        'Barossa' => 'Barossa',
+        'Castiile et Leon' => 'Castiile et Leon',
+        'Vallée de la Loire' => 'Loire',
+        'Marlborough' => 'Marlborough',
+        'Ombrie' => 'Ombrie',
+        'Catalogne' => 'Catalogne',
+        'Toscane' => 'Toscane',
+        'Piémont' => 'Piémont',
+        'Pouilles' => 'Pouilles',
+        'Rioja' => 'Rioja',
+        'Ribera Del Duero' => 'Ribera Del Duero',
+        'Sardaigne' => 'Sardaigne',
+        'Sicile' => 'Sicile',
+    ];
+
+    public const CATEGORIES = [
+        'vins' => Categories::WINE,
+        'Vins' => Categories::WINE,
+        'Champagnes' => Categories::CHAMPAGNE,
+        'Spiritueux' => Categories::SPIRIT,
+        'Liquoreux' => Categories::SWEET,
     ];
 
     /** @var EntityManagerInterface */
@@ -209,9 +246,49 @@ class Importer
         return $varietals;
     }
 
+    public function formatColor($color)
+    {
+        $color = mb_strtolower($color);
+        if (\in_array($color, \array_keys(self::COLORS), true)) {
+            return self::COLORS[$color];
+        }
+
+        $this->console->warning('Color ' . $color . ' is unknown');
+    }
+
     public function formatCountry(string $country): string
     {
         return self::ISO_CODES[$country];
+    }
+
+    public function formatRegion(string $region): string
+    {
+        if (!\in_array($region, FrenchRegions::getConstants(), true)) {
+            if (!\array_key_exists($region, self::REGIONS)) {
+                $this->console->warning('Region ' . $region . ' is unknown');
+
+                return $region;
+            }
+
+            return self::REGIONS[$region];
+        }
+
+        return $region;
+    }
+
+    public function formatCategory(string $category): string
+    {
+        if (!\in_array($category, Categories::getConstants(), true)) {
+            if (!\array_key_exists($category, self::CATEGORIES)) {
+                $this->console->warning('Category ' . $category . ' is unknown');
+
+                return Categories::WINE;
+            }
+
+            return self::CATEGORIES[$category];
+        }
+
+        return $category;
     }
 
     public function getOrCreateWine(array $row): Wine
@@ -235,10 +312,10 @@ class Importer
         $wine = $this->setProperty($wine, 'name', $row);
         $wine = $this->setProperty($wine, 'designation', $row);
         $wine = $this->setProperty($wine, 'varietals', $row, function ($varietals) { return $this->formatVarietals($varietals); });
-        $wine = $this->setProperty($wine, 'color', $row);
+        $wine = $this->setProperty($wine, 'color', $row, function ($color) { return $this->formatColor($color); });
         $wine = $this->setProperty($wine, 'vintage', $row, 'int');
         $wine = $this->setProperty($wine, 'country', $row, function ($country) { return $this->formatCountry($country); });
-        $wine = $this->setProperty($wine, 'region', $row);
+        $wine = $this->setProperty($wine, 'region', $row, function ($region) { return $this->formatRegion($region); });
         $wine = $this->setProperty($wine, 'winemaker', $row);
         $wine = $this->setProperty($wine, 'rating', $row, 'int');
         $wine = $this->setProperty($wine, 'comment', $row);
@@ -252,7 +329,7 @@ class Importer
         $wine = $this->setProperty($wine, 'alcoholDegree', $row, 'float');
         $wine = $this->setProperty($wine, 'temperature', $row, 'int');
         $wine = $this->setProperty($wine, 'batch', $row);
-        $wine = $this->setProperty($wine, 'category', $row, 'string', 'Vins');
+        $wine = $this->setProperty($wine, 'category', $row, function ($category) { return $this->formatCategory($category); });
 
         return $wine;
     }

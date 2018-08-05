@@ -58,14 +58,14 @@ class AnnotationSubscriber implements EventSubscriberInterface
         $name = $annotation->getPropertyName();
 
         foreach ($method->getParameters() as $parameter) {
-            // Case where type and name is declared in the annotation and we find it
+            // Type and name are declared in the annotation
             if ($type !== null && $parameter->getName() === $name) {
                 $type = new \ReflectionClass($type);
                 $parameterFound = $parameter;
                 break;
             }
 
-            // Case where type is not declared but name is
+            // Type is not declared but name is
             if ($type === null && $parameter->getClass() !== null && $parameter->getName() === $name) {
                 $type = $parameter->getClass();
                 $parameterFound = $parameter;
@@ -73,7 +73,7 @@ class AnnotationSubscriber implements EventSubscriberInterface
                 break;
             }
 
-            // Case where type and name are not declared
+            // Type and name are not declared
             if ($type === null && $name === null) {
                 if ($parameter->getClass() === null || $parameter->getClass()->getName() !== Request::class) {
                     $type = $parameter->getClass();

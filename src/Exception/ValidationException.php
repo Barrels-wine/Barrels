@@ -11,12 +11,14 @@ use Symfony\Component\Validator\ConstraintViolationListInterface;
 
 class ValidationException extends \RuntimeException implements HttpExceptionInterface
 {
+    public const MESSAGE = 'Validation failed';
+
     /** @var ConstraintViolationListInterface */
     private $validationList;
 
     public function __construct(ConstraintViolationListInterface $validationList)
     {
-        parent::__construct('Validation failed');
+        parent::__construct(self::MESSAGE);
         $this->validationList = $validationList;
     }
 
