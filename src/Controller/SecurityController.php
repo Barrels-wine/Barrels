@@ -7,7 +7,6 @@ namespace App\Controller;
 use App\HttpFoundation\ApiResponse;
 use App\Security\AuthenticationProvider;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Exception\BadCredentialsException;

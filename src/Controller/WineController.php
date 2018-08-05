@@ -10,7 +10,6 @@ use App\Entity\Wine;
 use App\HttpFoundation\ApiResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
@@ -100,7 +99,7 @@ class WineController extends BaseController
             $em->persist($wine);
         }
 
-        for ($i=0; $i<$nbBottles; $i++) {
+        for ($i = 0; $i < $nbBottles; ++$i) {
             $clone = clone $bottle;
             $em->persist($clone);
         }

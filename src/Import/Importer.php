@@ -266,8 +266,10 @@ class Importer
         if (!\in_array($region, FrenchRegions::getConstants(), true)) {
             if (!\array_key_exists($region, self::REGIONS)) {
                 $this->console->warning('Region ' . $region . ' is unknown');
+
                 return $region;
             }
+
             return self::REGIONS[$region];
         }
 
@@ -279,8 +281,10 @@ class Importer
         if (!\in_array($category, Categories::getConstants(), true)) {
             if (!\array_key_exists($category, self::CATEGORIES)) {
                 $this->console->warning('Category ' . $category . ' is unknown');
+
                 return Categories::WINE;
             }
+
             return self::CATEGORIES[$category];
         }
 

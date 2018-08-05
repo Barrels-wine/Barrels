@@ -6,7 +6,6 @@ namespace App\Serializer;
 
 use App\Normalizer\EntityNormalizer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\Serializer\Serializer as BaseSerializer;
 
 class Serializer

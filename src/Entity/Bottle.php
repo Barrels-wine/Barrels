@@ -57,6 +57,11 @@ class Bottle
         $this->createdAt = new \DateTime();
     }
 
+    public function __clone()
+    {
+        $this->setId(null);
+    }
+
     public function getId(): string
     {
         return $this->id;
@@ -139,10 +144,5 @@ class Bottle
         $this->storageLocation = $storageLocation;
 
         return $this;
-    }
-
-    public function __clone()
-    {
-        $this->setId(null);
     }
 }
