@@ -33,7 +33,7 @@ class SecurityController extends BaseController
         } catch (BadCredentialsException $e) {
             throw new UnauthorizedHttpException('None', 'login.bad_credentials', $e);
         } catch (\Exception $e) {
-            throw new NotFoundHttpException($e->getMessage(), $e);
+            throw new UnauthorizedHttpException('None', 'login.bad_credentials', $e);
         }
     }
 }

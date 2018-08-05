@@ -14,13 +14,15 @@ class FrenchRegions
             'Bordeaux',
             'Bourgogne',
             'Champagne',
+            'Charentes',
+            'Corse',
             'Jura',
             'Languedoc-Roussillon',
             'Loire',
             'Lorraine',
-            'Provence-Corse',
+            'Provence',
             'Rhône',
-            'Savoie-Bugey',
+            'Savoie',
             'Sud-Ouest',
         ];
     }

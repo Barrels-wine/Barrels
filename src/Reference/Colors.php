@@ -6,8 +6,12 @@ namespace App\Reference;
 
 class Colors
 {
+    public const RED = 'red';
+    public const ROSE = 'rose';
+    public const WHITE = 'white';
+
     public static function getConstants()
     {
-        return ['red', 'rose', 'white'];
+        return [self::RED, self::ROSE, self::WHITE];
     }
 }
