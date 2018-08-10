@@ -5,10 +5,11 @@ declare(strict_types=1);
 namespace App\Import;
 
 use App\Entity\Bottle;
+use App\Entity\Storage;
 use App\Entity\Wine;
 use App\Reference\Categories;
 use App\Reference\Colors;
-use App\Reference\FrenchRegions;
+use App\Reference\Designations;
 use App\Reference\Varietals;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
@@ -60,6 +61,7 @@ class Importer
         'Abruzzo' => 'Abruzzo',
         'Barossa' => 'Barossa',
         'Castiile et Leon' => 'Castiile et Leon',
+        'Charentes' => 'Cognac',
         'Vallée de la Loire' => 'Loire',
         'Marlborough' => 'Marlborough',
         'Ombrie' => 'Ombrie',
@@ -71,6 +73,8 @@ class Importer
         'Ribera Del Duero' => 'Ribera Del Duero',
         'Sardaigne' => 'Sardaigne',
         'Sicile' => 'Sicile',
+        'Provence' => 'Provence-Corse',
+        'Savoie' => 'Savoie-Bugey',
     ];
 
     public const CATEGORIES = [
@@ -79,6 +83,72 @@ class Importer
         'Champagnes' => Categories::CHAMPAGNE,
         'Spiritueux' => Categories::SPIRIT,
         'Liquoreux' => Categories::SWEET,
+    ];
+
+    public const DESIGNATIONS = [
+        'Aloxe-corton' => 'Aloxe-Corton',
+        'Alsace edelzwicker"' => 'Alsace',
+        'Alsace (gewurztraminer)' => 'Alsace',
+        'Alsace (pinot, pinot blanc ou klevner)' => 'Alsace',
+        'Alsace (pinot gris)' => 'Alsace',
+        'Alsace (pinot noir)' => 'Alsace',
+        'Alsace (riesling)' => 'Alsace',
+        'Alsace (tokay-pinot gris)' => 'Alsace',
+        'Bâtard-montrachet' => 'Bâtard-Montrachet',
+        'Chablis premier cru' => 'Chablis',
+        'Chambolle-musigny' => 'Chambolle-Musigny',
+        'Charmes-chambertin' => 'Charmes-Chambertin',
+        'Chassagne-montrachet' => 'Chassagne-Montrachet',
+        'Château-grillet' => 'Château-Grillet',
+        'Châteauneuf-du-pape' => 'Châteauneuf-du-Pape',
+        'Chevalier-montrachet' => 'Chevalier-Montrachet',
+        'Chianti Classico' => 'Chianti classico',
+        'Clos de tart' => 'Clos de Tart',
+        'Corton charlemagne' => 'Corton-Charlemagne',
+        'Côte-rôtie' => 'Côte Rôtie',
+        'Coteaux du languedoc' => 'Languedoc',
+        'Coteaux du languedoc Pic Saint Loup' => 'Languedoc',
+        'Côtes de blaye' => 'Côte de Blaye',
+        'Côtes de provence' => 'Côtes de Provence',
+        'Côtes de toul' => 'Côtes de Toul',
+        'Côtes du jura' => 'Côtes du Jura',
+        'Côtes du rhône' => 'Côtes du Rhône',
+        'Côtes du rhône-villages Cairanne' => 'Côtes du Rhône villages',
+        'Côtes du roussillon' => 'Côtes du Roussillon',
+        'Côtes du roussillon-villages' => 'Côtes du Roussillon villages',
+        'Crozes-hermitage' => 'Crozes-Hermitage',
+        'Echézeaux' => 'Échezeaux',
+        'Gevrey-chambertin' => 'Gevrey-Chambertin',
+        'Haut-médoc' => 'Haut-Médoc',
+        'Macon Lugny' => 'Mâcon',
+        'Mazoyères-chambertin' => 'Mazoyères-Chambertin',
+        'Menetou-salon' => 'Menetou-Salon',
+        'Mondeuse' => 'Bugey',
+        'Montagne-saint-émilion' => 'Montagne-Saint-Émilion',
+        'Montlouis' => 'Montlouis-sur-Loire',
+        'Montlouis pétillant' => 'Montlouis-sur-Loire',
+        'Montsant' => 'Montsant',
+        'Morey saint-denis' => 'Morey-Saint-Denis',
+        'Muscadet sèvre-et-maine' => 'Muscadet Sèvre et Maine',
+        'Nebbiolo Langhe' => 'Nebbiolo Langhe',
+        'Pessac-léognan' => 'Pessac-Léognan',
+        'Pouilly-fuissé' => 'Pouilly-Fuissé',
+        'Puligny-montrachet' => 'Puligny-Montrachet',
+        'Roussette de savoie' => 'Roussette de Savoie',
+        'Saint-émilion' => 'Saint-Émilion',
+        'Saint-émilion grand cru' => 'Saint-Émilion grand cru',
+        'Saint-estèphe' => 'Saint-Estèphe',
+        'Saint-chinian' => 'Saint-Chinian',
+        'Saint-julien' => 'Saint-Julien',
+        'Saint-joseph' => 'Saint-Joseph',
+        'Saumur-champigny' => 'Saumur-Champigny',
+        'Vins de pays d\'Oc' => 'Pays d\'Oc',
+        'Vin de pays de l\'Hérault' => 'Pays d\'Hérault',
+        'Vins de pays des coteaux de l\'Ardèche' => 'Ardèche',
+        'Vins de pays des cotes catalanes' => 'Côtes catalanes',
+        'Vin de pays des cotes de Gascogne' => 'Côtes de Gascogne',
+        'Viré-clessé' => 'Viré-Clessé',
+        'Vosne-romanée' => 'Vosne-Romanée',
     ];
 
     /** @var EntityManagerInterface */
@@ -153,7 +223,7 @@ class Importer
                 $bottle = $this->setProperty($bottle, 'acquisitionPrice', $row, function ($price) { return $this->formatPrice($price); });
                 $bottle = $this->setProperty($bottle, 'estimationPrice', $row, function ($price) { return $this->formatPrice($price); });
                 $bottle = $this->setProperty($bottle, 'volume', $row, 'string', Bottle::DEFAULT_VOLUME);
-                $bottle = $this->setProperty($bottle, 'storageLocation', $row);
+                $bottle = $this->setProperty($bottle, 'storageLocation', $row, function ($location) { return $this->formatStorageLocation($location); });
                 $bottle->setWine($wine);
                 $this->entityManager->persist($bottle);
                 $this->console->progressAdvance(1);
@@ -206,7 +276,7 @@ class Importer
 
         if ($value !== null) {
             if (\is_callable($cast)) {
-                $value = $cast($value);
+                $value = $cast($value, $object);
             } else {
                 settype($value, $cast);
             }
@@ -224,6 +294,37 @@ class Importer
         $price = (int) round($price);
 
         return $price;
+    }
+
+    public function formatStorageLocation(?string $location): ?Storage
+    {
+        if (!$location || \trim($location) === '') {
+            return null;
+        }
+
+        $storage = new Storage();
+        $storage->setName($location);
+
+        return $storage;
+    }
+
+    public function formatDesignation(string $designation = null, Wine $wine): ?string
+    {
+        if ($wine->getCountry() === 'FR') {
+            $references = Designations::getByCountryAndRegion($wine->getCountry(), $wine->getRegion());
+        } else {
+            $references = Designations::getByCountry($wine->getCountry());
+        }
+
+        if (!\in_array($designation, $references, true)) {
+            if (!\array_key_exists($designation, self::DESIGNATIONS)) {
+                $this->console->warning('Designation ' . $designation . ' is unknown ('.$wine->getCountry(). ' '.$wine->getRegion().')');
+                return $designation;
+            }
+            return self::DESIGNATIONS[$designation];
+        }
+
+        return $designation;
     }
 
     public function formatVarietals(string $varietalsStr): array
@@ -263,7 +364,7 @@ class Importer
 
     public function formatRegion(string $region): string
     {
-        if (!\in_array($region, FrenchRegions::getConstants(), true)) {
+        if (!\in_array($region, Designations::getFrenchRegions(), true)) {
             if (!\array_key_exists($region, self::REGIONS)) {
                 $this->console->warning('Region ' . $region . ' is unknown');
 
@@ -310,12 +411,12 @@ class Importer
 
         $wine = new Wine();
         $wine = $this->setProperty($wine, 'name', $row);
-        $wine = $this->setProperty($wine, 'designation', $row);
+        $wine = $this->setProperty($wine, 'country', $row, function ($country) { return $this->formatCountry($country); });
+        $wine = $this->setProperty($wine, 'region', $row, function ($region) { return $this->formatRegion($region); });
+        $wine = $this->setProperty($wine, 'designation', $row, function ($designation, $wine) { return $this->formatDesignation($designation, $wine); });
         $wine = $this->setProperty($wine, 'varietals', $row, function ($varietals) { return $this->formatVarietals($varietals); });
         $wine = $this->setProperty($wine, 'color', $row, function ($color) { return $this->formatColor($color); });
         $wine = $this->setProperty($wine, 'vintage', $row, 'int');
-        $wine = $this->setProperty($wine, 'country', $row, function ($country) { return $this->formatCountry($country); });
-        $wine = $this->setProperty($wine, 'region', $row, function ($region) { return $this->formatRegion($region); });
         $wine = $this->setProperty($wine, 'winemaker', $row);
         $wine = $this->setProperty($wine, 'rating', $row, 'int');
         $wine = $this->setProperty($wine, 'comment', $row);

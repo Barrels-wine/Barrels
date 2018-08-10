@@ -41,8 +41,20 @@ App\Entity\Bottle:
       - GreaterThanOrEqual: { value: 0, message: 'bottle.acquisition_price.no_negative' }
     estimationPrice:
     - GreaterThanOrEqual: { value: 0, message: 'bottle.estimation_price.no_negative' }
+    storageLocation:
+      - NotNull: { message: 'bottle.storage_location.required' }
+      - Valid: ~
     volume:
       - NotBlank: { message: 'bottle.volume.required' }
     wine:
       - NotNull: { message: 'bottle.wine.required' }
       - Valid: ~
+
+App\Entity\Storage:
+  constraints:
+    - Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity: { fields: ['name'], message: 'storage_location.name.not_unique' }
+  properties:
+    name:
+      - NotBlank: { message: 'storage_location.name.required' }
+    capacity:
+    - GreaterThanOrEqual: { value: 0, message: 'storage_location.capacity.no_negative' }

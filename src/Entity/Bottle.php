@@ -48,7 +48,8 @@ class Bottle
     private $volume = self::DEFAULT_VOLUME;
 
     /**
-     * @ORM\Column(name="storage_location", type="string", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Storage", inversedBy="bottles")
+     * @ORM\JoinColumn(name="storage_location_id")
      */
     private $storageLocation = null;
 
@@ -86,12 +87,12 @@ class Bottle
         return $this;
     }
 
-    public function getWine(): Wine
+    public function getWine(): ?Wine
     {
         return $this->wine;
     }
 
-    public function setWine(Wine $wine): self
+    public function setWine(Wine $wine = null): self
     {
         $this->wine = $wine;
 
@@ -134,12 +135,12 @@ class Bottle
         return $this;
     }
 
-    public function getStorageLocation(): ?string
+    public function getStorageLocation(): ?Storage
     {
         return $this->storageLocation;
     }
 
-    public function setStorageLocation(string $storageLocation = null): self
+    public function setStorageLocation(Storage $storageLocation = null)
     {
         $this->storageLocation = $storageLocation;
 

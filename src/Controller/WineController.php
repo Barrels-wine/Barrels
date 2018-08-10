@@ -77,7 +77,6 @@ class WineController extends BaseController
 
         $em->persist($wine);
         $em->flush();
-        $em->refresh($wine);
 
         return new ApiResponse($wine, Response::HTTP_CREATED);
     }

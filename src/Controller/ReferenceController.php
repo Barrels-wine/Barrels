@@ -18,7 +18,7 @@ class ReferenceController extends BaseController
     public function getReferences(): ApiResponse
     {
         return new ApiResponse([
-            'frenchRegions' => FrenchRegions::getConstants(),
+            'frenchRegions' => Designations::getFrenchRegions(),
             'designations' => Designations::getAll(),
             'varietals' => Varietals::getConstants(),
         ]);
