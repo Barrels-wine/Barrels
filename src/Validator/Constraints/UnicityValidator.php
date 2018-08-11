@@ -6,10 +6,8 @@ namespace App\Validator\Constraints;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\Common\Persistence\Mapping\ClassMetadata;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntityValidator;
 use Symfony\Component\Validator\Constraint;
-use Symfony\Component\Validator\Exception\ConstraintDefinitionException;
 
 class UnicityValidator extends UniqueEntityValidator
 {
@@ -75,11 +73,10 @@ class UnicityValidator extends UniqueEntityValidator
         }
 
         $errorPath = null !== $constraint->errorPath ? $constraint->errorPath : $fields[0];
-        $invalidValue = isset($criteria[$errorPath]) ? $criteria[$errorPath] : $criteria[$fields[0]];
+        $invalidValue = $criteria[$errorPath] ?? $criteria[$fields[0]];
 
         $this->context->buildViolation($constraint->message)
             ->atPath($errorPath)
             ->addViolation();
     }
-
 }

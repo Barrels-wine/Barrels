@@ -7,7 +7,6 @@ namespace App\Controller;
 use App\Annotation\JsonBody;
 use App\Entity\Storage;
 use App\HttpFoundation\ApiResponse;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;

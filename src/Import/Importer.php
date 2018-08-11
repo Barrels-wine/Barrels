@@ -172,7 +172,7 @@ class Importer
     public function truncate($table)
     {
         $connection = $this->entityManager->getConnection();
-        $sql = 'DELETE FROM '.$table.';';
+        $sql = 'DELETE FROM ' . $table . ';';
         $stmt = $connection->prepare($sql);
         $stmt->execute();
     }
@@ -206,7 +206,7 @@ class Importer
         // Import data
         $winesCount = \count($rows) - 1;
         $bottlesCount = $this->getTotalCount($rows);
-        $this->console->writeln('Importing ' . $bottlesCount . ' bottles from '.$winesCount.' wines in database.');
+        $this->console->writeln('Importing ' . $bottlesCount . ' bottles from ' . $winesCount . ' wines in database.');
         $this->console->progressStart($bottlesCount);
 
         $this->importData($rows);
@@ -321,9 +321,11 @@ class Importer
 
         if (!\in_array($designation, $references, true)) {
             if (!\array_key_exists($designation, self::DESIGNATIONS)) {
-                $this->console->warning('Designation ' . $designation . ' is unknown ('.$wine->getCountry(). ' '.$wine->getRegion().')');
+                $this->console->warning('Designation ' . $designation . ' is unknown (' . $wine->getCountry() . ' ' . $wine->getRegion() . ')');
+
                 return $designation;
             }
+
             return self::DESIGNATIONS[$designation];
         }
 

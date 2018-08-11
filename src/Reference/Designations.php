@@ -88,7 +88,7 @@ class Designations
                 'Saint-Julien',
                 'Sainte-Croix-du-Mont',
                 'Sainte-Foy-Bordeaux',
-                'Sauternes'
+                'Sauternes',
             ],
             'Bourgogne' => [
                 'Aloxe-Corton',

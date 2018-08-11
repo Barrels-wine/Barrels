@@ -6,7 +6,6 @@ namespace App\Controller;
 
 use App\HttpFoundation\ApiResponse;
 use App\Reference\Designations;
-use App\Reference\FrenchRegions;
 use App\Reference\Varietals;
 use Symfony\Component\Routing\Annotation\Route;
 

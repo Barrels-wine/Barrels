@@ -17,18 +17,6 @@ class Serializer
     /** @var EntityNormalizer */
     protected $entityNormalizer;
 
-    public function reduce($object)
-    {
-        return $object ? $object->getId() : null;
-    }
-
-    public function normalizeDate($dateTime)
-    {
-        return $dateTime instanceof \DateTime
-            ? $dateTime->format(\DateTime::ATOM)
-            : null;
-    }
-
     public function __construct(EntityNormalizer $entityNormalizer)
     {
         $encoder = new JsonEncoder();
@@ -39,6 +27,18 @@ class Serializer
         $this->entityNormalizer->setMaxDepthHandler([$this, 'reduce']);
 
         $this->serializer = new BaseSerializer([$this->entityNormalizer], [$encoder]);
+    }
+
+    public function reduce($object)
+    {
+        return $object ? $object->getId() : null;
+    }
+
+    public function normalizeDate($dateTime)
+    {
+        return $dateTime instanceof \DateTime
+            ? $dateTime->format(\DateTime::ATOM)
+            : null;
     }
 
     public function serialize($data)

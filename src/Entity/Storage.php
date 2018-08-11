@@ -107,7 +107,7 @@ class Storage
         return $this;
     }
 
-    public function update(Storage $location)
+    public function update(self $location)
     {
         $this->name = $location->getName();
         $this->description = $location->getDescription();
