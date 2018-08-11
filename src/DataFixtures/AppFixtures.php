@@ -12,8 +12,9 @@ class AppFixtures extends Fixture
 {
     public const PATH = [
         'src/DataFixtures/Fixtures/001-users.yml',
-        'src/DataFixtures/Fixtures/002-wines.yml',
-        'src/DataFixtures/Fixtures/003-bottles.yml',
+        'src/DataFixtures/Fixtures/002-storageLocations.yml',
+        'src/DataFixtures/Fixtures/003-wines.yml',
+        'src/DataFixtures/Fixtures/004-bottles.yml',
     ];
 
     /** @var PurgerLoader */

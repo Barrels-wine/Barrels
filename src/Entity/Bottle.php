@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
 
 /**
  * @ORM\Entity()
@@ -29,6 +30,7 @@ class Bottle
     /**
      * @ORM\ManyToOne(targetEntity="Wine", inversedBy="bottles", cascade={"persist"})
      * @ORM\JoinColumn(name="wine_id", referencedColumnName="id", onDelete="CASCADE", nullable=false)
+     * @MaxDepth(1)
      */
     private $wine;
 
@@ -48,7 +50,9 @@ class Bottle
     private $volume = self::DEFAULT_VOLUME;
 
     /**
-     * @ORM\Column(name="storage_location", type="string", nullable=true)
+     * @ORM\ManyToOne(targetEntity="Storage", inversedBy="bottles")
+     * @ORM\JoinColumn(name="storage_location_id")
+     * @MaxDepth(1)
      */
     private $storageLocation = null;
 
@@ -86,12 +90,12 @@ class Bottle
         return $this;
     }
 
-    public function getWine(): Wine
+    public function getWine(): ?Wine
     {
         return $this->wine;
     }
 
-    public function setWine(Wine $wine): self
+    public function setWine(Wine $wine = null): self
     {
         $this->wine = $wine;
 
@@ -134,12 +138,12 @@ class Bottle
         return $this;
     }
 
-    public function getStorageLocation(): ?string
+    public function getStorageLocation(): ?Storage
     {
         return $this->storageLocation;
     }
 
-    public function setStorageLocation(string $storageLocation = null): self
+    public function setStorageLocation(Storage $storageLocation = null)
     {
         $this->storageLocation = $storageLocation;
 

@@ -6,7 +6,6 @@ namespace App\Controller;
 
 use App\HttpFoundation\ApiResponse;
 use App\Reference\Designations;
-use App\Reference\FrenchRegions;
 use App\Reference\Varietals;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -18,7 +17,7 @@ class ReferenceController extends BaseController
     public function getReferences(): ApiResponse
     {
         return new ApiResponse([
-            'frenchRegions' => FrenchRegions::getConstants(),
+            'frenchRegions' => Designations::getFrenchRegions(),
             'designations' => Designations::getAll(),
             'varietals' => Varietals::getConstants(),
         ]);
