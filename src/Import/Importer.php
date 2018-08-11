@@ -169,17 +169,19 @@ class Importer
         $this->parser = $parser;
     }
 
-    public function purge()
+    public function truncate($table)
     {
         $connection = $this->entityManager->getConnection();
-
-        $sql = 'DELETE FROM bottle;';
+        $sql = 'DELETE FROM '.$table.';';
         $stmt = $connection->prepare($sql);
         $stmt->execute();
+    }
 
-        $sql = 'DELETE FROM wine;';
-        $stmt = $connection->prepare($sql);
-        $stmt->execute();
+    public function purge()
+    {
+        $this->truncate('bottle');
+        $this->truncate('wine');
+        $this->truncate('storage');
     }
 
     public function import(SymfonyStyle $console, string $mappingPath, string $dataPath): int
@@ -202,8 +204,9 @@ class Importer
         }
 
         // Import data
+        $winesCount = \count($rows) - 1;
         $bottlesCount = $this->getTotalCount($rows);
-        $this->console->writeln('Importing ' . $bottlesCount . ' bottles in database.');
+        $this->console->writeln('Importing ' . $bottlesCount . ' bottles from '.$winesCount.' wines in database.');
         $this->console->progressStart($bottlesCount);
 
         $this->importData($rows);
@@ -395,13 +398,17 @@ class Importer
     public function getOrCreateWine(array $row): Wine
     {
         // First check if wine exist
-        // Wine unicity is defined by its name and vintage.
+        // Wine unicity is defined by name, designation, vintage, classificationLevel, batch and winemaker
         $wine = $this
             ->entityManager
             ->getRepository(Wine::class)
             ->findOneBy([
                 'name' => $row[$this->mapping['name']],
+                'designation' => $row[$this->mapping['designation']],
                 'vintage' => (int) $row[$this->mapping['vintage']],
+                'classificationLevel' => $row[$this->mapping['classificationLevel']],
+                'batch' => $row[$this->mapping['batch']],
+                'winemaker' => $row[$this->mapping['winemaker']],
             ])
         ;
 
@@ -431,6 +438,7 @@ class Importer
         $wine = $this->setProperty($wine, 'temperature', $row, 'int');
         $wine = $this->setProperty($wine, 'batch', $row);
         $wine = $this->setProperty($wine, 'category', $row, function ($category) { return $this->formatCategory($category); });
+        $this->entityManager->persist($wine);
 
         return $wine;
     }

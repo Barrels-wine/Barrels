@@ -32,7 +32,7 @@ class CellarController extends BaseController
     }
 
     /**
-     * @Route("/storage_location/{id}", name="get_storage_location", methods={"GET"})
+     * @Route("/storage_locations/{id}", name="get_storage_location", methods={"GET"})
      */
     public function getStorageLocation(string $id): ApiResponse
     {
@@ -83,12 +83,35 @@ class CellarController extends BaseController
             throw new NotFoundHttpException();
         }
 
-        $this->validate($validator, $location);
-
         $entity->update($location);
+
+        $this->validate($validator, $entity);
 
         $em->flush();
 
-        return new ApiResponse($location, Response::HTTP_OK);
+        return new ApiResponse($entity, Response::HTTP_OK);
+    }
+
+    /**
+     * @Route("/storage_locations/{id}", name="delete_storage_location", methods={"DELETE"})
+     */
+    public function deleteStorageLocation(string $id): ApiResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $this
+            ->getDoctrine()
+            ->getRepository(Storage::class)
+            ->find($id)
+        ;
+
+        if (!$entity) {
+            throw new NotFoundHttpException();
+        }
+
+        $em->remove($entity);
+        $em->flush();
+
+        return new ApiResponse([], Response::HTTP_NO_CONTENT);
     }
 }

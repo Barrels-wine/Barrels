@@ -88,7 +88,6 @@ class WineController extends BaseController
     public function createBottle(Bottle $bottle, Request $request, ValidatorInterface $validator): ApiResponse
     {
         $nbBottles = $request->query->get('nb', 1);
-        dump($nbBottles);
         $em = $this->getDoctrine()->getManager();
 
         $this->validate($validator, $bottle);
@@ -96,6 +95,11 @@ class WineController extends BaseController
         $wine = $bottle->getWine();
         if (!$wine->getId()) {
             $em->persist($wine);
+        }
+
+        $storage = $bottle->getStorageLocation();
+        if (!$storage->getId()) {
+            $em->persist($storage);
         }
 
         for ($i = 0; $i < $nbBottles; ++$i) {

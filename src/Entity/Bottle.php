@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\MaxDepth;
 
 /**
  * @ORM\Entity()
@@ -29,6 +30,7 @@ class Bottle
     /**
      * @ORM\ManyToOne(targetEntity="Wine", inversedBy="bottles", cascade={"persist"})
      * @ORM\JoinColumn(name="wine_id", referencedColumnName="id", onDelete="CASCADE", nullable=false)
+     * @MaxDepth(1)
      */
     private $wine;
 
@@ -50,6 +52,7 @@ class Bottle
     /**
      * @ORM\ManyToOne(targetEntity="Storage", inversedBy="bottles")
      * @ORM\JoinColumn(name="storage_location_id")
+     * @MaxDepth(1)
      */
     private $storageLocation = null;
 
