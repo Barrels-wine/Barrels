@@ -67,6 +67,14 @@ class WineController extends BaseController
     }
 
     /**
+     * @Route("/wines/{id}", name="delete_wine", methods={"DELETE"})
+     */
+    public function deleteWine(string $id): ApiResponse
+    {
+        return $this->deleteEntity($id, Wine::class);
+    }
+
+    /**
      * @Route("/bottles", name="create_bottle", methods={"POST"})
      * @JsonBody
      */
