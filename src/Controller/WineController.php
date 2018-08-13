@@ -10,6 +10,7 @@ use App\Entity\Wine;
 use App\HttpFoundation\ApiResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
@@ -94,5 +95,42 @@ class WineController extends BaseController
         $em->refresh($wine);
 
         return new ApiResponse($wine, Response::HTTP_CREATED);
+    }
+
+    /**
+     * @Route("/bottles/{id}", name="update_bottle", methods={"PUT"})
+     * @JsonBody
+     */
+    public function updateBottle(Bottle $bottle, string $id, ValidatorInterface $validator): ApiResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $this
+            ->getDoctrine()
+            ->getRepository(Bottle::class)
+            ->find($id)
+        ;
+
+        if (!$entity) {
+            throw new NotFoundHttpException();
+        }
+
+        $wine = $bottle->getWine();
+        if (!$wine->getId()) {
+            $em->persist($wine);
+        }
+
+        $storage = $bottle->getStorageLocation();
+        if (!$storage->getId()) {
+            $em->persist($storage);
+        }
+
+        $entity->update($bottle);
+
+        $this->validate($validator, $entity);
+
+        $em->flush();
+
+        return new ApiResponse($wine, Response::HTTP_OK);
     }
 }
