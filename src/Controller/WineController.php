@@ -10,7 +10,6 @@ use App\Entity\Wine;
 use App\HttpFoundation\ApiResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
@@ -21,14 +20,7 @@ class WineController extends BaseController
      */
     public function getWines(): ApiResponse
     {
-        $wines = $this
-            ->getDoctrine()
-            ->getRepository(Wine::class)
-            ->findBy([], ['createdAt' => 'DESC']);
-
-        return new ApiResponse([
-            'results' => $wines,
-        ]);
+        return $this->getList(Wine::class, [], ['createdAt' => 'DESC']);
     }
 
     /**
@@ -52,17 +44,7 @@ class WineController extends BaseController
      */
     public function getWine(string $id): ApiResponse
     {
-        $wine = $this
-            ->getDoctrine()
-            ->getRepository(Wine::class)
-            ->find($id)
-        ;
-
-        if (!$wine) {
-            throw new NotFoundHttpException();
-        }
-
-        return new ApiResponse($wine);
+        return $this->getEntity($id, Wine::class);
     }
 
     /**
@@ -71,14 +53,16 @@ class WineController extends BaseController
      */
     public function createWine(Wine $wine, ValidatorInterface $validator): ApiResponse
     {
-        $em = $this->getDoctrine()->getManager();
+        return $this->createEntity($wine, $validator);
+    }
 
-        $this->validate($validator, $wine);
-
-        $em->persist($wine);
-        $em->flush();
-
-        return new ApiResponse($wine, Response::HTTP_CREATED);
+    /**
+     * @Route("/wines/{id}", name="update_wine", methods={"PUT"})
+     * @JsonBody
+     */
+    public function updateWine(Wine $wine, string $id, ValidatorInterface $validator): ApiResponse
+    {
+        return $this->updateEntity($wine, $id, $validator);
     }
 
     /**

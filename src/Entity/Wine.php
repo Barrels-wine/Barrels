@@ -83,11 +83,6 @@ class Wine
     private $foodPairing = null;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
-     */
-    private $reference = null;
-
-    /**
      * @ORM\Column(name="classification_level" ,type="string", nullable=true)
      */
     private $classificationLevel = null;
@@ -144,9 +139,16 @@ class Wine
         $this->createdAt = new \DateTime();
     }
 
-    public function getId(): string
+    public function getId(): ?string
     {
         return $this->id;
+    }
+
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
     }
 
     public function getCreatedAt()
@@ -293,18 +295,6 @@ class Wine
         return $this;
     }
 
-    public function getReference(): ?string
-    {
-        return $this->reference;
-    }
-
-    public function setReference(string $reference = null): self
-    {
-        $this->reference = $reference;
-
-        return $this;
-    }
-
     public function getClassificationLevel(): ?string
     {
         return $this->classificationLevel;
@@ -436,5 +426,29 @@ class Wine
         }
 
         return $this;
+    }
+
+    public function update(self $wine)
+    {
+        $this->name = $wine->getName();
+        $this->designation = $wine->getDesignation();
+        $this->varietals = $wine->getVarietals();
+        $this->color = $wine->getColor();
+        $this->vintage = $wine->getVintage();
+        $this->country = $wine->getCountry();
+        $this->region = $wine->getRegion();
+        $this->winemaker = $wine->getWinemaker();
+        $this->rating = $wine->getRating();
+        $this->comment = $wine->getComment();
+        $this->foodPairing = $wine->getFoodPairing();
+        $this->classificationLevel = $wine->getClassificationLevel();
+        $this->drinkFrom = $wine->getDrinkFrom();
+        $this->drinkTo = $wine->getDrinkTo();
+        $this->climaxFrom = $wine->getClimaxFrom();
+        $this->climaxTo = $wine->getClimaxTo();
+        $this->alcoholDegree = $wine->getAlcoholDegree();
+        $this->temperature = $wine->getTemperature();
+        $this->batch = $wine->getBatch();
+        $this->category = $wine->getCategory();
     }
 }

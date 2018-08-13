@@ -430,7 +430,6 @@ class Importer
         $wine = $this->setProperty($wine, 'rating', $row, 'int');
         $wine = $this->setProperty($wine, 'comment', $row);
         //$wine = $this->setProperty($wine, 'foodPairing', $row);
-        //$wine = $this->setProperty($wine, 'reference', $row);
         $wine = $this->setProperty($wine, 'classificationLevel', $row);
         $wine = $this->setProperty($wine, 'drinkFrom', $row, 'int');
         $wine = $this->setProperty($wine, 'drinkTo', $row, 'int');

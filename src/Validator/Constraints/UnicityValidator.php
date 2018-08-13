@@ -68,7 +68,7 @@ class UnicityValidator extends UniqueEntityValidator
          * which has the same id as the entity being validated, the criteria is
          * unique.
          */
-        if (0 === count($result) || (1 === count($result) && $entity->getId() === (current($result)->getId()))) {
+        if (0 === count($result) || (1 === count($result) && $entity->getId() === current($result)->getId())) {
             return;
         }
 
