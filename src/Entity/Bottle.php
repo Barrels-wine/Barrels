@@ -149,4 +149,13 @@ class Bottle
 
         return $this;
     }
+
+    public function update(self $bottle)
+    {
+        $this->wine = $bottle->getWine();
+        $this->acquisitionPrice = $bottle->getAcquisitionPrice();
+        $this->estimationPrice = $bottle->getEstimationPrice();
+        $this->volume = $bottle->getVolume();
+        $this->storageLocation = $bottle->getStorageLocation();
+    }
 }

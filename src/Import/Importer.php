@@ -339,17 +339,21 @@ class Importer
         $varietals = str_replace('; ', ';', $varietals);
         $varietals = explode(';', $varietals);
 
+        $cleaned = [];
+
         foreach ($varietals as $varietal) {
             if (!\in_array($varietal, Varietals::getConstants(), true)) {
                 if (!\array_key_exists($varietal, self::VARIETALS)) {
                     $this->console->warning('Varietal ' . $varietal . ' is unknown');
                     continue;
                 }
-                $varietal = self::VARIETALS[$varietal];
+                $cleaned[] = self::VARIETALS[$varietal];
+            } else {
+                $cleaned[] = $varietal;
             }
         }
 
-        return $varietals;
+        return $cleaned;
     }
 
     public function formatColor($color)
