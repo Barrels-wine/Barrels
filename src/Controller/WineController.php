@@ -133,4 +133,29 @@ class WineController extends BaseController
 
         return new ApiResponse($wine, Response::HTTP_OK);
     }
+
+    /**
+     * @Route("/bottles/{id}", name="delete_bottle", methods={"DELETE"})
+     */
+    public function deleteBottle(string $id): ApiResponse
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $bottle = $this
+            ->getDoctrine()
+            ->getRepository(Bottle::class)
+            ->find($id)
+        ;
+
+        if (!$bottle) {
+            throw new NotFoundHttpException();
+        }
+
+        $wine = $bottle->getWine();
+        $em->remove($bottle);
+        $em->flush();
+        $em->refresh($wine);
+
+        return new ApiResponse($wine, Response::HTTP_OK);
+    }
 }
