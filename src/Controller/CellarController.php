@@ -7,8 +7,6 @@ namespace App\Controller;
 use App\Annotation\JsonBody;
 use App\Entity\Storage;
 use App\HttpFoundation\ApiResponse;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
@@ -19,15 +17,7 @@ class CellarController extends BaseController
      */
     public function getStorageLocations(): ApiResponse
     {
-        $locations = $this
-            ->getDoctrine()
-            ->getRepository(Storage::class)
-            ->findAll()
-        ;
-
-        return new ApiResponse([
-            'results' => $locations,
-        ]);
+        return $this->getList(Storage::class);
     }
 
     /**
@@ -35,17 +25,7 @@ class CellarController extends BaseController
      */
     public function getStorageLocation(string $id): ApiResponse
     {
-        $location = $this
-            ->getDoctrine()
-            ->getRepository(Storage::class)
-            ->find($id)
-        ;
-
-        if (!$location) {
-            throw new NotFoundHttpException();
-        }
-
-        return new ApiResponse($location);
+        return $this->getEntity($id, Storage::class);
     }
 
     /**
@@ -54,14 +34,7 @@ class CellarController extends BaseController
      */
     public function createStorageLocation(Storage $location, ValidatorInterface $validator): ApiResponse
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $this->validate($validator, $location);
-
-        $em->persist($location);
-        $em->flush();
-
-        return new ApiResponse($location, Response::HTTP_CREATED);
+        return $this->createEntity($location, $validator);
     }
 
     /**
@@ -70,25 +43,7 @@ class CellarController extends BaseController
      */
     public function updateStorageLocation(Storage $location, string $id, ValidatorInterface $validator): ApiResponse
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $this
-            ->getDoctrine()
-            ->getRepository(Storage::class)
-            ->find($id)
-        ;
-
-        if (!$entity) {
-            throw new NotFoundHttpException();
-        }
-
-        $entity->update($location);
-
-        $this->validate($validator, $entity);
-
-        $em->flush();
-
-        return new ApiResponse($entity, Response::HTTP_OK);
+        return $this->updateEntity($location, $id, $validator);
     }
 
     /**
@@ -96,21 +51,6 @@ class CellarController extends BaseController
      */
     public function deleteStorageLocation(string $id): ApiResponse
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $entity = $this
-            ->getDoctrine()
-            ->getRepository(Storage::class)
-            ->find($id)
-        ;
-
-        if (!$entity) {
-            throw new NotFoundHttpException();
-        }
-
-        $em->remove($entity);
-        $em->flush();
-
-        return new ApiResponse([], Response::HTTP_NO_CONTENT);
+        return $this->deleteEntity($id, Storage::class);
     }
 }
