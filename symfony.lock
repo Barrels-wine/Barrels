@@ -18,7 +18,7 @@
         "version": "v2.8.1"
     },
     "doctrine/data-fixtures": {
-        "version": "v1.3.0"
+        "version": "v1.3.1"
     },
     "doctrine/dbal": {
         "version": "v2.7.1"
@@ -53,6 +53,9 @@
             "ref": "c1431086fec31f17fbcfe6d6d7e92059458facc1"
         }
     },
+    "doctrine/event-manager": {
+        "version": "v1.0.0"
+    },
     "doctrine/inflector": {
         "version": "v1.3.0"
     },
@@ -68,6 +71,12 @@
     "doctrine/orm": {
         "version": "v2.6.1"
     },
+    "doctrine/persistence": {
+        "version": "v1.0.0"
+    },
+    "doctrine/reflection": {
+        "version": "v1.0.0"
+    },
     "easycorp/easy-log-handler": {
         "version": "1.0",
         "recipe": {
@@ -78,7 +87,7 @@
         }
     },
     "fzaninotto/faker": {
-        "version": "v1.7.1"
+        "version": "v1.8.0"
     },
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
@@ -90,10 +99,16 @@
         "version": "1.23.0"
     },
     "myclabs/deep-copy": {
-        "version": "1.7.0"
+        "version": "1.8.1"
     },
     "nelmio/alice": {
-        "version": "v3.3.0"
+        "version": "3.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.2",
+            "ref": "5ef2976310e8f9621c1a722a73bfbe115c1559a3"
+        }
     },
     "ocramius/package-versions": {
         "version": "1.3.0"
@@ -222,7 +237,7 @@
         "version": "v1.7.0"
     },
     "symfony/process": {
-        "version": "v4.0.8"
+        "version": "v4.1.3"
     },
     "symfony/profiler-pack": {
         "version": "v1.0.3"
@@ -309,7 +324,13 @@
         "version": "v4.0.8"
     },
     "theofidry/alice-data-fixtures": {
-        "version": "v1.0.1"
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "fe5a50faf580eb58f08ada2abe8afbd2d4941e05"
+        }
     },
     "twig/twig": {
         "version": "v2.4.8"
