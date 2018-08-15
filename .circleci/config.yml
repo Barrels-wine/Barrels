@@ -22,3 +22,8 @@ jobs:
             - run:
                 name: Check coding standards
                 command: fab cs_fix:True
+deployment:
+    staging:
+        branch: master
+        heroku:
+          appname: barrels-wine
