@@ -16,12 +16,11 @@ class Varietals
     public const ALPHONSE_LAVALLEE_N = 'Alphonse-lavallée';
     public const ALTESSE_B = 'Altesse';
     public const ALVARINHO_B = 'Alvarinho';
-    public const ARAMON_B = 'Aramon blanc';
+    public const ARAMON_BLANC_B = 'Aramon blanc';
     public const ARAMON_GRIS_G = 'Aramon gris';
     public const ARAMON_N = 'Aramon noir';
     public const ARANEL_B = 'Aranel';
     public const ARBANE_B = 'Arbane';
-    public const ARBOIS_B = 'Arbois (ou Orbois)';
     public const ARINARNOA_N = 'Arinarnoa';
     public const ARRILOBA_B = 'Arriloba';
     public const ARROUYA_N = 'Arrouya';
@@ -34,7 +33,7 @@ class Varietals
     public const BACHET_N = 'Bachet';
     public const BACO_B = 'Baco blanc';
     public const BACO_N = 'Baco noir';
-    public const BARBAROSSA_RS = 'Barbarossa ou barbaroux ou grec rose';
+    public const BARBAROUX_RS = 'Barbaroux ou barbarossa ou grec rose';
     public const BAROQUE_B = 'Baroque';
     public const BECLAN_N = 'Beclan';
     public const BEQUIGNOL_N = 'Bequignol';
@@ -56,20 +55,21 @@ class Varietals
     public const CAMARALET_B = 'Camaralet';
     public const CARCAJOLO_B = 'Carcajolo blanc';
     public const CARCAJOLO_N = 'Carcajolo nero';
-    public const CARIGNAN_B = 'Carignan blanc';
+    public const CARIGNAN_BLANC_B = 'Carignan blanc';
     public const CARIGNAN_N = 'Carignan noir';
     public const CARMENERE_N = 'Carménère';
     public const CASTETS_N = 'Castets';
     public const CESAR_N = 'César ou Romain';
+    public const CHAMBOURCIN_N = 'Chambourcin';
     public const CHARDONNAY_B = 'Chardonnay';
     public const CHASAN_B = 'Chasan B';
-    public const CHASSELAS_BLANC_B = 'Chasselas (ou Chasselas doré de Fontainebleau ou Gutedel)';
+    public const CARIGNAN_B = 'Chasselas (ou Chasselas doré de Fontainebleau ou Gutedel)';
     public const CHASSELAS_ROSE_RS = 'Chasselas rose';
     public const CHATUS_N = 'Chatus';
     public const CHENANSON_N = 'Chenanson';
     public const CHENIN_B = 'Chenin blanc';
     public const CILIEGIOLO = 'Ciliegiolo';
-    public const CINSAULT_N = 'Cinsault';
+    public const CINSAUT_N = 'Cinsaut';
     public const CLAIRETTE_B = 'Clairette';
     public const CLAIRETTE_ROSE_RS = 'Clairette rose';
     public const CLARIN_B = 'Clarin';
@@ -78,7 +78,7 @@ class Varietals
     public const COLOMBARD_B = 'Colombard';
     public const CORBEAU_N = 'Corbeau';
     public const COT_N = 'Côt ou malbec';
-    public const COUDERC_N = 'Couderc noir';
+    public const COUDERC_NOIR_N = 'Couderc noir';
     public const COUNOISE_N = 'Counoise';
     public const COURBU_B = 'Courbu blanc';
     public const COURBU_NOIR_N = 'Courbu noir';
@@ -111,8 +111,8 @@ class Varietals
     public const GRAISSE_B = 'Graisse';
     public const GRAMON_N = 'Gramon';
     public const GRASSEN_N = 'Grassen';
-    public const GRENACHE_B = 'Grenache blanc';
-    public const GRENACHE_G = 'Grenache gris';
+    public const GRENACHE_BLANC_B = 'Grenache blanc';
+    public const GRENACHE_GRIS_G = 'Grenache gris';
     public const GRENACHE_N = 'Grenache noir';
     public const GRINGET_B = 'Gringet';
     public const GROLLEAU_GRIS_G = 'Grolleau gris';
@@ -123,7 +123,7 @@ class Varietals
     public const JACQUERE_B = 'Jacquère';
     public const JOUBERTIN_N = 'Joubertin';
     public const JURANCON_BLANC_B = 'Jurançon blanc';
-    public const JURANCON_N = 'Jurançon noir';
+    public const JURANCON_NOIR_N = 'Jurançon noir';
     public const KNIPPERLE_B = 'Knipperle';
     public const LAUZET_B = 'Lauzet';
     public const LEN_DE_L_EL_B = 'Len de l\'el';
@@ -163,19 +163,21 @@ class Varietals
     public const MUSCADELLE_B = 'Muscadelle';
     public const MUSCARDIN_N = 'Muscardin';
     public const MUSCAT_B = 'Muscat';
-    public const MUSCAT_BLANC_A_PETITS_GRAINS_B = 'Muscat blanc à petits grains ou muscat d\'Alsace';
+    public const MUSCAT_A_PETITS_GRAINS_B = 'Muscat blanc à petits grains ou muscat d\'Alsace';
     public const MUSCAT_CENDRE_B = 'Muscat cendré';
     public const MUSCAT_D_ALEXANDRIE_B = 'Muscat d\'Alexandrie ou muscat d\'Espagne';
     public const MUSCAT_DE_HAMBOURG_N = 'Muscat de Hambourg';
     public const MUSCAT_N = 'Muscat noir';
     public const MUSCAT_OTTONEL_B = 'Muscat ottonel';
-    public const MUSCAT_ROSE_A_PETITS_GRAINS_RS = 'Muscat rose à petits grains';
-    public const MUSCAT_ROUGE_A_PETITS_GRAINS_RG = 'Muscat rouge à petits grains';
+    public const MUSCAT_A_PETITS_GRAINS_RS = 'Muscat rose à petits grains';
+    public const MUSCAT_A_PETITS_GRAINS_RG = 'Muscat rouge à petits grains';
     public const NEGRET_DE_BANHARS_N = 'Négret de Banhars';
     public const NEGRETTE_N = 'Négrette';
     public const NIELLUCCIO_N = 'Nielluccio';
     public const NOIR_FLEURIEN_N = 'Noir fleurien';
+    public const OBERLIN_N = 'Oberlin';
     public const ONDENC_B = 'Ondenc';
+    public const ORBOIS_B = 'Orbois (ou Arbois)';
     public const PAGADEBITI_B = 'Pagadebiti';
     public const PASCAL_B = 'Pascal blanc';
     public const PERDEA_B = 'Perdea';
@@ -192,7 +194,9 @@ class Varietals
     public const PINOT_BLANC_B = 'Pinot blanc';
     public const PINOT_D_AUNIS_N = 'Pinot d\'Aunis';
     public const PINOT_GRIS_G = 'Pinot gris (ou tokay d\'Alsace )';
-    public const PINOT_MEUNIER_N = 'Pinot meunier';
+    public const PLANTET_N = 'Plantet';
+    public const PLANT_DE_BRUNEL_N = 'Plant de Brunel';
+    public const MEUNIER_N = 'Pinot meunier';
     public const PINOT_NOIR_N = 'Pinot noir';
     public const PIQUEPOUL_BLANC_B = 'Piquepoul blanc';
     public const PIQUEPOUL_GRIS_G = 'Piquepoul gris';
@@ -206,29 +210,33 @@ class Varietals
     public const PRIN_B = 'Prin blanc';
     public const PRUNELARD_N = 'Prunelard';
     public const RAFFIAT_DE_MONCADE_B = 'Raffiat de moncade';
+    public const RAVAT_BLANC_B = 'Ravat blanc';
+    public const RAYON_D_OR_B = 'Rayon d\'or';
     public const REINE_DES_VIGNES = 'Reine des vignes';
     public const RIBOL_N = 'Ribol';
     public const RIESLING_B = 'Riesling';
     public const RIMINESE_B = 'Riminèse ou Albana';
     public const RIVAIRENC_BLANC_B = 'Rivairenc blanc ou Verdal';
     public const RIVAIRENC_GRIS_G = 'Rivairenc gris';
-    public const RIVAIRENC_NOIR_N = 'Rivairenc noir ou Aspiran';
+    public const RIVAIRENC_N = 'Rivairenc noir ou Aspiran';
     public const ROMORANTIN_B = 'Romorantin';
     public const ROSE_DU_VAR_RS = 'Rosé du Var';
     public const ROUBLOT_B = 'Roublot';
     public const ROUSSANNE_B = 'Roussanne';
     public const ROUSSETTE_B = 'Roussette';
     public const ROUSSETTE_D_AYZE_B = 'Roussette d\'Ayze ou grosse rossette';
+    public const RUBILANDE_RS = 'Rubilande';
     public const SACY_B = 'Sacy ou Tressallier';
     public const SAINT_COME_B = 'Saint-Côme';
     public const SAINT_MACAIRE_N = 'Saint-Macaire';
     public const SAINT_PIERRE_DORE_B = 'Saint-Pierre doré';
     public const SAUVIGNON_B = 'Sauvignon blanc';
     public const SAUVIGNON_GRIS_G = 'Sauvignon gris';
-    public const SAVAGNIN_B = 'Savagnin blanc';
+    public const SAVAGNIN_BLANC_B = 'Savagnin blanc';
     public const SAVAGNIN_ROSE_RS = 'Savagnin rose ou klevener de Heiligenstein';
     public const SCIACCARELLO_N = 'Sciacarello';
     public const SEGALIN_N = 'Ségalin';
+    public const SEINOIR_N = 'Seinoir';
     public const SELECT_B = 'Select';
     public const SEMEBAT_N = 'Semebat';
     public const SEMILLON_B = 'Sémillon';
@@ -254,13 +262,15 @@ class Varietals
     public const UGNI_BLANC_B = 'Ugni blanc ou Trebbiano bianco';
     public const VALDIGUIE_N = 'Valdiguie';
     public const VALENSY_N = 'Valensy noir';
+    public const VALERIEN_B = 'Valérien';
+    public const VAROUSSET_N = 'Varousset';
     public const VELTELINER_ROUGE_PRECOCE_RS = 'Velteliner rouge précoce';
     public const VERDELHO_B = 'Verdelho';
     public const VERDESSE_B = 'Verdesse';
     public const VERMENTINO_B = 'Vermentino (ou Rolle ou Malvoisie de Corse)';
     public const VIDAL_B = 'Vidal blanc';
-    public const VILLARD_B = 'Villard blanc';
-    public const VILLARD_N = 'Villard noir';
+    public const VILLARD_BLANC_B = 'Villard blanc';
+    public const VILLARD_NOIR_N = 'Villard noir';
     public const VIOGNIER_B = 'Viognier';
 
     public static function getConstants()
@@ -283,13 +293,13 @@ class Varietals
             self::ALTESSE_B,
             self::AMIGNE,
             self::ANGEVINE_OBERLIN,
-            self::ARAMON_B,
+            self::ARAMON_BLANC_B,
             self::ARAMON_G,
             self::ARAMON_N,
             self::ARANEL_B,
             self::ARBANE,
             self::ARBANE_B,
-            self::ARBOIS_B,
+            self::ORBOIS_B,
             self::ARINARNOA_N,
             self::ARINTO,
             self::ARNEIS,
@@ -306,7 +316,7 @@ class Varietals
             self::BACO_N,
             self::BAGA,
             self::BALOCHIN,
-            self::BARBAROSSA_RS,
+            self::BARBAROUX_RS,
             self::BARBERA,
             self::BAROQUE_B,
             self::BECLAN_N,
@@ -342,7 +352,7 @@ class Varietals
             self::CARCAJOLO_B,
             self::CARCAJOLO_N,
             self::CARDINAL,
-            self::CARIGNAN_B,
+            self::CARIGNAN_BLANC_B,
             self::CARIGNAN_N,
             self::CARMENERE,
             self::CARMENERE_N,
@@ -355,7 +365,7 @@ class Varietals
             self::CHANCELLOR,
             self::CHARDONNAY_B,
             self::CHASAN_B,
-            self::CHASSELAS_BLANC_B,
+            self::CARIGNAN_B,
             self::CHASSELAS_DE_JERUSALEM,
             self::CHASSELAS_DE_MOISSAC,
             self::CHASSELAS_DE_THOMERY,
@@ -365,7 +375,7 @@ class Varietals
             self::CHENANSON_N,
             self::CHENIN_B,
             self::CILIEGIOLO,
-            self::CINSAULT_N,
+            self::CINSAUT_N,
             self::CLAIRETTE_B,
             self::CLAIRETTE_ROSE_RS,
             self::CLARIN_B,
@@ -439,8 +449,8 @@ class Varietals
             self::GRASSEN_N,
             self::GRECHETTO,
             self::GRECO,
-            self::GRENACHE_B,
-            self::GRENACHE_G,
+            self::GRENACHE_BLANC_B,
+            self::GRENACHE_GRIS_G,
             self::GRENACHE_N,
             self::GRIGNOLINO,
             self::GRINGET_B,
@@ -468,7 +478,7 @@ class Varietals
             self::JOHANNISBERG,
             self::JOUBERTIN_N,
             self::JURANCON_BLANC_B,
-            self::JURANCON_N,
+            self::JURANCON_NOIR_N,
             self::KADARKA,
             self::KALECIK_KARASI,
             self::KEKFRANKOS,
@@ -535,14 +545,14 @@ class Varietals
             self::MUSCARDIN_N,
             self::MUSCAT_B,
             self::MUSCAT_D_ALEXANDRIE_B,
-            self::MUSCAT_BLANC_A_PETITS_GRAINS_B,
+            self::MUSCAT_A_PETITS_GRAINS_B,
             self::MUSCAT_CENDRE_B,
             self::MUSCAT_DE_HAMBOURG_N,
             self::MUSCAT_ITALIE,
             self::MUSCAT_N,
             self::MUSCAT_OTTONEL_B,
             self::MUSCAT_ROMAIN,
-            self::MUSCAT_ROSE_A_PETITS_GRAINS_RS,
+            self::MUSCAT_A_PETITS_GRAINS_RS,
             self::NARINCE,
             self::NEBBIOLO,
             self::NEGRET_DE_BANHARS_N,
@@ -596,7 +606,7 @@ class Varietals
             self::PINOT_BLANC_B,
             self::PINOT_D_AUNIS_N,
             self::PINOT_GRIS_G,
-            self::PINOT_MEUNIER_N,
+            self::MEUNIER_N,
             self::PINOT_NOIR_N,
             self::PINOT_NOIR_PRECOCE,
             self::PIQUEPOUL_BLANC_B,
@@ -628,7 +638,7 @@ class Varietals
             self::RIMINESE_B,
             self::RIVAIRENC_BLANC_B,
             self::RIVAIRENC_GRIS_G,
-            self::RIVAIRENC_NOIR_N,
+            self::RIVAIRENC_N,
             self::ROGETTAZ,
             self::ROGNIN,
             self::ROMORANTIN_B,
@@ -653,7 +663,7 @@ class Varietals
             self::SAUVIGNON_B,
             self::SAUVIGNON_GRIS_G,
             self::SAVAGNIN,
-            self::SAVAGNIN_B,
+            self::SAVAGNIN_BLANC_B,
             self::SAVAGNIN_ROSE_RS,
             self::SCHEUREBE,
             self::SCHIAVA,

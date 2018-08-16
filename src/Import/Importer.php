@@ -26,7 +26,7 @@ class Importer
         'Chenin blanc' => Varietals::CHENIN_B,
         'cinsault' => Varietals::CINSAULT,
         'Gewurtztraminer' => Varietals::GEWURZTRAMINER,
-        'Grenache Blanc' => Varietals::GRENACHE_B,
+        'Grenache Blanc' => Varietals::GRENACHE_BLANC_B,
         'incrocio mazoni' => Varietals::INCROCIO_MANZONI,
         'merlot' => Varietals::MERLOT,
         'Macabeu' => Varietals::MACABEO,

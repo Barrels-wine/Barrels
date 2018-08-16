@@ -19,6 +19,7 @@ $raw = str_replace('ô', 'o', $raw);
 $raw = str_replace('â', 'a', $raw);
 $raw = str_replace('ê', 'e', $raw);
 $raw = str_replace('\'', '_', $raw);
+$raw = str_replace('’', '_', $raw);
 
 $raw = strtoupper($raw);
 $raw = 'Varietals::'.$raw;
@@ -31,4 +32,5 @@ $result = join($pieces, ",\n");
 
 echo "=====================================\n\n";
 echo $result;
+echo "\n\n=====================================";
 exit;
