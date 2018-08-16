@@ -13,9 +13,12 @@ final class UserProcessor implements ProcessorInterface
     /** @var EncoderFactoryInterface */
     private $encoderFactory;
 
-    public function __construct(EncoderFactoryInterface $encoderFactory)
+    private $adminPassword;
+
+    public function __construct(EncoderFactoryInterface $encoderFactory, $adminPassword)
     {
         $this->encoderFactory = $encoderFactory;
+        $this->adminPassword = $adminPassword;
     }
 
     public function preProcess(string $id, $object): void
@@ -24,10 +27,15 @@ final class UserProcessor implements ProcessorInterface
             return;
         }
 
+        $rawPassword = $object->getUsername() === 'admin'
+            ? $this->adminPassword
+            : $object->getPassword()
+        ;
+
         $encoded = $this
             ->encoderFactory
             ->getEncoder(User::class)
-            ->encodePassword($object->getPassword(), null)
+            ->encodePassword($rawPassword, null)
         ;
         $object->setPassword($encoded);
     }
