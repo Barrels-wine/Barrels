@@ -41,16 +41,6 @@ class ApiExceptionSubscriber implements EventSubscriberInterface
             return;
         }
 
-        $negotiator = new Negotiator();
-        $acceptHeader = $event->getRequest()->headers->get('Accept', 'text/html');
-        $priorities = ['text/html', 'application/json'];
-        $mediaType = $negotiator->getBest($acceptHeader, $priorities);
-
-        // Let Symfony handle the exception if the Accept-Header is not defined or different than 'application/json'
-        if ($mediaType === null || $mediaType->getType() !== 'application/json') {
-            return;
-        }
-
         $exception = $event->getException();
         $content = [
             'message' => 'An internal error happens',
@@ -116,6 +106,16 @@ class ApiExceptionSubscriber implements EventSubscriberInterface
         if ($exception instanceof HttpExceptionInterface) {
             $response->setStatusCode($exception->getStatusCode());
             $response->headers->add($exception->getHeaders());
+        } else {
+            $negotiator = new Negotiator();
+            $acceptHeader = $event->getRequest()->headers->get('Accept', 'text/html');
+            $priorities = ['text/html', 'application/json'];
+            $mediaType = $negotiator->getBest($acceptHeader, $priorities);
+
+            // Let Symfony handle the exception if the Accept-Header is not defined or different than 'application/json'
+            if ($mediaType === null || $mediaType->getType() !== 'application/json') {
+                return;
+            }
         }
 
         $event->setResponse($response);
