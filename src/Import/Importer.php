@@ -19,22 +19,22 @@ use Symfony\Component\Yaml\Yaml;
 class Importer
 {
     public const VARIETALS = [
-        'Braquet' => 'Brachetto',
-        'Cabernet-franc' => 'Cabernet franc',
-        'Cabernet-sauvignon' => 'Cabernet sauvignon',
-        'Cabernet Sauvignon' => 'Cabernet sauvignon',
-        'Chenin blanc' => 'Chenin',
-        'cinsault' => 'Cinsault',
-        'Gewurtztraminer' => 'Gewürztraminer',
-        'Grenache Blanc' => 'Grenache blanc',
-        'incrocio mazoni' => 'Incrocio Manzoni',
-        'merlot' => 'Merlot',
-        'Macabeu' => 'Macabeo',
-        'Mourvedre' => 'Mourvèdre',
-        'mourvedre' => 'Mourvèdre',
-        'Rousssane' => 'Roussanne',
-        'San Giovese' => 'Sangiovese',
-        'syrah' => 'Syrah',
+        'Braquet' => Varietals::BRACHETTO,
+        'Cabernet-franc' => Varietals::CABERNET_FRANC_N,
+        'Cabernet-sauvignon' => Varietals::CABERNET_SAUVIGNON_N,
+        'Cabernet Sauvignon' => Varietals::CABERNET_SAUVIGNON_N,
+        'Chenin blanc' => Varietals::CHENIN_B,
+        'cinsault' => Varietals::CINSAULT,
+        'Gewurtztraminer' => Varietals::GEWURZTRAMINER,
+        'Grenache Blanc' => Varietals::GRENACHE_B,
+        'incrocio mazoni' => Varietals::INCROCIO_MANZONI,
+        'merlot' => Varietals::MERLOT,
+        'Macabeu' => Varietals::MACABEO,
+        'Mourvedre' => Varietals::MOURVEDRE,
+        'mourvedre' => Varietals::MOURVEDRE,
+        'Rousssane' => Varietals::ROUSSANNE,
+        'San Giovese' => Varietals::SANGIOVESE,
+        'syrah' => Varietals::SYRAH,
     ];
 
     public const ISO_CODES = [
