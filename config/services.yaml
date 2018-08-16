@@ -16,6 +16,7 @@ services:
             $projectSecret: '%env(APP_SECRET)%'
             $debug: '%kernel.debug%'
             $corsDomain: '%env(CORS_DOMAIN)%'
+            $adminPassword: '%env(ADMIN_PASSWORD)%'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
