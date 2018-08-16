@@ -187,6 +187,19 @@ def ssh():
     docker_compose('exec --user=barrels --index=1 php /bin/bash')
 
 
+@task
+def deploy():
+    """
+    Deploy to Heroku
+    """
+    local('git push heroku master')
+
+
+@task
+def prod_fixtures():
+    prod_run('php bin/console doctrine:fixtures:load --no-interaction')
+
+
 def docker_compose(command_name):
     local('BARRELS_UID=%s docker-compose -p barrels %s %s' % (
         env.uid,
@@ -209,6 +222,12 @@ def docker_compose_run(command_name, service, user="barrels", no_deps=False):
         ' '.join(args),
         _shell_escape(service),
         _shell_escape(command_name)
+    ))
+
+
+def prod_run(command):
+    local('heroku run %s' % (
+        command
     ))
 
 
