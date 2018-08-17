@@ -31,7 +31,7 @@ class Varietals
     public const AUBUN_N = 'Aubun';
     public const AUXERROIS_B = 'Auxerrois';
     public const BACHET_N = 'Bachet';
-    public const BACO_B = 'Baco blanc';
+    public const BACO_BLANC_B = 'Baco blanc';
     public const BACO_N = 'Baco noir';
     public const BARBAROUX_RS = 'Barbaroux ou barbarossa ou grec rose';
     public const BAROQUE_B = 'Baroque';
