@@ -95,7 +95,9 @@ class Varietals
     public const EKIGAINA_N = 'Ekigaïna';
     public const ELBLING_B = 'Elbling';
     public const ETRAIRE_DE_LA_DUI_N = 'Etraire de L\'Aduï';
+    public const FEL_B = 'Fel';
     public const FER_N = 'Fer ou Fer Servadou';
+    public const FERRADOU_N = 'Ferradou';
     public const FEUNATE_N = 'Feunate';
     public const FLORENTAL_N = 'Florental';
     public const FOLIGNAN_B = 'Folignan_B';
@@ -151,6 +153,7 @@ class Varietals
     public const MAUZAC_ROSE_RS = 'Mauzac rose';
     public const MAYORQUIN_B = 'Mayorquin';
     public const MELON_B = 'Melon (ou Melon de Bourgogne ou Muscadet)';
+    public const MECLE_N = 'Mècle';
     public const MERILLE_N = 'Mérille';
     public const MERLOT_BLANC_B = 'Merlot blanc';
     public const MERLOT_N = 'Merlot noir';
@@ -163,6 +166,7 @@ class Varietals
     public const MONDEUSE_N = 'Mondeuse';
     public const MONERAC_N = 'Monerac';
     public const MONTILS_B = 'Montils';
+    public const MORNEN_N = 'Mornen ou chasselas noir';
     public const MORRASTEL_N = 'Morrastel';
     public const MOURVAISON_N = 'Mourvaison';
     public const MOURVEDRE_N = 'Mourvèdre';
@@ -188,6 +192,7 @@ class Varietals
     public const ONDENC_B = 'Ondenc';
     public const ORBOIS_B = 'Orbois (ou Arbois)';
     public const PAGADEBITI_B = 'Pagadebiti';
+    public const PARELLADA_B = 'Parellada';
     public const PASCAL_B = 'Pascal blanc';
     public const PERDEA_B = 'Perdea';
     public const PERSAN_N = 'Persan';
