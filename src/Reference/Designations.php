@@ -1326,7 +1326,11 @@ class Designations
                     'colors' => [Colors::RED],
                     'coordinates' => ['44.9311234', '-0.1999904'],
                     'varietals' => [
-
+                        Varietals::CABERNET_FRANC_N,
+                        Varietals::CABERNET_SAUVIGNON_N,
+                        Varietals::COT_N,
+                        Varietals::MERLOT_N,
+                        Varietals::PETIT_VERDOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1345,7 +1349,12 @@ class Designations
                     'colors' => [Colors::RED],
                     'coordinates' => ['44.9233689', '-0.0736703'],
                     'varietals' => [
-
+                        Varietals::CABERNET_FRANC_N,
+                        Varietals::CABERNET_SAUVIGNON_N,
+                        Varietals::CARMENERE_N,
+                        Varietals::COT_N,
+                        Varietals::MERLOT_N,
+                        Varietals::PETIT_VERDOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1353,7 +1362,12 @@ class Designations
                     'colors' => [Colors::RED],
                     'coordinates' => ['44.8931452', '-0.1560662'],
                     'varietals' => [
-
+                        Varietals::CABERNET_FRANC_N,
+                        Varietals::CABERNET_SAUVIGNON_N,
+                        Varietals::CARMENERE_N,
+                        Varietals::COT_N,
+                        Varietals::MERLOT_N,
+                        Varietals::PETIT_VERDOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1374,7 +1388,12 @@ class Designations
                     'colors' => [Colors::RED],
                     'coordinates' => ['45.2642784', '-0.7706847'],
                     'varietals' => [
-
+                        Varietals::CABERNET_FRANC_N,
+                        Varietals::CABERNET_SAUVIGNON_N,
+                        Varietals::CARMENERE_N,
+                        Varietals::COT_N,
+                        Varietals::MERLOT_N,
+                        Varietals::PETIT_VERDOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1382,7 +1401,12 @@ class Designations
                     'colors' => [Colors::RED],
                     'coordinates' => ['44.9274208', '-0.1331057'],
                     'varietals' => [
-
+                        Varietals::CABERNET_FRANC_N,
+                        Varietals::CABERNET_SAUVIGNON_N,
+                        Varietals::CARMENERE_N,
+                        Varietals::COT_N,
+                        Varietals::MERLOT_N,
+                        Varietals::PETIT_VERDOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1390,7 +1414,12 @@ class Designations
                     'colors' => [Colors::RED],
                     'coordinates' => ['45.159860', '-0.757192'],
                     'varietals' => [
-
+                        Varietals::CABERNET_FRANC_N,
+                        Varietals::CABERNET_SAUVIGNON_N,
+                        Varietals::CARMENERE_N,
+                        Varietals::COT_N,
+                        Varietals::MERLOT_N,
+                        Varietals::PETIT_VERDOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1398,7 +1427,10 @@ class Designations
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['44.593203', '-0.282474'],
                     'varietals' => [
-
+                        Varietals::MUSCADELLE_B,
+                        Varietals::SAUVIGNON_B,
+                        Varietals::SAUVIGNON_GRIS_G,
+                        Varietals::SEMILLON_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1406,7 +1438,18 @@ class Designations
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['44.8416496', '0.214969'],
                     'varietals' => [
-
+                        Varietals::CABERNET_SAUVIGNON_N,
+                        Varietals::CABERNET_FRANC_N,
+                        Varietals::COT_N,
+                        Varietals::MERLOT_N,
+                        Varietals::CARMENERE_N,
+                        Varietals::PETIT_VERDOT_N,
+                        Varietals::SAUVIGNON_B,
+                        Varietals::SAUVIGNON_GRIS_G,
+                        Varietals::SEMILLON_B,
+                        Varietals::MUSCADELLE_B,
+                        Varietals::COLOMBARD_B,
+                        Varietals::UGNI_BLANC_B
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1414,7 +1457,10 @@ class Designations
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['44.5327805', '-0.341386'],
                     'varietals' => [
-
+                        Varietals::MUSCADELLE_B,
+                        Varietals::SAUVIGNON_B,
+                        Varietals::SAUVIGNON_GRIS_G,
+                        Varietals::SEMILLON_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
