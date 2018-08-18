@@ -2424,31 +2424,37 @@ class Designations
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
                     'coordinates' => ['46.903611', '5.774722'],
                     'varietals' => [
-
+                        Varietals::CHARDONNAY_B,
+                        Varietals::PINOT_NOIR_N,
+                        Varietals::POULSARD_N,
+                        Varietals::SAVAGNIN_BLANC_B,
+                        Varietals::TROUSSEAU_N,
+                        Varietals::TROUSSEAU_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
                 'Château-Chalon' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.755556', '5.626667'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::SAVAGNIN_BLANC_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Côtes du Jura' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
                     'coordinates' => ['46.7550716', '5.6115027'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::SAVAGNIN_BLANC_B, Varietals::PINOT_NOIR_N, Varietals::POULSARD_N, Varietals::TROUSSEAU_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Crémant du Jura' => [
                     'colors' => [Colors::WHITE, Colors::ROSE],
                     'coordinates' => ['46.7550716', '5.6115027'],
                     'varietals' => [
-
+                        Varietals::CHARDONNAY_B,
+                        Varietals::PINOT_GRIS_G,
+                        Varietals::PINOT_NOIR_N,
+                        Varietals::POULSARD_N,
+                        Varietals::SAVAGNIN_BLANC_B,
+                        Varietals::TROUSSEAU_N,
                     ],
                     'sparkling' => true,
                     'type' => self::TYPE_AOC,
@@ -2457,23 +2463,45 @@ class Designations
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
                     'coordinates' => ['46.7550716', '5.6115027'],
                     'varietals' => [
-
+                        Varietals::ALIGOTE_B,
+                        Varietals::ARBANE_B,
+                        Varietals::AUXERROIS_B,
+                        Varietals::CHARDONNAY_B,
+                        Varietals::GAMARET_N,
+                        Varietals::GAMAY_N,
+                        Varietals::GEWURZTRAMINER_RS,
+                        Varietals::MERLOT_N,
+                        Varietals::MEUNIER_N,
+                        Varietals::MUSCAT_B,
+                        Varietals::PETIT_MESLIER_B,
+                        Varietals::PINOT_BLANC_B,
+                        Varietals::PINOT_GRIS_G,
+                        Varietals::PINOT_NOIR_N,
+                        Varietals::POULSARD_N,
+                        Varietals::SAUVIGNON_B,
+                        Varietals::SAUVIGNON_GRIS_G,
+                        Varietals::SAVAGNIN_BLANC_B,
+                        Varietals::SYRAH_N,
+                        Varietals::TROUSSEAU_N,
+                        Varietals::VIOGNIER_B,
                     ],
                     'type' => self::TYPE_IGP,
                 ],
                 'L\'étoile' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.715000', '5.536100'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::SAVAGNIN_BLANC_B, Varietals::POULSARD_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Macvin du Jura' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
                     'coordinates' => ['46.7550716', '5.6115027'],
                     'varietals' => [
-
+                        Varietals::CHARDONNAY_B,
+                        Varietals::PINOT_NOIR_N,
+                        Varietals::POULSARD_N,
+                        Varietals::SAVAGNIN_BLANC_B,
+                        Varietals::TROUSSEAU_N,
                     ],
                     'category' => Categories::SWEET,
                     'type' => self::TYPE_AOC,
