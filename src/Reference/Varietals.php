@@ -127,7 +127,7 @@ class Varietals
     public const GROLLEAU_GRIS_G = 'Grolleau gris';
     public const GROLLEAU_N = 'Grolleau';
     public const GROS_MANSENG_B = 'Gros Manseng';
-    public const GROS_MESLIER_B = 'Gros meslier ou meslier Saint-François';
+    public const MESLIER_SAINT_FRANCOIS_B = 'Meslier Saint-François ou gros meslier';
     public const GROS_VERT_B = 'Gros vert';
     public const JACQUERE_B = 'Jacquère';
     public const JOUBERTIN_N = 'Joubertin';
@@ -272,6 +272,7 @@ class Varietals
     public const TIBOUREN_N = 'Tibouren';
     public const TOURBAT_B = 'Tourbat';
     public const TRESSOT_N = 'Tressot';
+    public const TROUSSEAU_GRIS_G = 'Trousseau gris';
     public const TROUSSEAU_N = 'Trousseau';
     public const UGNI_BLANC_B = 'Ugni blanc ou Trebbiano bianco';
     public const VALDIGUIE_N = 'Valdiguie';
