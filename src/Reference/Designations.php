@@ -712,7 +712,7 @@ class Designations
                     'varietals' => [
                         Varietals::SEMILLON_B,
                         Varietals::SAUVIGNON_B,
-                        Varietals::MUSCADELLE_B
+                        Varietals::MUSCADELLE_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -725,7 +725,7 @@ class Designations
                         Varietals::MERLOT_N,
                         Varietals::CARMENERE_N,
                         Varietals::COT_N,
-                        Varietals::PETIT_VERDOT_N
+                        Varietals::PETIT_VERDOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -746,7 +746,7 @@ class Designations
                         Varietals::MAUZAC_B,
                         Varietals::MERLOT_BLANC_B,
                         Varietals::ONDENC_B,
-                        Varietals::UGNI_BLANC_B
+                        Varietals::UGNI_BLANC_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -757,7 +757,7 @@ class Designations
                         Varietals::MERLOT_N,
                         Varietals::CABERNET_FRANC_N,
                         Varietals::SEMILLON_B,
-                        Varietals::SAUVIGNON_B
+                        Varietals::SAUVIGNON_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -768,7 +768,7 @@ class Designations
                         Varietals::SEMILLON_B,
                         Varietals::SAUVIGNON_B,
                         Varietals::SAUVIGNON_GRIS_G,
-                        Varietals::MUSCADELLE_B
+                        Varietals::MUSCADELLE_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -777,7 +777,7 @@ class Designations
                     'coordinates' => ['44.927168', '-0.292906'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::MERLOT_N,
-                        Varietals::CARMENERE_N, Varietals::COT_N, Varietals::PETIT_VERDOT_N
+                        Varietals::CARMENERE_N, Varietals::COT_N, Varietals::PETIT_VERDOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -802,7 +802,7 @@ class Designations
                         Varietals::MUSCADELLE_B,
                         Varietals::SAUVIGNON_B,
                         Varietals::SAUVIGNON_GRIS_G,
-                        Varietals::SEMILLON_B
+                        Varietals::SEMILLON_B,
                         ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -821,7 +821,7 @@ class Designations
                         Varietals::SEMILLON_B,
                         Varietals::MUSCADELLE_B,
                         Varietals::COLOMBARD_B,
-                        Varietals::UGNI_BLANC_B
+                        Varietals::UGNI_BLANC_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -859,7 +859,7 @@ class Designations
                         Varietals::CHARDONNAY_B,
                         Varietals::MELON_B,
                         Varietals::PINOT_BLANC_B,
-                        Varietals::SACY_B
+                        Varietals::SACY_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -874,7 +874,7 @@ class Designations
                         Varietals::COLOMBARD_B,
                         Varietals::MAUZAC_B,
                         Varietals::MERLOT_BLANC_B,
-                        Varietals::UGNI_BLANC_B
+                        Varietals::UGNI_BLANC_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -921,7 +921,7 @@ class Designations
                         Varietals::MUSCADELLE_B,
                         Varietals::SAUVIGNON_B,
                         Varietals::SEMILLON_B,
-                        Varietals::MERLOT_BLANC_B
+                        Varietals::MERLOT_BLANC_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -951,7 +951,7 @@ class Designations
                       Varietals::CARMENERE_N,
                       Varietals::COT_N,
                       Varietals::MERLOT_N,
-                      Varietals::PETIT_VERDOT_N
+                      Varietals::PETIT_VERDOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -964,7 +964,7 @@ class Designations
                         Varietals::COT_N,
                         Varietals::MERLOT_N,
                         Varietals::CARMENERE_N,
-                        Varietals::PETIT_VERDOT_N
+                        Varietals::PETIT_VERDOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -977,8 +977,7 @@ class Designations
                         Varietals::CARMENERE_N,
                         Varietals::COT_N,
                         Varietals::MERLOT_N,
-                        Varietals::PETIT_VERDOT_N
-
+                        Varietals::PETIT_VERDOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -990,16 +989,14 @@ class Designations
                         Varietals::MUSCADELLE_B,
                         Varietals::SAUVIGNON_B,
                         Varietals::SAUVIGNON_GRIS_G,
-                        Varietals::SEMILLON_B
+                        Varietals::SEMILLON_B,
                     ],
                     'type' => self::TYPE_AOC,
-
                 ],
                 'Lussac-Saint-Émilion' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['45.095442', '-0.125505'],
                     'varietals' => [
-
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1051,7 +1048,7 @@ class Designations
                         Varietals::PETIT_VERDOT_N,
                         Varietals::CABERNET_FRANC_N,
                         Varietals::COT_N,
-                        Varietals::CARMENERE_N
+                        Varietals::CARMENERE_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1301,7 +1298,7 @@ class Designations
                         Varietals::VELTELINER_ROUGE_PRECOCE_RS,
                         Varietals::VERDESSE_B,
                         Varietals::VERMENTINO_B,
-                        Varietals::VIOGNIER_B
+                        Varietals::VIOGNIER_B,
                     ],
                     'type' => self::TYPE_IGP,
                 ],
@@ -1449,7 +1446,7 @@ class Designations
                         Varietals::SEMILLON_B,
                         Varietals::MUSCADELLE_B,
                         Varietals::COLOMBARD_B,
-                        Varietals::UGNI_BLANC_B
+                        Varietals::UGNI_BLANC_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1553,7 +1550,7 @@ class Designations
                         Varietals::GAMAY_N,
                         Varietals::PINOT_BLANC_B,
                         Varietals::PINOT_GRIS_G,
-                        Varietals::PINOT_NOIR_N
+                        Varietals::PINOT_NOIR_N,
                     ],
                     'sparkling' => true,
                     'type' => self::TYPE_AOC,
@@ -2440,7 +2437,7 @@ class Designations
                         Varietals::MONTILS_B,
                         Varietals::SAUVIGNON_B,
                         Varietals::SEMILLON_B,
-                        Varietals::UGNI_BLANC_B
+                        Varietals::UGNI_BLANC_B,
                     ],
                     'category' => Categories::SWEET,
                     'type' => self::TYPE_AOC,
@@ -2905,7 +2902,7 @@ class Designations
                         Varietals::SEMILLON_B,
                         Varietals::SYRAH_N,
                         Varietals::UGNI_BLANC_B,
-                        Varietals::VIOGNIER_B
+                        Varietals::VIOGNIER_B,
                     ],
                     'type' => self::TYPE_IGP,
                 ],
@@ -3092,7 +3089,7 @@ class Designations
                         Varietals::VERMENTINO_B,
                         Varietals::VILLARD_BLANC_B,
                         Varietals::VILLARD_NOIR_N,
-                        Varietals::VIOGNIER_B
+                        Varietals::VIOGNIER_B,
                     ],
                     'type' => self::TYPE_IGP,
                 ],
@@ -5807,19 +5804,19 @@ class Designations
             'Lorraine' => [
                 'Côtes de Meuse' => [
                     'colors' => [Colors::WHITE, Colors::GREY, Colors::RED],
-                    'coordinates' => ['48.981944','5.704167'],
+                    'coordinates' => ['48.981944', '5.704167'],
                     'varietals' => [Varietals::PINOT_NOIR_N, Varietals::GAMAY_N, Varietals::AUXERROIS_B, Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G],
                     'type' => self::TYPE_IGP,
                 ],
                 'Côtes de Toul' => [
                     'colors' => [Colors::WHITE, Colors::GREY, Colors::RED],
-                    'coordinates' => ['48.675000','5.891667'],
+                    'coordinates' => ['48.675000', '5.891667'],
                     'varietals' => [Varietals::PINOT_NOIR_N, Varietals::GAMAY_N, Varietals::MEUNIER_N, Varietals::AUXERROIS_B, Varietals::AUBIN_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Moselle' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['49.215833','6.116667'],
+                    'coordinates' => ['49.215833', '6.116667'],
                     'varietals' => [Varietals::PINOT_NOIR_N, Varietals::AUXERROIS_B, Varietals::PINOT_GRIS_G, Varietals::GAMAY_N, Varietals::GEWURZTRAMINER_RS, Varietals::MEUNIER_N, Varietals::MULLER_THURGAU_B, Varietals::PINOT_BLANC_B, Varietals::RIESLING_B],
                     'type' => self::TYPE_AOC,
                 ],
@@ -5827,97 +5824,97 @@ class Designations
             'Provence-Corse' => [
                 'Ajaccio' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['41.926670','8.736940'],
+                    'coordinates' => ['41.926670', '8.736940'],
                     'varietals' => [Varietals::SCIACCARELLO_N, Varietals::VERMENTINO_B, Varietals::BIANCU_GENTILE_B, Varietals::CODIVARTA_B, Varietals::GENOVESE_B, Varietals::UGNI_BLANC_B, Varietals::BARBAROUX_RS, Varietals::NIELLUCCIO_N, Varietals::ALEATICO_N, Varietals::CARCAJOLO_N, Varietals::CARIGNAN_N, Varietals::CINSAUT_N, Varietals::GRENACHE_BLANC_B, Varietals::MINUSTELLO_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Alpes-de-Haute-Provence' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['44.1640832','6.18785153860908'],
+                    'coordinates' => ['44.1640832', '6.18785153860908'],
                     'varietals' => [Varietals::GRENACHE_BLANC_B, Varietals::CINSAUT_N, Varietals::SYRAH_N, Varietals::CARIGNAN_N, Varietals::MERLOT_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::UGNI_BLANC_B, Varietals::CLAIRETTE_B, Varietals::CHARDONNAY_B, Varietals::MUSCAT_A_PETITS_GRAINS_B],
                     'type' => self::TYPE_IGP,
                 ],
                 'Alpes-Maritimes' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['43.9210587','7.1790785'],
+                    'coordinates' => ['43.9210587', '7.1790785'],
                     'varietals' => [Varietals::BRACHET_N, Varietals::FUELLA_NERA_N, Varietals::GRASSEN_N, Varietals::MOURVAISON_N, Varietals::MOURVEDRE_N, Varietals::GRENACHE_N, Varietals::CARIGNAN_N, Varietals::CINSAUT_N, Varietals::ALICANTE_N, Varietals::VERMENTINO_B, Varietals::ROUSSANNE_B, Varietals::CLAIRETTE_B, Varietals::BOURBOULENC_B, Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_IGP,
                 ],
                 'Alpilles' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['43.721667','4.804167'],
+                    'coordinates' => ['43.721667', '4.804167'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::CINSAUT_N, Varietals::SYRAH_N, Varietals::CARIGNAN_N, Varietals::CLAIRETTE_B, Varietals::UGNI_BLANC_B],
                     'type' => self::TYPE_IGP,
                 ],
                 'Bandol' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['43.133333','5.750000'],
+                    'coordinates' => ['43.133333', '5.750000'],
                     'varietals' => [Varietals::MOURVEDRE_N, Varietals::GRENACHE_N, Varietals::CINSAUT_N, Varietals::SYRAH_N, Varietals::CARIGNAN_N, Varietals::CLAIRETTE_B, Varietals::UGNI_BLANC_B, Varietals::BOURBOULENC_B, Varietals::SAUVIGNON_B, Varietals::MARSANNE_B, Varietals::VERMENTINO_B, Varietals::SEMILLON_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Bellet' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['43.749203','7.210344'],
+                    'coordinates' => ['43.749203', '7.210344'],
                     'varietals' => [Varietals::VERMENTINO_B, Varietals::ROUSSANNE_B, Varietals::SPAGNOL_B, Varietals::MAYORQUIN_B, Varietals::CLAIRETTE_B, Varietals::BOURBOULENC_B, Varietals::CHARDONNAY_B, Varietals::PIGNEROL_B, Varietals::MUSCAT_A_PETITS_GRAINS_B, Varietals::FUELLA_NERA_N, Varietals::BRACHET_N, Varietals::CINSAUT_N, Varietals::GRENACHE_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Bouches-du-Rhone' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['43.531127','5.454025'],
+                    'coordinates' => ['43.531127', '5.454025'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::CINSAUT_N, Varietals::SYRAH_N, Varietals::CARIGNAN_N, Varietals::MERLOT_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::CALADOC_N, Varietals::UGNI_BLANC_B, Varietals::CLAIRETTE_B, Varietals::VERMENTINO_B, Varietals::BOURBOULENC_B, Varietals::CHASAN_B, Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_IGP,
                 ],
                 'Cassis' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['43.216667','5.538889'],
+                    'coordinates' => ['43.216667', '5.538889'],
                     'varietals' => [Varietals::MARSANNE_B, Varietals::UGNI_BLANC_B, Varietals::CLAIRETTE_B, Varietals::SAUVIGNON_B, Varietals::BOURBOULENC_B, Varietals::PASCAL_B, Varietals::GRENACHE_N, Varietals::CARIGNAN_N, Varietals::MOURVEDRE_N, Varietals::CINSAUT_N, Varietals::BARBAROUX_RS],
                     'type' => self::TYPE_AOC,
                 ],
                 'Corse' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['42.18808965','9.06841377142769'],
+                    'coordinates' => ['42.18808965', '9.06841377142769'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::NIELLUCCIO_N, Varietals::SCIACCARELLO_N, Varietals::ALEATICO_N, Varietals::BARBAROUX_RS, Varietals::CARCAJOLO_N, Varietals::CARIGNAN_N, Varietals::CINSAUT_N, Varietals::MINUSTELLO_N, Varietals::MOURVEDRE_N, Varietals::SYRAH_N, Varietals::VERMENTINO_B, Varietals::BIANCU_GENTILE_B, Varietals::CODIVARTA_B, Varietals::GENOVESE_B, Varietals::UGNI_BLANC_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Coteaux d\'Aix-en-Provence' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['43.580278','5.415556'],
+                    'coordinates' => ['43.580278', '5.415556'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::CARIGNAN_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::CINSAUT_N, Varietals::SYRAH_N, Varietals::COUNOISE_N, Varietals::MOURVEDRE_N, Varietals::GRENACHE_BLANC_B, Varietals::VERMENTINO_B, Varietals::CLAIRETTE_B, Varietals::BOURBOULENC_B, Varietals::UGNI_BLANC_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Coteaux varois en Provence' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['43.558889','6.008056'],
+                    'coordinates' => ['43.558889', '6.008056'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::CINSAUT_N, Varietals::SYRAH_N, Varietals::MOURVEDRE_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::CARIGNAN_N, Varietals::TIBOUREN_N, Varietals::GRENACHE_BLANC_B, Varietals::VERMENTINO_B, Varietals::CLAIRETTE_B, Varietals::UGNI_BLANC_B, Varietals::SEMILLON_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Côtes de Provence' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['43.503437','5.733355'],
-                    'varietals' => [Varietals::GRENACHE_N, Varietals::CINSAUT_N, Varietals::SYRAH_N, Varietals::MOURVEDRE_N,Varietals::TIBOUREN_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::CARIGNAN_N, Varietals::VERMENTINO_B, Varietals::CLAIRETTE_B, Varietals::UGNI_BLANC_B, Varietals::SEMILLON_B],
+                    'coordinates' => ['43.503437', '5.733355'],
+                    'varietals' => [Varietals::GRENACHE_N, Varietals::CINSAUT_N, Varietals::SYRAH_N, Varietals::MOURVEDRE_N, Varietals::TIBOUREN_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::CARIGNAN_N, Varietals::VERMENTINO_B, Varietals::CLAIRETTE_B, Varietals::UGNI_BLANC_B, Varietals::SEMILLON_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Hautes-Alpes' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['44.658294','6.603706'],
+                    'coordinates' => ['44.658294', '6.603706'],
                     'varietals' => [Varietals::MOLLARD_N, Varietals::MOLLARDON_N, Varietals::TEOULIER_N, Varietals::CINSAUT_N, Varietals::GRENACHE_N, Varietals::CINSAUT_N, Varietals::CHARDONNAY_B, Varietals:: ARAMON_N, Varietals::CARIGNAN_N, Varietals::CHASAN_B, Varietals::ALICANTE_HENRI_BOUSCHET_N, Varietals::MUSCAT_B, Varietals::CLAIRETTE_B, Varietals::BARBAROUX_RS],
                     'type' => self::TYPE_IGP,
                 ],
                 'Ile de Beauté' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['42.18808965','9.06841377142769'],
+                    'coordinates' => ['42.18808965', '9.06841377142769'],
                     'varietals' => [Varietals::NIELLUCCIO_N, Varietals::SCIACCARELLO_N, Varietals::VERMENTINO_B, Varietals::BIANCU_GENTILE_B, Varietals::PAGADEBITI_B, Varietals::ALEATICO_N, Varietals::BARBAROUX_RS, Varietals::RIMINESE_B, Varietals::CARIGNAN_N, Varietals::GANSON_N, Varietals::GRAMON_N, Varietals::LLEDONER_PELUT_N, Varietals::MOURVEDRE_N, Varietals::PORTAN_N, Varietals::TEMPRANILLO_N, Varietals::CODIVARTA_B, Varietals::MORRASTEL_N, Varietals::CHARDONNAY_B, Varietals::MERLOT_N, Varietals::PINOT_NOIR_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::CINSAUT_N, Varietals::GRENACHE_N, Varietals::MUSCAT_A_PETITS_GRAINS_B, Varietals::MUSCAT_D_ALEXANDRIE_B, Varietals::SYRAH_N],
                     'type' => self::TYPE_IGP,
                 ],
                 'Les Baux de Provence' => [
                     'colors' => [Colors::ROSE, Colors::RED],
-                    'coordinates' => ['43.743889','4.795278'],
+                    'coordinates' => ['43.743889', '4.795278'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::MOURVEDRE_N, Varietals::SYRAH_N, Varietals::CINSAUT_N, Varietals::COUNOISE_N, Varietals::CARIGNAN_N, Varietals::CABERNET_SAUVIGNON_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Maures' => [
                     'colors' => [Colors::ROSE, Colors::RED, Colors::WHITE],
-                    'coordinates' => ['43.395556','6.313333'],
+                    'coordinates' => ['43.395556', '6.313333'],
                     'varietals' => [
                         Varietals::ALICANTE_HENRI_BOUSCHET_N,
                         Varietals::ALIGOTE_B,
@@ -6136,13 +6133,13 @@ class Designations
                 ],
                 'Méditerranée' => [
                     'colors' => [Colors::ROSE, Colors::RED, Colors::WHITE],
-                    'coordinates' => ['43.4173595','6.26728100271036'],
+                    'coordinates' => ['43.4173595', '6.26728100271036'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::CABERNET_FRANC_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::MERLOT_N, Varietals::SYRAH_N, Varietals::VIOGNIER_B, Varietals::CHARDONNAY_B, Varietals::CALADOC_N, Varietals::MARSELAN_N],
                     'type' => self::TYPE_IGP,
                 ],
                 'Mont Caume' => [
                     'colors' => [Colors::ROSE, Colors::RED, Colors::WHITE],
-                    'coordinates' => ['43.198889','5.803333'],
+                    'coordinates' => ['43.198889', '5.803333'],
                     'varietals' => [
                         Varietals::ALICANTE_HENRI_BOUSCHET_N,
                         Varietals::ALIGOTE_B,
@@ -6361,32 +6358,32 @@ class Designations
                 ],
                 'Muscat du Cap-Corse' => [
                     'colors' => [Colors::WHITE],
-                    'coordinates' => ['42.732778','9.366111'],
+                    'coordinates' => ['42.732778', '9.366111'],
                     'varietals' => [Varietals::MUSCAT_A_PETITS_GRAINS_B],
                     'category' => Categories::SWEET,
                     'type' => self::TYPE_AOC,
                 ],
                 'Palette' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['43.486900','5.494200'],
+                    'coordinates' => ['43.486900', '5.494200'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::MOURVEDRE_N, Varietals::CINSAUT_N, Varietals::CARIGNAN_N, Varietals::SYRAH_N, Varietals::TEOULIER_N, Varietals::DURIF_N, Varietals::MUSCAT_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::CASTETS_N, Varietals::CLAIRETTE_B, Varietals::UGNI_BLANC_B, Varietals::GRENACHE_BLANC_B, Varietals::MUSCAT_B, Varietals::TERRET_GRIS_G, Varietals::PIQUEPOUL_BLANC_B, Varietals::PASCAL_B, Varietals::PICARDAN_B, Varietals::COLOMBARD_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Patrimonio' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['42.698333','9.362222'],
+                    'coordinates' => ['42.698333', '9.362222'],
                     'varietals' => [Varietals::VERMENTINO_B, Varietals::NIELLUCCIO_N, Varietals::GRENACHE_N, Varietals::SCIACCARELLO_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Pierrevert' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['43.812222','5.750278'],
+                    'coordinates' => ['43.812222', '5.750278'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::SYRAH_N, Varietals::CARIGNAN_N, Varietals::TEOULIER_N, Varietals::CINSAUT_N, Varietals::GRENACHE_BLANC_B, Varietals::VERMENTINO_B, Varietals::UGNI_BLANC_B, Varietals::CLAIRETTE_B, Varietals::ROUSSANNE_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Var' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['43.4173595','6.26728100271036'],
+                    'coordinates' => ['43.4173595', '6.26728100271036'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::TEOULIER_N, Varietals::CINSAUT_N, Varietals::MOURVEDRE_N, Varietals::SYRAH_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::CARIGNAN_N, Varietals::GRENACHE_BLANC_B, Varietals::VERMENTINO_B, Varietals::BOURBOULENC_B, Varietals::ROUSSANNE_B, Varietals::UGNI_BLANC_B, Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_IGP,
                 ],
@@ -6394,19 +6391,19 @@ class Designations
             'Rhône' => [
                 'Ardèche' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['44.815194','4.3986524702344'],
+                    'coordinates' => ['44.815194', '4.3986524702344'],
                     'varietals' => [Varietals::CABERNET_FRANC_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::CALADOC_N, Varietals::CARIGNAN_N, Varietals::CHATUS_N, Varietals::CINSAUT_N, Varietals::GAMARET_N, Varietals::GAMAY_N, Varietals::GRENACHE_N, Varietals::MARSELAN_N, Varietals::MERLOT_N, Varietals::PINOT_NOIR_N, Varietals::SYRAH_N, Varietals::CHARDONNAY_B, Varietals::CLAIRETTE_B, Varietals::GRENACHE_BLANC_B, Varietals::MARSANNE_B, Varietals::MUSCAT_A_PETITS_GRAINS_B, Varietals::ROUSSANNE_B, Varietals::SAUVIGNON_B, Varietals::UGNI_BLANC_B, Varietals::VIOGNIER_B],
                     'type' => self::TYPE_IGP,
                 ],
                 'Beaumes de Venise' => [
                     'colors' => [Colors::RED],
-                    'coordinates' => ['44.123611','5.031111'],
+                    'coordinates' => ['44.123611', '5.031111'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::SYRAH_N, Varietals::MOURVEDRE_N, Varietals::CINSAUT_N, Varietals::CARIGNAN_N, Varietals::COUNOISE_N, Varietals::BOURBOULENC_B, Varietals::BRUN_ARGENTE_N, Varietals::CLAIRETTE_B, Varietals::CLAIRETTE_ROSE_RS, Varietals::GRENACHE_BLANC_B, Varietals::GRENACHE_GRIS_G, Varietals::MARSANNE_B, Varietals::MOURVEDRE_N, Varietals::MUSCARDIN_N, Varietals::PIQUEPOUL_BLANC_B, Varietals::PIQUEPOUL_NOIR_N, Varietals::ROUSSANNE_B, Varietals::TERRET_NOIR_N, Varietals::UGNI_BLANC_B, Varietals::VIOGNIER_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Bouches-du-Rhone' => [
                     'colors' => [Colors::RED, Colors::WHITE, Colors::ROSE],
-                    'coordinates' => ['43.531127','5.454025'],
+                    'coordinates' => ['43.531127', '5.454025'],
                     'varietals' => [
                         Varietals::ALEATICO_N,
                         Varietals::ALICANTE_HENRI_BOUSCHET_N,
@@ -6522,7 +6519,7 @@ class Designations
                 ],
                 'Cévennes' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors::WHITE],
-                    'coordinates' => ['44.2402072','4.456716'],
+                    'coordinates' => ['44.2402072', '4.456716'],
                     'varietals' => [
                         Varietals::ALICANTE_HENRI_BOUSCHET_N,
                         Varietals::ALPHONSE_LAVALLEE_N,
@@ -6617,32 +6614,32 @@ class Designations
                 ],
                 'Château-Grillet' => [
                     'colors' => [Colors::WHITE],
-                    'coordinates' => ['45.443300','4.779700'],
+                    'coordinates' => ['45.443300', '4.779700'],
                     'varietals' => [Varietals::VIOGNIER_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Châteauneuf-du-Pape' => [
                     'colors' => [Colors::WHITE, Colors::RED],
-                    'coordinates' => ['44.056944','4.831944'],
+                    'coordinates' => ['44.056944', '4.831944'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::SYRAH_N, Varietals::MOURVEDRE_N, Varietals::CINSAUT_N, Varietals::MUSCARDIN_N, Varietals::COUNOISE_N, Varietals::CLAIRETTE_B, Varietals::BOURBOULENC_B, Varietals::ROUSSANNE_B, Varietals::PIQUEPOUL_BLANC_B, Varietals::PICARDAN_B, Varietals::TERRET_NOIR_N, Varietals::BRUN_ARGENTE_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Châtillon-en-Diois' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::RED],
-                    'coordinates' => ['44.695556','5.484722'],
+                    'coordinates' => ['44.695556', '5.484722'],
                     'varietals' => [Varietals::GAMAY_N, Varietals::PINOT_NOIR_N, Varietals::SYRAH_N, Varietals::ALIGOTE_B, Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Clairette de Die' => [
                     'colors' => [Colors::WHITE],
-                    'coordinates' => ['44.753611','5.370278'],
+                    'coordinates' => ['44.753611', '5.370278'],
                     'varietals' => [Varietals::MUSCAT_A_PETITS_GRAINS_B, Varietals::CLAIRETTE_B],
                     'sparkling' => true,
                     'type' => self::TYPE_AOC,
                 ],
                 'Collines rhodaniennes' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['45.5596286','4.8441736'],
+                    'coordinates' => ['45.5596286', '4.8441736'],
                     'varietals' => [Varietals::SYRAH_N, Varietals::MERLOT_N, Varietals::GAMAY_N, Varietals::VIOGNIER_B, Varietals::MARSANNE_B, Varietals::ROUSSANNE_B, Varietals::CHARDONNAY_B, Varietals::ALIGOTE_B],
                     'type' => self::TYPE_IGP,
                 ],
@@ -6825,19 +6822,19 @@ class Designations
                 ],
                 'Condrieu' => [
                     'colors' => [Colors::WHITE],
-                    'coordinates' => ['45.463889','4.768333'],
+                    'coordinates' => ['45.463889', '4.768333'],
                     'varietals' => [Varietals::VIOGNIER_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Cornas' => [
                     'colors' => [Colors::RED],
-                    'coordinates' => ['44.964722','4.849167'],
+                    'coordinates' => ['44.964722', '4.849167'],
                     'varietals' => [Varietals::SYRAH_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Côte Rôtie' => [
                     'colors' => [Colors::RED],
-                    'coordinates' => ['44.753611','5.370278'],
+                    'coordinates' => ['44.753611', '5.370278'],
                     'varietals' => [Varietals::SYRAH_N, Varietals::VIOGNIER_B],
                     'type' => self::TYPE_AOC,
                 ],
@@ -6849,7 +6846,7 @@ class Designations
                 ],
                 'Coteaux des Baronnies' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['44.380278','5.191111'],
+                    'coordinates' => ['44.380278', '5.191111'],
                     'varietals' => [
                         Varietals::ABOURIOU_N,
                         Varietals::ALEATICO_N,
@@ -7090,19 +7087,19 @@ class Designations
                 ],
                 'Coteaux du Lyonnais' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['45.586667','4.695833'],
+                    'coordinates' => ['45.586667', '4.695833'],
                     'varietals' => [Varietals::ALIGOTE_B, Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::GAMAY_N, Varietals::GAMAY_DE_BOUZE_N, Varietals::GAMAY_DE_CHAUDENAY_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Coteaux du Pont du Gard' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['43.791700','4.230800'],
+                    'coordinates' => ['43.791700', '4.230800'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::CINSAUT_N, Varietals::CARIGNAN_N, Varietals::SYRAH_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::CABERNET_FRANC_N, Varietals::MERLOT_N, Varietals::CHARDONNAY_B, Varietals::SAUVIGNON_B, Varietals::ROUSSANNE_B, Varietals::MARSANNE_B],
                     'type' => self::TYPE_IGP,
                 ],
                 'Côtes du Rhône' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['45.068056','4.833333'],
+                    'coordinates' => ['45.068056', '4.833333'],
                     'varietals' => [
                         Varietals::BOURBOULENC_B,
                         Varietals::BRUN_ARGENTE_N,
@@ -7130,7 +7127,7 @@ class Designations
                 ],
                 'Côtes du Rhône villages' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['44.257500','4.649167'],
+                    'coordinates' => ['44.257500', '4.649167'],
                     'varietals' => [
                         Varietals::BOURBOULENC_B,
                         Varietals::BRUN_ARGENTE_N,
@@ -7158,7 +7155,7 @@ class Designations
                 ],
                 'Côtes du Vivarais' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::RED],
-                    'coordinates' => ['44.449167','4.600000'],
+                    'coordinates' => ['44.449167', '4.600000'],
                     'varietals' => [
                         Varietals::CINSAUT_N,
                         Varietals::CLAIRETTE_B,
@@ -7175,7 +7172,7 @@ class Designations
                 ],
                 'Crémant de Die' => [
                     'colors' => [Colors::WHITE],
-                    'coordinates' => ['44.753611','5.370278'],
+                    'coordinates' => ['44.753611', '5.370278'],
                     'varietals' => [
                         Varietals::ALIGOTE_B,
                         Varietals::CLAIRETTE_B,
@@ -7186,13 +7183,13 @@ class Designations
                 ],
                 'Crozes-Hermitage' => [
                     'colors' => [Colors::WHITE, Colors::RED],
-                    'coordinates' => ['45.090800','4.846700'],
+                    'coordinates' => ['45.090800', '4.846700'],
                     'varietals' => [Varietals::MARSANNE_B, Varietals::ROUSSANNE_B, Varietals::SYRAH_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Drôme' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['44.442778','5.288889'],
+                    'coordinates' => ['44.442778', '5.288889'],
                     'varietals' => [
                         Varietals::ABOURIOU_N,
                         Varietals::ALEATICO_N,
@@ -7432,7 +7429,7 @@ class Designations
                         Varietals::VERMENTINO_B,
                         Varietals::VILLARD_BLANC_B,
                         Varietals::VILLARD_NOIR_N,
-                        Varietals::VIOGNIER_B
+                        Varietals::VIOGNIER_B,
                     ],
                     'type' => self::TYPE_IGP,
                 ],
@@ -7541,13 +7538,13 @@ class Designations
                 ],
                 'Gigondas' => [
                     'colors' => [Colors::RED, Colors::ROSE],
-                    'coordinates' => ['44.164720','5.005280'],
+                    'coordinates' => ['44.164720', '5.005280'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::SYRAH_N, Varietals::MOURVEDRE_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Grignan-les-Adhémar' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors::WHITE],
-                    'coordinates' => ['44.420278','4.908889'],
+                    'coordinates' => ['44.420278', '4.908889'],
                     'varietals' => [
                         Varietals::BOURBOULENC_B,
                         Varietals::CARIGNAN_N,
@@ -7566,19 +7563,19 @@ class Designations
                 ],
                 'Hermitage' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors::WHITE],
-                    'coordinates' => ['45.071667','4.843056'],
+                    'coordinates' => ['45.071667', '4.843056'],
                     'varietals' => [Varietals::MARSANNE_B, Varietals::ROUSSANNE_B, Varietals::SYRAH_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Lirac' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors::WHITE],
-                    'coordinates' => ['44.036667','4.690833'],
+                    'coordinates' => ['44.036667', '4.690833'],
                     'varietals' => [Varietals::BOURBOULENC_B, Varietals::CLAIRETTE_B, Varietals::GRENACHE_BLANC_B, Varietals::ROUSSANNE_B, Varietals::MARSANNE_B, Varietals::PIQUEPOUL_BLANC_B, Varietals::UGNI_BLANC_B, Varietals::VIOGNIER_B, Varietals::CINSAUT_N, Varietals::GRENACHE_N, Varietals::MOURVEDRE_N, Varietals::SYRAH_N, Varietals::CARIGNAN_N, Varietals::CLAIRETTE_ROSE_RS, Varietals::COUNOISE_N, Varietals::GRENACHE_GRIS_G, Varietals::PIQUEPOUL_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Luberon' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors::WHITE],
-                    'coordinates' => ['43.845278','5.169444'],
+                    'coordinates' => ['43.845278', '5.169444'],
                     'varietals' => [
                         Varietals::BOURBOULENC_B,
                         Varietals::CARIGNAN_N,
@@ -7599,20 +7596,20 @@ class Designations
                 ],
                 'Méditerranée' => [
                     'colors' => [Colors::ROSE, Colors::RED, Colors::WHITE],
-                    'coordinates' => ['43.4173595','6.26728100271036'],
+                    'coordinates' => ['43.4173595', '6.26728100271036'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::CABERNET_FRANC_N, Varietals::CABERNET_SAUVIGNON_N, Varietals::MERLOT_N, Varietals::SYRAH_N, Varietals::VIOGNIER_B, Varietals::CHARDONNAY_B, Varietals::CALADOC_N, Varietals::MARSELAN_N],
                     'type' => self::TYPE_IGP,
                 ],
                 'Muscat de Beaumes-de-Venise' => [
                     'colors' => [Colors::ROSE, Colors::RED, Colors::WHITE],
-                    'coordinates' => ['44.123611','5.031111'],
+                    'coordinates' => ['44.123611', '5.031111'],
                     'varietals' => [Varietals::MUSCAT_A_PETITS_GRAINS_B, Varietals::MUSCAT_A_PETITS_GRAINS_RG],
                     'category' => Categories::SWEET,
                     'type' => self::TYPE_AOC,
                 ],
                 'Rasteau' => [
                     'colors' => [Colors::ROSE, Colors::RED, Colors::WHITE, Colors::RANCIO, Colors::AMBER, Colors::GARNET, Colors::BRICK],
-                    'coordinates' => ['44.231111','4.987778'],
+                    'coordinates' => ['44.231111', '4.987778'],
                     'varietals' => [
                         Varietals::BOURBOULENC_B,
                         Varietals::BRUN_ARGENTE_N,
@@ -7676,19 +7673,19 @@ class Designations
                 ],
                 'Saint-Joseph' => [
                     'colors' => [Colors::RED, Colors::WHITE],
-                    'coordinates' => ['45.247800','4.782800'],
+                    'coordinates' => ['45.247800', '4.782800'],
                     'varietals' => [Varietals::MARSANNE_B, Varietals::ROUSSANNE_B, Varietals::SYRAH_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Saint-Péray' => [
                     'colors' => [Colors::WHITE],
-                    'coordinates' => ['44.949444','4.845833'],
+                    'coordinates' => ['44.949444', '4.845833'],
                     'varietals' => [Varietals::MARSANNE_B, Varietals::ROUSSANNE_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Tavel' => [
                     'colors' => [Colors::ROSE],
-                    'coordinates' => ['44.011900','4.700600'],
+                    'coordinates' => ['44.011900', '4.700600'],
                     'varietals' => [
                         Varietals::BOURBOULENC_B,
                         Varietals::CALITOR_N,
@@ -7700,13 +7697,13 @@ class Designations
                         Varietals::GRENACHE_N,
                         Varietals::MOURVEDRE_N,
                         Varietals::PIQUEPOUL_BLANC_B,
-                        Varietals::SYRAH_N
+                        Varietals::SYRAH_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
                 'Vacqueyras' => [
                     'colors' => [Colors::ROSE, Colors::WHITE, Colors::RED],
-                    'coordinates' => ['44.138889','4.983056'],
+                    'coordinates' => ['44.138889', '4.983056'],
                     'varietals' => [
                         Varietals::BOURBOULENC_B,
                         Varietals::BRUN_ARGENTE_N,
@@ -7725,13 +7722,13 @@ class Designations
                         Varietals::ROUSSANNE_B,
                         Varietals::SYRAH_N,
                         Varietals::TERRET_NOIR_N,
-                        Varietals::VIOGNIER_B
+                        Varietals::VIOGNIER_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
                 'Vaucluse' => [
                     'colors' => [Colors::ROSE, Colors::WHITE, Colors::RED],
-                    'coordinates' => ['43.99386435','5.18188983890024'],
+                    'coordinates' => ['43.99386435', '5.18188983890024'],
                     'varietals' => [
                         Varietals::ABONDANT_B,
                         Varietals::ABOURIOU_N,
@@ -7964,13 +7961,13 @@ class Designations
                 ],
                 'Ventoux' => [
                     'colors' => [Colors::ROSE, Colors::WHITE, Colors::RED],
-                    'coordinates' => ['43.843900','5.139440'],
+                    'coordinates' => ['43.843900', '5.139440'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::SYRAH_N, Varietals::CINSAUT_N, Varietals::MOURVEDRE_N, Varietals::CARIGNAN_N, Varietals::PIQUEPOUL_NOIR_N, Varietals::COUNOISE_N, Varietals::CLAIRETTE_B, Varietals::BOURBOULENC_B, Varietals::GRENACHE_BLANC_B, Varietals::UGNI_BLANC_B, Varietals::ROUSSANNE_B, Varietals::PIQUEPOUL_BLANC_B, Varietals::PASCAL_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Vinsobres' => [
                     'colors' => [Colors::RED],
-                    'coordinates' => ['44.334722','5.061944'],
+                    'coordinates' => ['44.334722', '5.061944'],
                     'varietals' => [Varietals::GRENACHE_N, Varietals::SYRAH_N, Varietals::CINSAUT_N, Varietals::MOURVEDRE_N, Varietals::CARIGNAN_N],
                     'type' => self::TYPE_AOC,
                 ],
@@ -7978,7 +7975,7 @@ class Designations
             'Savoie-Bugey' => [
                 'Bugey' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['45.796900','5.720000'],
+                    'coordinates' => ['45.796900', '5.720000'],
                     'varietals' => [
                         Varietals::ALIGOTE_B,
                         Varietals::ALTESSE_B,
@@ -8173,7 +8170,7 @@ class Designations
                 ],
                 'Coteaux de l\'Ain' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['46.06551335','5.28478031423462'],
+                    'coordinates' => ['46.06551335', '5.28478031423462'],
                     'varietals' => [
                         Varietals::ALIGOTE_B,
                         Varietals::ALTESSE_B,
@@ -8242,13 +8239,13 @@ class Designations
                         Varietals::SYRAH_N,
                         Varietals::TROUSSEAU_N,
                         Varietals::VELTELINER_ROUGE_PRECOCE_RS,
-                        Varietals::VIOGNIER_B
+                        Varietals::VIOGNIER_B,
                     ],
                     'type' => self::TYPE_IGP,
                 ],
                 'Isère' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['45.2556949','5.6654815'],
+                    'coordinates' => ['45.2556949', '5.6654815'],
                     'varietals' => [
                         Varietals::ALTESSE_B,
                         Varietals::CHARDONNAY_B,
@@ -8273,19 +8270,19 @@ class Designations
                 ],
                 'Roussette de Savoie' => [
                     'colors' => [Colors::WHITE],
-                    'coordinates' => ['45.719722','5.810000'],
+                    'coordinates' => ['45.719722', '5.810000'],
                     'varietals' => [Varietals::ALTESSE_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Roussette du Bugey' => [
                     'colors' => [Colors::WHITE],
-                    'coordinates' => ['45.778100','5.761700'],
+                    'coordinates' => ['45.778100', '5.761700'],
                     'varietals' => [Varietals::ALTESSE_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Savoie' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['45.535556','5.994167'],
+                    'coordinates' => ['45.535556', '5.994167'],
                     'varietals' => [
                         Varietals::ALIGOTE_B,
                         Varietals::ALTESSE_B,
@@ -8311,19 +8308,19 @@ class Designations
                         Varietals::ROUSSETTE_D_AYZE_B,
                         Varietals::SERVANIN_N,
                         Varietals::VELTELINER_ROUGE_PRECOCE_RS,
-                        Varietals::VERDESSE_B
+                        Varietals::VERDESSE_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
                 'Seyssel' => [
                     'colors' => [Colors::WHITE],
-                    'coordinates' => ['45.958300','5.830600'],
+                    'coordinates' => ['45.958300', '5.830600'],
                     'varietals' => [Varietals::ALTESSE_B, Varietals::CHASSELAS_B, Varietals::MOLETTE_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Vin des Allobroges' => [
                     'colors' => [Colors::WHITE, Colors::ROSE, Colors::WHITE],
-                    'coordinates' => ['45.5951342','5.7704482'],
+                    'coordinates' => ['45.5951342', '5.7704482'],
                     'varietals' => [
                         Varietals::ALIGOTE_B,
                         Varietals::ALTESSE_B,
@@ -8366,7 +8363,7 @@ class Designations
             'Sud-Ouest' => [
                 'Agenais' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['44.3691703','0.453915758324875'],
+                    'coordinates' => ['44.3691703', '0.453915758324875'],
                     'varietals' => [
                         Varietals::ABOURIOU_N,
                         Varietals::ALICANTE_HENRI_BOUSCHET_N,
@@ -8406,7 +8403,7 @@ class Designations
                 ],
                 'Ariège' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['43.0125341','1.4293448'],
+                    'coordinates' => ['43.0125341', '1.4293448'],
                     'varietals' => [
                         Varietals::ARRUFIAC_B,
                         Varietals::CABERNET_FRANC_N,
@@ -8664,7 +8661,7 @@ class Designations
                 ],
                 'Aveyron' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['44.31585745','2.50656973024198'],
+                    'coordinates' => ['44.31585745', '2.50656973024198'],
                     'varietals' => [
                         Varietals::CABERNET_SAUVIGNON_N,
                         Varietals::CHARDONNAY_B,
@@ -8678,7 +8675,7 @@ class Designations
                 ],
                 'Béarn' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['43.355300','-0.616111'],
+                    'coordinates' => ['43.355300', '-0.616111'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
@@ -8699,7 +8696,7 @@ class Designations
                 ],
                 'Bergerac' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['44.73837485','0.517110597415541'],
+                    'coordinates' => ['44.73837485', '0.517110597415541'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
@@ -8719,7 +8716,7 @@ class Designations
                 ],
                 'Brulhois' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['44.126592','0.628882'],
+                    'coordinates' => ['44.126592', '0.628882'],
                     'varietals' => [
                         Varietals::ABOURIOU_N,
                         Varietals::CABERNET_FRANC_N,
@@ -8733,7 +8730,7 @@ class Designations
                 ],
                 'Buzet' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['44.258890','0.300000'],
+                    'coordinates' => ['44.258890', '0.300000'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
@@ -8753,7 +8750,7 @@ class Designations
                 ],
                 'Cahors' => [
                     'colors' => [Colors::RED],
-                    'coordinates' => ['44.448600','1.132200'],
+                    'coordinates' => ['44.448600', '1.132200'],
                     'varietals' => [
                         Varietals::COT_N,
                         Varietals::MERLOT_N,
@@ -8785,7 +8782,7 @@ class Designations
                 ],
                 'Coteaux de Glanes' => [
                     'colors' => [Colors::RED, Colors::WHITE, Colors::ROSE],
-                    'coordinates' => ['44.922222','1.880000'],
+                    'coordinates' => ['44.922222', '1.880000'],
                     'varietals' => [
                         Varietals::ABOURIOU_N,
                         Varietals::CABERNET_FRANC_N,
@@ -8814,7 +8811,7 @@ class Designations
                 ],
                 'Coteaux du Quercy' => [
                     'colors' => [Colors::RED],
-                    'coordinates' => ['44.239167','1.477222'],
+                    'coordinates' => ['44.239167', '1.477222'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::COT_N,
@@ -8826,7 +8823,7 @@ class Designations
                 ],
                 'Côtes de Bergerac' => [
                     'colors' => [Colors::RED, Colors::WHITE],
-                    'coordinates' => ['44.710000','0.613333'],
+                    'coordinates' => ['44.710000', '0.613333'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
@@ -8844,7 +8841,7 @@ class Designations
                 ],
                 'Côtes de Duras' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['44.676944','0.183611'],
+                    'coordinates' => ['44.676944', '0.183611'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
@@ -8864,7 +8861,7 @@ class Designations
                 ],
                 'Côtes de Gascogne' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['43.6955276','0.410101917523799'],
+                    'coordinates' => ['43.6955276', '0.410101917523799'],
                     'varietals' => [
                         Varietals::ARRUFIAC_B,
                         Varietals::BAROQUE_B,
@@ -8913,7 +8910,7 @@ class Designations
                 ],
                 'Côtes de Millau' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['44.098611','3.078333'],
+                    'coordinates' => ['44.098611', '3.078333'],
                     'varietals' => [
                         Varietals::CABERNET_SAUVIGNON_N,
                         Varietals::CHENIN_B,
@@ -8927,7 +8924,7 @@ class Designations
                 ],
                 'Côtes de Montravel' => [
                     'colors' => [Colors:: WHITE],
-                    'coordinates' => ['44.852222','0.026111'],
+                    'coordinates' => ['44.852222', '0.026111'],
                     'varietals' => [
                         Varietals::MUSCADELLE_B,
                         Varietals::ONDENC_B,
@@ -8939,7 +8936,7 @@ class Designations
                 ],
                 'Côtes du Lot' => [
                     'colors' => [Colors:: WHITE, Colors::RED, Colors::ROSE],
-                    'coordinates' => ['44.6249918','1.66577421697537'],
+                    'coordinates' => ['44.6249918', '1.66577421697537'],
                     'varietals' => [
                         Varietals::ABOURIOU_N,
                         Varietals::ALICANTE_HENRI_BOUSCHET_N,
@@ -8972,7 +8969,7 @@ class Designations
                 ],
                 'Côtes du Tarn' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['43.828600','1.782500'],
+                    'coordinates' => ['43.828600', '1.782500'],
                     'varietals' => [
                         Varietals::ALICANTE_HENRI_BOUSCHET_N,
                         Varietals::CABERNET_FRANC_N,
@@ -9015,7 +9012,7 @@ class Designations
                 ],
                 'Côtes du Marmandais' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['44.509973','0.161705'],
+                    'coordinates' => ['44.509973', '0.161705'],
                     'varietals' => [
                         Varietals::ABOURIOU_N,
                         Varietals::CABERNET_FRANC_N,
@@ -9034,7 +9031,7 @@ class Designations
                 ],
                 'Entraygues - Le Fel' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['44.647200','2.567500'],
+                    'coordinates' => ['44.647200', '2.567500'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
@@ -9050,7 +9047,7 @@ class Designations
                 ],
                 'Estaing' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['44.554749','2.671964'],
+                    'coordinates' => ['44.554749', '2.671964'],
                     'varietals' => [
                         Varietals::ABOURIOU_N,
                         Varietals::CABERNET_FRANC_N,
@@ -9066,13 +9063,13 @@ class Designations
                         Varietals::MOUYSSAGUES_N,
                         Varietals::NEGRET_DE_BANHARS_N,
                         Varietals::PINOT_NOIR_N,
-                        Varietals::SAINT_COME_B
+                        Varietals::SAINT_COME_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
                 'Fronton' => [
                     'colors' => [Colors::RED, Colors::ROSE],
-                    'coordinates' => ['43.841111','1.390278'],
+                    'coordinates' => ['43.841111', '1.390278'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
@@ -9088,7 +9085,7 @@ class Designations
                 ],
                 'Gaillac' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['43.901389','1.899167'],
+                    'coordinates' => ['43.901389', '1.899167'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
@@ -9109,7 +9106,7 @@ class Designations
                 ],
                 'Gaillac premières côtes' => [
                     'colors' => [Colors:: WHITE],
-                    'coordinates' => ['43.901389','1.899167'],
+                    'coordinates' => ['43.901389', '1.899167'],
                     'varietals' => [
                         Varietals::LEN_DE_L_EL_B,
                         Varietals::MAUZAC_B,
@@ -9122,7 +9119,7 @@ class Designations
                 ],
                 'Gers' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['43.6955276','0.410101917523799'],
+                    'coordinates' => ['43.6955276', '0.410101917523799'],
                     'varietals' => [
                         Varietals::ABONDANT_B,
                         Varietals::ABOURIOU_N,
@@ -9353,7 +9350,7 @@ class Designations
                 ],
                 'Haut-Montravel' => [
                     'colors' => [Colors:: WHITE],
-                    'coordinates' => ['44.844444','0.211111'],
+                    'coordinates' => ['44.844444', '0.211111'],
                     'varietals' => [
                         Varietals::MUSCADELLE_B,
                         Varietals::ONDENC_B,
@@ -9365,7 +9362,7 @@ class Designations
                 ],
                 'Irouléguy' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['43.178600','-1.299167'],
+                    'coordinates' => ['43.178600', '-1.299167'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
@@ -9373,13 +9370,13 @@ class Designations
                         Varietals::GROS_MANSENG_B,
                         Varietals::PETIT_COURBU_B,
                         Varietals::PETIT_MANSENG_B,
-                        Varietals::TANNAT_N
+                        Varietals::TANNAT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
                 'Jurançon' => [
                     'colors' => [Colors:: WHITE],
-                    'coordinates' => ['43.288300','-0.386944'],
+                    'coordinates' => ['43.288300', '-0.386944'],
                     'varietals' => [
                         Varietals::CAMARALET_DE_LASSEUBE_B,
                         Varietals::COURBU_B,
@@ -9392,7 +9389,7 @@ class Designations
                 ],
                 'Lavilledieu' => [
                     'colors' => [Colors::RED, Colors::ROSE],
-                    'coordinates' => ['44.035833','1.218056'],
+                    'coordinates' => ['44.035833', '1.218056'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::FER_N,
@@ -9406,7 +9403,7 @@ class Designations
                 ],
                 'Madiran' => [
                     'colors' => [Colors::RED],
-                    'coordinates' => ['43.549516','-0.057875'],
+                    'coordinates' => ['43.549516', '-0.057875'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
@@ -9417,7 +9414,7 @@ class Designations
                 ],
                 'Marcillac' => [
                     'colors' => [Colors::RED, Colors::ROSE],
-                    'coordinates' => ['44.474722','2.465278'],
+                    'coordinates' => ['44.474722', '2.465278'],
                     'varietals' => [
                         Varietals::CABERNET_SAUVIGNON_N,
                         Varietals::FER_N,
@@ -9428,7 +9425,7 @@ class Designations
                 ],
                 'Monbazillac' => [
                     'colors' => [Colors:: WHITE],
-                    'coordinates' => ['44.795000','0.492500'],
+                    'coordinates' => ['44.795000', '0.492500'],
                     'varietals' => [
                         Varietals::CHENIN_B,
                         Varietals::MUSCADELLE_B,
@@ -9442,7 +9439,7 @@ class Designations
                 ],
                 'Montravel' => [
                     'colors' => [Colors:: WHITE, Colors::RED],
-                    'coordinates' => ['44.852222','0.026111'],
+                    'coordinates' => ['44.852222', '0.026111'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
@@ -9452,13 +9449,13 @@ class Designations
                         Varietals::SAUVIGNON_B,
                         Varietals::SAUVIGNON_GRIS_G,
                         Varietals::SEMILLON_B,
-                        Varietals::MUSCADELLE_B
+                        Varietals::MUSCADELLE_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
                 'Pacherenc du Vic-Bilh' => [
                     'colors' => [Colors:: WHITE],
-                    'coordinates' => ['43.549516','-0.057875'],
+                    'coordinates' => ['43.549516', '-0.057875'],
                     'varietals' => [
                         Varietals::ARRUFIAC_B,
                         Varietals::GROS_MANSENG_B,
@@ -9471,18 +9468,18 @@ class Designations
                 ],
                 'Pécharmant' => [
                     'colors' => [Colors::RED],
-                    'coordinates' => ['44.855833','0.565833'],
+                    'coordinates' => ['44.855833', '0.565833'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
                         Varietals::COT_N,
-                        Varietals::MERLOT_N
+                        Varietals::MERLOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
                 'Périgord' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['45.14291985','0.632125805865104'],
+                    'coordinates' => ['45.14291985', '0.632125805865104'],
                     'varietals' => [
                         Varietals::ABONDANT_B,
                         Varietals::ABOURIOU_N,
@@ -9708,7 +9705,7 @@ class Designations
                 ],
                 'Rosette' => [
                     'colors' => [Colors:: WHITE],
-                    'coordinates' => ['44.851944','0.483055'],
+                    'coordinates' => ['44.851944', '0.483055'],
                     'varietals' => [
                         Varietals::MUSCADELLE_B,
                         Varietals::SAUVIGNON_B,
@@ -9719,7 +9716,7 @@ class Designations
                 ],
                 'Saint-Mont' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['43.652222','-0.149167'],
+                    'coordinates' => ['43.652222', '-0.149167'],
                     'varietals' => [
                         Varietals::ARRUFIAC_B,
                         Varietals::CABERNET_FRANC_N,
@@ -9736,7 +9733,7 @@ class Designations
                 ],
                 'Saint-Sardos' => [
                     'colors' => [Colors::RED, Colors::ROSE],
-                    'coordinates' => ['43.900833','1.135000'],
+                    'coordinates' => ['43.900833', '1.135000'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::MERLOT_N,
@@ -9747,7 +9744,7 @@ class Designations
                 ],
                 'Saussignac' => [
                     'colors' => [Colors:: WHITE],
-                    'coordinates' => ['44.800556','0.325833'],
+                    'coordinates' => ['44.800556', '0.325833'],
                     'varietals' => [
                         Varietals::CHENIN_B,
                         Varietals::MUSCADELLE_B,
@@ -9761,7 +9758,7 @@ class Designations
                 ],
                 'Thézac-Perricard' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['44.430000','1.015833'],
+                    'coordinates' => ['44.430000', '1.015833'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
@@ -9784,7 +9781,7 @@ class Designations
                 ],
                 'Tursan' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['43.658900','-0.405833'],
+                    'coordinates' => ['43.658900', '-0.405833'],
                     'varietals' => [
                         Varietals::BAROQUE_B,
                         Varietals::CABERNET_FRANC_N,
@@ -9804,7 +9801,7 @@ class Designations
                 ],
                 'Vins de la Corrèze' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
-                    'coordinates' => ['45.293056','1.438056'],
+                    'coordinates' => ['45.293056', '1.438056'],
                     'varietals' => [
                         Varietals::CABERNET_FRANC_N,
                         Varietals::CABERNET_SAUVIGNON_N,
