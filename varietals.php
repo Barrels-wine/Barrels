@@ -1,6 +1,7 @@
 <?php
 
 $raw = $argv[1];
+$raw = preg_replace('/^\s*(.*)/', '$1', $raw);
 $raw = str_replace (["\r\n", "\n", "\r"], " ", $raw);
 $raw = preg_replace('/\s+/', ' ', $raw);
 $raw = str_replace(' ,', ',', $raw);
@@ -20,8 +21,8 @@ $raw = str_replace('â', 'a', $raw);
 $raw = str_replace('ê', 'e', $raw);
 
 $raw = strtoupper($raw);
-$raw = 'Varietals::'.$raw;
 $raw = preg_replace('/\n(.*)/', "\nVarietals::$1", $raw);
+$raw = 'Varietals::'.$raw.',';
 $pieces = explode(",\n", $raw);
 sort($pieces);
 $pieces = array_unique($pieces);

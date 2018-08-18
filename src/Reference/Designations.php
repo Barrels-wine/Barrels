@@ -28,18 +28,18 @@ class Designations
                     'colors' => [Colors::RED, Colors::WHITE, Colors::ROSE],
                     'coordinates' => ['48.24917645', '7.4074699518555'],
                     'varietals' => [
-                        Varietals::CARIGNAN_B,
+                        Varietals::AUXERROIS_B,
+                        Varietals::CHASSELAS_B,
                         Varietals::CHASSELAS_ROSE_RS,
                         Varietals::GEWURZTRAMINER_RS,
                         Varietals::MUSCAT_A_PETITS_GRAINS_B,
                         Varietals::MUSCAT_A_PETITS_GRAINS_RS,
                         Varietals::MUSCAT_OTTONEL_B,
-                        Varietals::SAVAGNIN_ROSE_RS,
+                        Varietals::PINOT_BLANC_B,
                         Varietals::PINOT_GRIS_G,
                         Varietals::PINOT_NOIR_N,
-                        Varietals::AUXERROIS_B,
-                        Varietals::PINOT_BLANC_B,
                         Varietals::RIESLING_B,
+                        Varietals::SAVAGNIN_ROSE_RS,
                         Varietals::SYLVANER_B,
                     ],
                     'type' => self::TYPE_AOC,
@@ -48,13 +48,16 @@ class Designations
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['48.24917645', '7.4074699518555'],
                     'varietals' => [
-                        Varietals::RIESLING_B,
-                        Varietals::PINOT_GRIS_G,
+                        Varietals::CHASSELAS_B,
+                        Varietals::GEWURZTRAMINER_RS,
                         Varietals::MUSCAT_A_PETITS_GRAINS_B,
                         Varietals::MUSCAT_A_PETITS_GRAINS_RS,
                         Varietals::MUSCAT_OTTONEL_B,
+                        Varietals::PINOT_BLANC_B,
+                        Varietals::PINOT_GRIS_G,
+                        Varietals::PINOT_NOIR_N,
+                        Varietals::RIESLING_B,
                         Varietals::SYLVANER_B,
-                        Varietals::GEWURZTRAMINER_RS,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -63,12 +66,12 @@ class Designations
                     'coordinates' => ['48.24917645', '7.4074699518555'],
                     'sparkling' => true,
                     'varietals' => [
+                        Varietals::AUXERROIS_B,
+                        Varietals::CHARDONNAY_B,
                         Varietals::PINOT_BLANC_B,
                         Varietals::PINOT_GRIS_G,
                         Varietals::PINOT_NOIR_N,
                         Varietals::RIESLING_B,
-                        Varietals::AUXERROIS_B,
-                        Varietals::CHARDONNAY_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1331,7 +1334,10 @@ class Designations
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['44.810952', '0.157239'],
                     'varietals' => [
-
+                        Varietals::MUSCADELLE_B,
+                        Varietals::SAUVIGNON_B,
+                        Varietals::SAUVIGNON_GRIS_G,
+                        Varietals::SEMILLON_B,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1355,7 +1361,12 @@ class Designations
                     'colors' => [Colors::RED],
                     'coordinates' => ['44.8931452', '-0.1560662'],
                     'varietals' => [
-
+                        Varietals::CABERNET_FRANC_N,
+                        Varietals::CABERNET_SAUVIGNON_N,
+                        Varietals::CARMENERE_N,
+                        Varietals::COT_N,
+                        Varietals::MERLOT_N,
+                        Varietals::PETIT_VERDOT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1412,80 +1423,78 @@ class Designations
                 'Aloxe-Corton' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['47.0653471', '4.8596328'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Auxey-Duresses' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['46.9862244', '4.7467921'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Bâtard-Montrachet' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.9451362', '4.7404005'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Beaune' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['47.1109409', '4.80585304031604'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Bienvenues-Bâtard-Montrachet' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.9457247', '4.742291'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Blagny' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['46.9594209', '4.7411893'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Bonnes-Mares' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.1919287', '4.95728148897395'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Bourgogne' => [
                     'colors' => [Colors::RED, Colors::WHITE, Colors::ROSE],
                     'coordinates' => ['47.27808725', '4.22248630430605'],
                     'varietals' => [
-
+                        Varietals::CESAR_N,
+                        Varietals::CHARDONNAY_B,
+                        Varietals::GAMAY_N,
+                        Varietals::PINOT_BLANC_B,
+                        Varietals::PINOT_GRIS_G,
+                        Varietals::PINOT_NOIR_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
                 'Bourgogne aligoté' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['47.27808725', '4.22248630430605'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::ALIGOTE_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Bourgogne mousseux' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.27808725', '4.22248630430605'],
                     'varietals' => [
-
+                        Varietals::ALIGOTE_B,
+                        Varietals::CESAR_N,
+                        Varietals::CHARDONNAY_B,
+                        Varietals::GAMAY_DE_BOUZE_N,
+                        Varietals::GAMAY_DE_CHAUDENAY_N,
+                        Varietals::GAMAY_N,
+                        Varietals::MELON_B,
+                        Varietals::PINOT_BLANC_B,
+                        Varietals::PINOT_GRIS_G,
+                        Varietals::PINOT_NOIR_N,
                     ],
                     'sparkling' => true,
                     'type' => self::TYPE_AOC,
@@ -1494,7 +1503,11 @@ class Designations
                     'colors' => [Colors::RED, Colors::ROSE],
                     'coordinates' => ['47.27808725', '4.22248630430605'],
                     'varietals' => [
-
+                        Varietals::CHARDONNAY_B,
+                        Varietals::GAMAY_N,
+                        Varietals::PINOT_BLANC_B,
+                        Varietals::PINOT_GRIS_G,
+                        Varietals::PINOT_NOIR_N
                     ],
                     'sparkling' => true,
                     'type' => self::TYPE_AOC,
@@ -1502,184 +1515,149 @@ class Designations
                 'Bouzeron' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.8897667', '4.7265722'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::ALIGOTE_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Chablis' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['47.8152073,3.8001657'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Chablis grand cru' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['47.821840', '3.801621'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Chambertin' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.211693', '4.964889'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Chambertin-Clos de Bèze' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.21656625', '4.96607559719211'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Chambolle-Musigny' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.1864158', '4.9533347'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Chapelle-Chambertin' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.2173114', '4.96934886289917'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Charlemagne' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['47.07265705', '4.85323314385518'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Charmes-Chambertin' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.2069405', '4.96749330168809'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Chassagne-Montrachet' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['46.93636', '4.72736'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Chevalier-Montrachet' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.9466831,4.7373286'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Chorey-lès-Beaune' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['47.0478752', '4.8666174'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Clos de la Roche' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['46.797194', '4.74613635649189'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Clos de Tart' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.1956198', '4.95958853929336'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Clos de Vougeot' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.1752753', '4.9554317'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Clos des Lambrays' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.19806455', '4.95900207990256'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Clos Saint-Denis' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.1671118', '4.9531946'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Corton' => [
                     'colors' => [Colors::RED, Colors::WHITE],
                     'coordinates' => ['47.0759241', '4.86623684688732'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Corton-Charlemagne' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['47.07931745', '4.87188630182417'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Côte de Beaune' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['47.1109409', '4.80585304031604'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Côte de Beaune-villages' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['46.969061', '4.763061'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Côte de Nuits-villages' => [
                     'colors' => [Colors::RED, Colors::WHITE],
                     'coordinates' => ['47.240241', '4.961755'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Coteaux bourguignons' => [
                     'colors' => [Colors::RED, Colors::WHITE, Colors::ROSE],
                     'coordinates' => ['47.27808725', '4.22248630430605'],
                     'varietals' => [
-
+                        Varietals::ALIGOTE_B,
+                        Varietals::CESAR_N,
+                        Varietals::CHARDONNAY_B,
+                        Varietals::GAMAY_N,
+                        Varietals::GAMAY_DE_BOUZE_N,
+                        Varietals::GAMAY_DE_CHAUDENAY_N,
+                        Varietals::MELON_B,
+                        Varietals::PINOT_BLANC_B,
+                        Varietals::PINOT_GRIS_G,
+                        Varietals::PINOT_NOIR_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
@@ -1687,7 +1665,25 @@ class Designations
                     'colors' => [Colors::RED, Colors::WHITE, Colors::ROSE],
                     'coordinates' => ['47.2876802', '3.8138541'],
                     'varietals' => [
-
+                        Varietals::ALIGOTE_B,
+                        Varietals::AUXERROIS_B,
+                        Varietals::CESAR_N,
+                        Varietals::CHARDONNAY_B,
+                        Varietals::CHASSELAS_B,
+                        Varietals::CHENIN_B,
+                        Varietals::GAMARET_N,
+                        Varietals::GAMAY_N,
+                        Varietals::MELON_B,
+                        Varietals::MERLOT_N,
+                        Varietals::MEUNIER_N,
+                        Varietals::PINOT_BLANC_B,
+                        Varietals::PINOT_GRIS_G,
+                        Varietals::PINOT_NOIR_N,
+                        Varietals::SAINT_PIERRE_DORE_B,
+                        Varietals::SAUVIGNON_B,
+                        Varietals::SAUVIGNON_GRIS_G,
+                        Varietals::SAVAGNIN_BLANC_B,
+                        Varietals::VIOGNIER_B,
                     ],
                     'type' => self::TYPE_IGP,
                 ],
@@ -1711,7 +1707,14 @@ class Designations
                     'colors' => [Colors::WHITE, Colors::ROSE],
                     'coordinates' => ['47.27808725', '4.22248630430605'],
                     'varietals' => [
-
+                        Varietals::ALIGOTE_B,
+                        Varietals::CHARDONNAY_B,
+                        Varietals::GAMAY_N,
+                        Varietals::MELON_B,
+                        Varietals::PINOT_BLANC_B,
+                        Varietals::PINOT_GRIS_G,
+                        Varietals::PINOT_NOIR_N,
+                        Varietals::SACY_B,
                     ],
                     'sparkling' => true,
                     'type' => self::TYPE_AOC,
@@ -1719,337 +1722,253 @@ class Designations
                 'Criots-Bâtard-Montrachet' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.9723603', '4.7753548'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Échezeaux' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.1668909', '4.9816856'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Fixin' => [
                     'colors' => [Colors::RED, Colors::WHITE],
                     'coordinates' => ['47.2455008', '4.9728452'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Gevrey-Chambertin' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.23000525', '4.96227357593831'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Givry' => [
                     'colors' => [Colors::RED, Colors::WHITE],
                     'coordinates' => ['46.7831191', '4.7432564'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Grands-Échezeaux' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.1713647', '4.9538051'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Griotte-Chambertin' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.21420335', '4.96863546033135'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Irancy' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.7132623', '3.6653566'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CESAR_N, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'La grande rue' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.164627', '4.948756'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'La Romanée' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.165549', '4.948201'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'La Tâche' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.162918, 4.949480'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Ladoix' => [
                     'colors' => [Colors::RED, Colors::WHITE],
                     'coordinates' => ['47.067871', '4.887449'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Latricières-Chambertin' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.208128', '4.963853'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Mâcon' => [
                     'colors' => [Colors::RED, Colors::WHITE, Colors::ROSE],
                     'coordinates' => ['46.4720992', '4.8113081'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::GAMAY_N, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Maranges' => [
                     'colors' => [Colors::RED, Colors::WHITE],
                     'coordinates' => ['46.906389', '4.653611'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Marsannay' => [
                     'colors' => [Colors::RED, Colors::WHITE, Colors::ROSE],
                     'coordinates' => ['47.271389', '4.989444'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Mazis-Chambertin' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.2201931', '4.96684212137278'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Mazoyères-Chambertin' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.207658', '4.968436'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Mercurey' => [
                     'colors' => [Colors::RED, Colors::WHITE],
                     'coordinates' => ['46.8364292', '4.716996'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Meursault' => [
                     'colors' => [Colors::RED, Colors::WHITE],
                     'coordinates' => ['46.9784288', '4.769377'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Montagny' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.706944', '4.670833'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Monthélie' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['46.9928724', '4.7658083'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Montrachet' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.9455125', '4.7384962'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Morey-Saint-Denis' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['47.1955052', '4.9623167'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N, Varietals::ALIGOTE_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Musigny' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['47.16263', '4.51809'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Nuits-Saint-Georges' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['47.134979', '4.9540989'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Pernand-Vergelesses' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['47.0794538', '4.8509277'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Petit-Chablis' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['47.782200', '3.797500'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Pommard' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.0087384', '4.7963167'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Pouilly-Fuissé' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.296548', '4.724669'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Pouilly-Loché' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.279413', '4.765929'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Pouilly-Vinzelles' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.2717358', '4.7686032'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Puligny-Montrachet' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['46.94497', '4.75393'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Richebourg' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.163050', '4.949720'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Romanée-Conti' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.161670', '4.949720'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Romanée-Saint-Vivant' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.162100', '4.952706'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Ruchottes-Chambertin' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.220864', '4.964731'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Rully' => [
                     'colors' => [Colors::RED, Colors::WHITE],
                     'coordinates' => ['46.876111', '4.740833'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Saint-Aubin' => [
                     'colors' => [Colors::RED, Colors::WHITE],
                     'coordinates' => ['46.954170', '4.717220'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Saint-Bris' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['47.744200, 3.650300'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::SAUVIGNON_B, Varietals::SAUVIGNON_GRIS_G],
                     'type' => self::TYPE_AOC,
                 ],
                 'Saint-Romain' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['47.000556', '4.711389'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Saint-Véran' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.255278', '4.736111'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Sainte-Marie-la-Blanche' => [
@@ -2070,64 +1989,79 @@ class Designations
                 'Santenay' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['46.913611', '4.698056'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Saône-et-Loire' => [
                     'colors' => [Colors::WHITE, Colors::RED, Colors::ROSE],
                     'coordinates' => ['46.6557086', '4.55855481835173'],
                     'varietals' => [
-
+                        Varietals::ALIGOTE_B,
+                        Varietals::AUXERROIS_B,
+                        Varietals::CESAR_N,
+                        Varietals::CHARDONNAY_B,
+                        Varietals::CHASSELAS_B,
+                        Varietals::CHENIN_B,
+                        Varietals::GAMARET_N,
+                        Varietals::GAMAY_N,
+                        Varietals::MELON_B,
+                        Varietals::MERLOT_N,
+                        Varietals::MEUNIER_N,
+                        Varietals::PINOT_BLANC_B,
+                        Varietals::PINOT_GRIS_G,
+                        Varietals::PINOT_NOIR_N,
+                        Varietals::SAINT_PIERRE_DORE_B,
+                        Varietals::SAUVIGNON_B,
+                        Varietals::SAUVIGNON_GRIS_G,
+                        Varietals::SAVAGNIN_BLANC_B,
+                        Varietals::SYRAH_N,
+                        Varietals::VIOGNIER_B,
                     ],
                     'type' => self::TYPE_IGP,
                 ],
                 'Savigny-lès-Beaune' => [
                     'colors' => [Colors::WHITE, Colors::RED],
                     'coordinates' => ['47.064167', '4.819167'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Viré-Clessé' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['46.417222', '4.815556'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Volnay' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.002222', '4.782222'],
-                    'varietals' => [
-
-                    ],
+                    [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Vosne-Romanée' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.160278', '4.954444'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Vougeot' => [
                     'colors' => [Colors::RED, Colors::WHITE],
                     'coordinates' => ['47.17722', '4.96417'],
-                    'varietals' => [
-
-                    ],
+                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G, Varietals::PINOT_NOIR_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Yonne' => [
                     'colors' => [Colors::RED, Colors::WHITE, Colors::ROSE],
                     'coordinates' => ['47.85512575', '3.64504392572388'],
                     'varietals' => [
-
+                        Varietals::ALIGOTE_B,
+                        Varietals::CESAR_N,
+                        Varietals::CHARDONNAY_B,
+                        Varietals::GAMAY_N,
+                        Varietals::PINOT_BLANC_B,
+                        Varietals::PINOT_GRIS_G,
+                        Varietals::PINOT_NOIR_N,
+                        Varietals::SAUVIGNON_B,
+                        Varietals::TRESSOT_N,
                     ],
                     'type' => self::TYPE_IGP,
                 ],
@@ -5656,7 +5590,7 @@ class Designations
                 'Orléans-Cléry' => [
                     'colors' => [Colors::RED],
                     'coordinates' => ['47.821100', '1.755000'],
-                    'varietals' => [Varietals::CABERNET_FRANC_N, Varietals::CABERNET_SAUVIGNON_N],
+                    'varietals' => [Varietals::CABERNET_FRANC_N],
                     'type' => self::TYPE_AOC,
                 ],
                 'Pouilly-fumé' => [
@@ -7568,7 +7502,20 @@ class Designations
                 'Grignan-les-Adhémar' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors::WHITE],
                     'coordinates' => ['44.420278','4.908889'],
-                    'varietals' => [Varietals::GRENACHE_N, Varietals::SYRAH_N, Varietals::CARIGNAN_N, Varietals::CINSAUT_N, Varietals::MARSELAN_N, Varietals::MARSANNE_B, Varietals::ROUSSANNE_B, Varietals::VIOGNIER_B, Varietals::GRENACHE_BLANC_B, Varietals::CLAIRETTE_B],
+                    'varietals' => [
+                        Varietals::BOURBOULENC_B,
+                        Varietals::CARIGNAN_N,
+                        Varietals::CINSAUT_N,
+                        Varietals::CLAIRETTE_B,
+                        Varietals::GRENACHE_BLANC_B,
+                        Varietals::GRENACHE_N,
+                        Varietals::MARSANNE_B,
+                        Varietals::MARSELAN_N,
+                        Varietals::MOURVEDRE_N,
+                        Varietals::ROUSSANNE_B,
+                        Varietals::SYRAH_N,
+                        Varietals::VIOGNIER_B,
+                    ],
                     'type' => self::TYPE_AOC,
                 ],
                 'Hermitage' => [
@@ -8287,7 +8234,7 @@ class Designations
                 'Roussette du Bugey' => [
                     'colors' => [Colors::WHITE],
                     'coordinates' => ['45.778100','5.761700'],
-                    'varietals' => [Varietals::ALTESSE_B, Varietals::CHARDONNAY_B],
+                    'varietals' => [Varietals::ALTESSE_B],
                     'type' => self::TYPE_AOC,
                 ],
                 'Savoie' => [
@@ -8921,7 +8868,15 @@ class Designations
                 'Côtes de Millau' => [
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
                     'coordinates' => ['44.098611','3.078333'],
-                    'varietals' => [Varietals::CHARDONNAY_B, Varietals::PINOT_NOIR_N, Varietals::PINOT_BLANC_B, Varietals::PINOT_GRIS_G],
+                    'varietals' => [
+                        Varietals::CABERNET_SAUVIGNON_N,
+                        Varietals::CHENIN_B,
+                        Varietals::DURAS_N,
+                        Varietals::FER_N,
+                        Varietals::GAMAY_N,
+                        Varietals::MAUZAC_B,
+                        Varietals::SYRAH_N,
+                    ],
                     'type' => self::TYPE_AOC,
                 ],
                 'Côtes de Montravel' => [
@@ -9720,10 +9675,16 @@ class Designations
                     'colors' => [Colors::RED, Colors::ROSE, Colors:: WHITE],
                     'coordinates' => ['43.652222','-0.149167'],
                     'varietals' => [
-                        Varietals::CHARDONNAY_B,
-                        Varietals::PINOT_BLANC_B,
-                        Varietals::PINOT_GRIS_G,
-                        Varietals::PINOT_NOIR_N,
+                        Varietals::ARRUFIAC_B,
+                        Varietals::CABERNET_FRANC_N,
+                        Varietals::CABERNET_SAUVIGNON_N,
+                        Varietals::COURBU_B,
+                        Varietals::FER_N,
+                        Varietals::GROS_MANSENG_B,
+                        Varietals::MERLOT_N,
+                        Varietals::PETIT_COURBU_B,
+                        Varietals::PETIT_MANSENG_B,
+                        Varietals::TANNAT_N,
                     ],
                     'type' => self::TYPE_AOC,
                 ],
