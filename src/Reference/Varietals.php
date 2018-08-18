@@ -129,6 +129,7 @@ class Varietals
     public const GROS_MANSENG_B = 'Gros Manseng';
     public const MESLIER_SAINT_FRANCOIS_B = 'Meslier Saint-François ou gros meslier';
     public const GROS_VERT_B = 'Gros vert';
+    public const INCROCIO_MANZONI_B = 'Incrocio Manzoni';
     public const JACQUERE_B = 'Jacquère';
     public const JOUBERTIN_N = 'Joubertin';
     public const JURANCON_BLANC_B = 'Jurançon blanc';
@@ -186,7 +187,7 @@ class Varietals
     public const MUSCAT_A_PETITS_GRAINS_RG = 'Muscat rouge à petits grains';
     public const NEGRET_DE_BANHARS_N = 'Négret de Banhars';
     public const NEGRETTE_N = 'Négrette';
-    public const NIELLUCCIO_N = 'Nielluccio';
+    public const NIELLUCCIO_N = 'Nielluccio ou Sangiovese';
     public const NOIR_FLEURIEN_N = 'Noir fleurien';
     public const OBERLIN_N = 'Oberlin';
     public const ONDENC_B = 'Ondenc';

@@ -19,22 +19,22 @@ use Symfony\Component\Yaml\Yaml;
 class Importer
 {
     public const VARIETALS = [
-        'Braquet' => Varietals::BRACHETTO,
+        'Braquet' => Varietals::BRACHET_N,
         'Cabernet-franc' => Varietals::CABERNET_FRANC_N,
         'Cabernet-sauvignon' => Varietals::CABERNET_SAUVIGNON_N,
         'Cabernet Sauvignon' => Varietals::CABERNET_SAUVIGNON_N,
         'Chenin blanc' => Varietals::CHENIN_B,
-        'cinsault' => Varietals::CINSAULT,
-        'Gewurtztraminer' => Varietals::GEWURZTRAMINER,
+        'cinsault' => Varietals::CINSAUT_N,
+        'Gewurtztraminer' => Varietals::GEWURZTRAMINER_RS,
         'Grenache Blanc' => Varietals::GRENACHE_BLANC_B,
-        'incrocio mazoni' => Varietals::INCROCIO_MANZONI,
-        'merlot' => Varietals::MERLOT,
-        'Macabeu' => Varietals::MACABEO,
-        'Mourvedre' => Varietals::MOURVEDRE,
-        'mourvedre' => Varietals::MOURVEDRE,
-        'Rousssane' => Varietals::ROUSSANNE,
-        'San Giovese' => Varietals::SANGIOVESE,
-        'syrah' => Varietals::SYRAH,
+        'incrocio mazoni' => Varietals::INCROCIO_MANZONI_B,
+        'merlot' => Varietals::MERLOT_N,
+        'Macabeu' => Varietals::MACABEU_B,
+        'Mourvedre' => Varietals::MOURVEDRE_N,
+        'mourvedre' => Varietals::MOURVEDRE_N,
+        'Rousssane' => Varietals::ROUSSANNE_B,
+        'San Giovese' => Varietals::NIELLUCCIO_N,
+        'syrah' => Varietals::SYRAH_N,
     ];
 
     public const ISO_CODES = [
